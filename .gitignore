@@ -227,3 +227,6 @@ node_modules
 #Files
 init-pc.bat
 init-project.bat
+src/vendor/material-design-lite/.bower.json
+src/vendor/material-design-lite/bower.json
+src/vendor/material-design-lite/gulpfile.babel.js
