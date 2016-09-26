@@ -1,0 +1,31 @@
+{
+  "name": "dev-environment",
+  "version": "0.0.1",
+  "description": "none",
+  "main": "gulpfile.js",
+  "authors": [
+    "alexanderkatkov"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "gulp",
+    "environment"
+  ],
+  "moduleType": [
+    "gulp"
+  ],
+  "homepage": "www.site.com",
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap-sass": "latest"
+  },
+  "devDependencies": {},
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./src/vendor",
+    "test",
+    "tests"
+  ]
+}
