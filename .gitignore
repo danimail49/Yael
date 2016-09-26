@@ -222,6 +222,7 @@ pip-log.txt
 #Folders
 .imdone
 .idea
+node_modules
 
 #Files
 init-pc.bat
