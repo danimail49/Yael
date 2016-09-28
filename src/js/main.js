@@ -1,3 +1,11 @@
 /**
- * Created by Alexander Katkov on 26.09.2016.
+ * Yael functions and definitions.
  */
+
+(function ($) {
+
+	$(function() {
+		console.log( "Main Script!" );
+	});
+
+})(jQuery);

@@ -15,10 +15,7 @@
     "gulp"
   ],
   "homepage": "www.site.com",
-  "dependencies": {
-    "jquery": "latest",
-    "bootstrap-sass": "latest"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "ignore": [
     "**/.*",

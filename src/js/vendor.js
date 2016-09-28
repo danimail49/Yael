@@ -1,3 +1,5 @@
 /**
- * Created by Alexander Katkov on 26.09.2016.
+ * Yael 3rd party scripts
  */
+
+//= ../vendor/material-design-lite/material.js
