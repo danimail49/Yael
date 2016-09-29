@@ -26,22 +26,19 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
 	<header class="mdl-layout__header">
 		<div class="mdl-layout__header-row">
-			<!-- Add spacer, to align title to the right on smaller screens -->
-			<div class="mdl-layout-spacer mdl-layout--small-screen-only"></div>
 			<!-- Title -->
-			<span class="mdl-layout-title"><?php budabuga_the_custom_logo(); ?></span>
+			<span class="mdl-layout-title bdbg-logo bdbg-logo--main"><?php budabuga_the_custom_logo(); ?></span>
 			<!-- Add spacer, to align navigation to the right -->
 			<div class="mdl-layout-spacer"></div>
 			<!-- Navigation. We hide it in small screens. -->
 			<?php
 			$args = array(
 				'container'       => 'nav',
-				'container_class' => '',
-				'container_id'    => '',
-				'menu_class'      => 'mdl-navigation mdl-layout--large-screen-only',
-				'menu_id'         => 'bgbd-menu-main',
+				'container_class' => 'bdbg-menu',
+				'menu_class'      => 'mdl-layout--large-screen-only bdbg-menu__main',
+				'menu_id'         => 'js-menu-main',
 				'echo'            => true,
-				'theme_location'  => 'primary'
+				'theme_location'  => 'primary',
 			);
 			wp_nav_menu( $args );
 			?>
