@@ -1,14 +1,6 @@
 /*----------------------------------------------------------------------------
- Base Styles
+ Customizer
 ----------------------------------------------------------------------------*/
-/* Header
+/* Alpha color picker module
 --------------------------------------*/
-header {
-  a {
-    text-decoration: none;
-  }
-}
-
-body {
-  overflow-y: hidden;
-}
+@import "admin/alpha_color_picker";

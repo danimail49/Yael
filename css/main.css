@@ -16,8 +16,16 @@ header a {
   text-decoration: none;
 }
 
+body {
+  overflow-y: hidden;
+}
+
 /* Layout
 --------------------------------------*/
+
+.bdbg-header__row {
+  height: auto;
+}
 
 /* Module
 --------------------------------------*/
@@ -54,25 +62,12 @@ header a {
   padding: 0 24px;
 }
 
-.menu-item-has-children {
-  position: relative;
+.bdbg-menu__main > li a i {
+  vertical-align: middle;
 }
 
-.menu-item-has-children > a:after {
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  -webkit-font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-  content: "more_vert";
-  vertical-align: middle;
+.menu-item-has-children {
+  position: relative;
 }
 
 .menu-item-has-children.is-active > .sub-menu {
@@ -117,7 +112,7 @@ header a {
   background-color: transparent;
   text-align: left;
   margin: 0;
-  padding: 0 16px;
+  padding: 0 24px;
   outline-color: #bdbdbd;
   position: relative;
   font-size: 14px;
@@ -130,8 +125,19 @@ header a {
   white-space: nowrap;
 }
 
+.bdbg-logo {
+  padding: 0.5em;
+}
+
 .bdbg-logo a {
   color: #fff;
+  display: block;
+}
+
+.bdbg-logo img {
+  display: block;
+  width: auto;
+  height: auto;
 }
 
 /* State

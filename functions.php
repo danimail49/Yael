@@ -22,23 +22,31 @@ define( 'FRAMEWORK', THEMEDIR . 'framework/', true ); // Framework Theme base pa
 define( 'FRAMEWORK_ADMIN', THEMEDIR . 'framework/admin/', true ); // Framework Theme Admin Scripts path.
 define( 'FRAMEWORK_CLASSES', THEMEDIR . 'framework/classes/', true ); // Framework Classes  path.
 define( 'FRAMEWORK_CORE', THEMEDIR . 'framework/core/', true ); // Framework Theme Modules base path.
+define( 'FRAMEWORK_SETTINGS', THEMEDIR . 'framework/settings/', true ); // Framework Theme Settings base path.
 
 
 // -------------------------------------------------
-// FRAMEWORK CORE
+// FRAMEWORK FUNCTIONS
 // -------------------------------------------------
 // Framework init.
 require_once( FRAMEWORK_CORE . 'budabuga-init.php' );
 // Framework scripts.
 require_once( FRAMEWORK_CORE . 'budabuga-scripts.php' );
+// Customizer styles.
+require_once( FRAMEWORK_CORE . 'budabuda-css-customizer.php' );
 // Framework views.
 require_once( FRAMEWORK_CORE . 'budabuga-views.php' );
-
+// Framework views.
+require_once( FRAMEWORK_SETTINGS . 'budabuga_customizer-controls.php' );
 // -------------------------------------------------
 // FRAMEWORK CLASSES
 // -------------------------------------------------
-// Framework class Bdbg_Menu_Desktop_Walker.
-require_once( FRAMEWORK_CLASSES . 'class-bdbg-menu-desktop-walker.php' );
+// Incule custom controls classes
+add_action( 'customize_register', 'customizer_register_classes' );
+function customizer_register_classes( $wp_customize ) {
+	require_once( FRAMEWORK_CLASSES . 'class-alpha-color-picker.php' );
+}
 
-
-
+// Creating theme customizer controls
+require_once( FRAMEWORK_CLASSES . 'class-bdbg-theme-customizer.php' );
+Bdbg_Theme_Customizer::init( $sections, $settings, $controls );

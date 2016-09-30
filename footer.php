@@ -10,8 +10,12 @@
  */
 
 ?>
-	</div>
-	<!-- /.mdl-layout mdl-js-layout -->
+
+
+	<footer class="mdl-mega-footer"> ... </footer>
+	</main>
+</div>
+<!-- /.mdl-layout mdl-js-layout -->
 <?php wp_footer(); ?>
 </body>
 </html>

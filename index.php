@@ -11,7 +11,7 @@
  *
  * @package Budabuga
  * @subpackage Yael
- * @since Yael 1.00
+ * @since 1.00
  */
 
 get_header(); ?>
@@ -33,7 +33,6 @@ get_header(); ?>
 	// End the loop. ?>
 
 <?php endif; ?>
-
 
 <?php
 get_footer();

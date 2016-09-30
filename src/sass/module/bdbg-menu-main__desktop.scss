@@ -18,6 +18,10 @@
       color: #fff;
       line-height: 64px;
       padding: 0 24px;
+
+      i {
+        vertical-align: middle;
+      }
     }
   }
 }
@@ -26,22 +30,23 @@
   position: relative;
 
   > a {
-    &:after {
-      font-family: 'Material Icons';
-      font-weight: normal;
-      font-style: normal;
-      font-size: 24px;
-      line-height: 1;
-      letter-spacing: normal;
-      text-transform: none;
-      display: inline-block;
-      white-space: nowrap;
-      word-wrap: normal;
-      -webkit-font-feature-settings: 'liga';
-      -webkit-font-smoothing: antialiased;
-      content: 'more_vert';
-      vertical-align: middle;
-    }
+
+    //&:after {
+    //  font-family: 'Material Icons';
+    //  font-weight: normal;
+    //  font-style: normal;
+    //  font-size: 24px;
+    //  line-height: 1;
+    //  letter-spacing: normal;
+    //  text-transform: none;
+    //  display: inline-block;
+    //  white-space: nowrap;
+    //  word-wrap: normal;
+    //  -webkit-font-feature-settings: 'liga';
+    //  -webkit-font-smoothing: antialiased;
+    //  content: 'more_vert';
+    //  vertical-align: middle;
+    //}
   }
 
   &.is-active {
@@ -86,7 +91,7 @@
       background-color: transparent;
       text-align: left;
       margin: 0;
-      padding: 0 16px;
+      padding: 0 24px;
       outline-color: #bdbdbd;
       position: relative;
       font-size: 14px;

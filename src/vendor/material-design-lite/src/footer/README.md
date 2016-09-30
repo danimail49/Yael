@@ -2,7 +2,7 @@
 
 The Material Design Lite (MDL) **footer** component is a comprehensive container intended to present a substantial amount of related content in a visually attractive and logically intuitive area. Although it is called "footer", it may be placed at any appropriate location on a device screen, either before or after other content.
 
-An MDL footer component takes two basic forms: *mega-footer* and *mini-footer*. As the names imply, mega-footers contain more (and more complex) content than mini-footers. A mega-footer presents multiple sections of content separated by horizontal rules, while a mini-footer presents a single section of content. Both footer forms have their own internal structures, including required and optional elements, and typically include both informational and clickable content, such as links.
+An MDL footer component takes two basic forms: *mega-footer* and *mini-footer*. As the names imply, mega-footers contain more (and more complex) content than mini-footers. A mega-footer presents multiple panels of content separated by horizontal rules, while a mini-footer presents a single section of content. Both footer forms have their own internal structures, including required and optional elements, and typically include both informational and clickable content, such as links.
 
 Footers, as represented by this component, are a fairly new feature in user interfaces, and allow users to view discrete blocks of content in a coherent and consistently organized way. Their design and use is an important factor in the overall user experience.
 
@@ -36,7 +36,7 @@ Footers, as represented by this component, are a fairly new feature in user inte
   </div>
 </footer>
 ```
-&nbsp;2a. Inside the top section div, code two sibling "inner" divs for the *left* and *right* content sections.
+&nbsp;2a. Inside the top section div, code two sibling "inner" divs for the *left* and *right* content panels.
 ```html
 <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__top-section">
@@ -74,7 +74,7 @@ Footers, as represented by this component, are a fairly new feature in user inte
   </div>
 </footer>
 ```
-&nbsp;3a. Inside the middle section div, code one or more sibling "inner" divs for the *drop-down* content sections. That is, for two drop-down sections, you would code two divs.
+&nbsp;3a. Inside the middle section div, code one or more sibling "inner" divs for the *drop-down* content panels. That is, for two drop-down panels, you would code two divs.
 ```html
 <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__top-section">
@@ -179,7 +179,7 @@ Footers, as represented by this component, are a fairly new feature in user inte
   </div>
 </footer>
 ```
-&nbsp;5. Add content to the top (left and right), middle (drop-downs), and bottom (text and links) sections of the footer; include any appropriate MDL classes using the `class` attribute.
+&nbsp;5. Add content to the top (left and right), middle (drop-downs), and bottom (text and links) panels of the footer; include any appropriate MDL classes using the `class` attribute.
 ```html
 <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__top-section">
@@ -229,7 +229,7 @@ The mega-footer component is ready for use.
 
 #### Examples
 
-A mega-footer component with three sections and two drop-down sections in the middle section.
+A mega-footer component with three panels and two drop-down panels in the middle section.
 ```html
 <footer class="mdl-mega-footer">
   <div class="mdl-mega-footer__top-section">
@@ -334,7 +334,7 @@ A mega-footer component with three sections and two drop-down sections in the mi
   </div>
 </footer>
 ```
-&nbsp;3. Add content to the left (text and links) and right (text or decoration) sections of the footer; include any appropriate MDL classes using the `class` attribute.
+&nbsp;3. Add content to the left (text and links) and right (text or decoration) panels of the footer; include any appropriate MDL classes using the `class` attribute.
 ```html
 <footer class="mdl-mini-footer">
   <div class="mdl-mini-footer__left-section">
@@ -359,7 +359,7 @@ The mini-footer component is ready for use.
 
 #### Examples
 
-A mini-footer with left and right sections.
+A mini-footer with left and right panels.
 
 ```html
 <footer class="mdl-mini-footer">
