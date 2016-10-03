@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "bower": "latest",
     "del": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
@@ -30,9 +31,6 @@
     "gulp-uglify": "latest",
     "gulp-util": "latest",
     "gulp.spritesmith": "latest",
-    "imagemin-mozjpeg": "latest",
-    "imagemin-pngquant": "latest",
-    "imagemin-svgo": "latest",
     "merge-stream": "latest",
     "path": "latest",
     "rigger": "latest"
