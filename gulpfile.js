@@ -105,6 +105,17 @@ gulp.task(
       .pipe(autoPlugin.notify({message: 'Optimizing IMG files completed', onLast: true}));
 });
 
+// Fonts Copy Task
+gulp.task(
+  'font', ['cleanFont'], function () {
+    consoleLog('Copying FONT files for production...');
+    return gulp.src(config.srcPath.font)
+      .pipe(autoPlugin.plumber({errorHandler: onError}))
+      .pipe(gulp.dest(config.buildPath.font))
+      .pipe(autoPlugin.plumber.stop())
+      .pipe(autoPlugin.notify({message: 'Copying FONT files completed', onLast: true}));
+});
+
 /**
  * Group of Clean tasks for build folders.
  */
@@ -127,6 +138,13 @@ gulp.task(
   'cleanImg', function() {
     consoleLog('Cleaning IMG files at ' + config.buildPath.img);
     return manualPlugin.del(config.helperVars.imgBuildClean);
+});
+
+// Clean: FONT
+gulp.task(
+  'cleanFont', function() {
+    consoleLog('Cleaning IMG files at ' + config.buildPath.font);
+    return manualPlugin.del(config.buildPath.font + '**/*.*');
 });
 
 /**

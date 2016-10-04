@@ -15,6 +15,8 @@ endif;
 /**
  * Theme Constants
  * Any constant we need to use in a theme should go here.
+ *
+ * @since 1.00
  */
 define( 'THEMEDIR_URI', trailingslashit( get_template_directory_uri() ), true ); // Path to theme folder.
 define( 'THEMEDIR', trailingslashit( get_template_directory() ), true ); // Path to theme folder.
@@ -41,12 +43,22 @@ require_once( FRAMEWORK_SETTINGS . 'budabuga_customizer-controls.php' );
 // -------------------------------------------------
 // FRAMEWORK CLASSES
 // -------------------------------------------------
-// Incule custom controls classes
-add_action( 'customize_register', 'customizer_register_classes' );
-function customizer_register_classes( $wp_customize ) {
-	require_once( FRAMEWORK_CLASSES . 'class-alpha-color-picker.php' );
-}
+// Custom navigation walker
+require_once( FRAMEWORK_CLASSES . 'class-bdbg-menu-walker.php' );
 
-// Creating theme customizer controls
+/**
+ * Incule custom controls classes.
+ * Without hooking inside function class dont see $wp_customize variable.
+ *
+ * @since 1.00
+ *
+ * @param  object $wp_customize Customizr manager object.
+ */
+function customizer_register_classes( $wp_customize ) {
+	require_once( FRAMEWORK_CLASSES . 'class-bdbg-alpha-color-picker.php' );
+}
+add_action( 'customize_register', 'customizer_register_classes' );
+
+// Creating theme customizer controls.
 require_once( FRAMEWORK_CLASSES . 'class-bdbg-theme-customizer.php' );
 Bdbg_Theme_Customizer::init( $sections, $settings, $controls );

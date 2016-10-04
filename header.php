@@ -27,20 +27,14 @@
 	<header class="mdl-layout__header bdbg-header ">
 		<div class="mdl-layout__header-row bdbg-header__row">
 			<!-- Title -->
-			<span class="mdl-layout-title bdbg-logo bdbg-logo--main"><?php budabuga_the_custom_logo(); ?></span>
+			<span class="mdl-layout-title bdbg-logo bdbg-logo--main"><?php bdbg_the_custom_logo(); ?></span>
 			<!-- Add spacer, to align navigation to the right -->
 			<div class="mdl-layout-spacer"></div>
 			<!-- Navigation. We hide it in small screens. -->
 			<?php
-			$args = array(
-				'container'       => 'nav',
-				'container_class' => 'bdbg-menu',
-				'menu_class'      => 'mdl-layout--large-screen-only bdbg-menu__main',
-				'menu_id'         => 'js-menu-main',
-				'echo'            => true,
-				'theme_location'  => 'primary',
-			);
-			wp_nav_menu( $args );
+			$type = 'main';
+			$position = 'left';
+				bdbg_menus();
 			?>
 		</div>
 	</header>

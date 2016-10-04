@@ -1,6 +1,7 @@
 /**
- * Customizer live preview snippets
+ * Custom code for WP Customizer
  */
+
 (function ($) {
 
 	$(function () {

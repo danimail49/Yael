@@ -2,9 +2,8 @@
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
- * @package BudaBuga framework
+ * @package BudaBuga
  * @since 1.00
- * @framework 1.00
  */
 
 // Preventing direct script access.
@@ -12,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) :
 	die( 'No direct script access allowed' );
 endif;
 
-if ( ! function_exists( 'budabuga_setup' ) ) :
+if ( ! function_exists( 'bdbg_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -22,7 +21,7 @@ if ( ! function_exists( 'budabuga_setup' ) ) :
 	 *
 	 * @since 1.00
 	 */
-	function budabuga_setup() {
+	function bdbg_setup() {
 		// Hide WordPress version.
 		remove_action( 'wp_head', 'wp_generator' );
 
@@ -53,9 +52,10 @@ if ( ! function_exists( 'budabuga_setup' ) ) :
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails', array( 'post' ) );
 
-		// This theme uses wp_nav_menu() in two locations.
+		// This theme uses wp_nav_menu() in three locations.
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'budabuga' ),
+			'main' => __( 'Primary Menu', 'budabuga' ),
+			'side' => __( 'Side Menu', 'budabuga' ),
 			'footer'  => __( 'Footer Menu', 'budabuga' ),
 		) );
 
@@ -89,4 +89,4 @@ if ( ! function_exists( 'budabuga_setup' ) ) :
 		) );
 	}
 endif; // budabuga_setup.
-add_action( 'after_setup_theme', 'budabuga_setup' );
+add_action( 'after_setup_theme', 'bdbg_setup' );

@@ -3,9 +3,10 @@
  */
 
 (function ($) {
+   'use strict';
 
-	$(function() {
-		//= admin/alpha_color_picker.js
-	});
+    $(function () {
+        //= customizer/alpha_color_picker.js
+    });
 
 })(jQuery);

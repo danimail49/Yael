@@ -1,5 +1,5 @@
 {
-  "name": "dev-environment",
+  "name": "Yael Theme",
   "version": "0.0.1",
   "description": "none",
   "main": "gulpfile.js",
@@ -8,15 +8,19 @@
   ],
   "license": "MIT",
   "keywords": [
-    "gulp",
-    "environment"
+    "WordPress",
+    "Theme"
   ],
   "moduleType": [
     "gulp"
   ],
   "homepage": "www.site.com",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "material-design-icons": "latest",
+    "normalize-css": "latest",
+    "material-design-lite": "^1.2.1"
+  },
   "ignore": [
     "**/.*",
     "node_modules",

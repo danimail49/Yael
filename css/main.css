@@ -27,103 +27,13 @@ body {
   height: auto;
 }
 
+.bdbg-header .mdl-layout__drawer-button {
+  position: relative;
+  top: auto;
+}
+
 /* Module
 --------------------------------------*/
-
-.bdbg-menu__main {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 64px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-          align-items: center;
-}
-
-.bdbg-menu__main ul {
-  list-style: none;
-  padding: 0;
-}
-
-.bdbg-menu__main > li a {
-  display: block;
-  color: #fff;
-  line-height: 64px;
-  padding: 0 24px;
-}
-
-.bdbg-menu__main > li a i {
-  vertical-align: middle;
-}
-
-.menu-item-has-children {
-  position: relative;
-}
-
-.menu-item-has-children.is-active > .sub-menu {
-  visibility: visible;
-  height: auto;
-  width: auto;
-  opacity: 1;
-  z-index: 999;
-  display: block;
-}
-
-.menu-item-has-children > .sub-menu {
-  position: absolute;
-  list-style: none;
-  top: 100%;
-  left: 0;
-  height: 0;
-  width: 0;
-  min-width: 124px;
-  padding: 8px 0;
-  margin: 0;
-  opacity: 0;
-  z-index: -1;
-  -webkit-transition: height, width, opacity 0.5s;
-          transition: height, width, opacity 0.5s;
-  display: none;
-  background: #fff;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-
-.menu-item-has-children > .sub-menu .sub-menu {
-  top: 0;
-  left: 100%;
-}
-
-.menu-item-has-children > .sub-menu li a {
-  display: block;
-  border: none;
-  color: rgba(0, 0, 0, 0.87);
-  background-color: transparent;
-  text-align: left;
-  margin: 0;
-  padding: 0 24px;
-  outline-color: #bdbdbd;
-  position: relative;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-decoration: none;
-  cursor: pointer;
-  height: 48px;
-  line-height: 48px;
-  white-space: nowrap;
-}
 
 .bdbg-logo {
   padding: 0.5em;

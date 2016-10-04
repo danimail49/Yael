@@ -3,16 +3,74 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-27 13:36+0000\n"
+"POT-Creation-Date: 2016-10-04 09:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
 "Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/"
+"X-Generator: Loco - https://localise.biz/"
+
+#: header.php:42
+msgid "Main Menu"
+msgstr ""
+
+#: framework/core/budabuga-init.php:58
+msgid "Primary Menu"
+msgstr ""
+
+#: framework/core/budabuga-init.php:59
+msgid "Side Menu"
+msgstr ""
+
+#: framework/core/budabuga-init.php:60
+msgid "Footer Menu"
+msgstr ""
+
+#: framework/core/budabuga-views.php:52
+msgid ""
+"%4$sTheme Menu is not set for %1$s. You can set it in %2$s Menu Editor %3$s."
+"%5$s"
+msgstr ""
+
+#: framework/settings/budabuga_customizer-controls.php:12
+msgid "Header"
+msgstr ""
+
+#: framework/settings/budabuga_customizer-controls.php:13
+msgid "Header color options"
+msgstr ""
+
+#: framework/settings/budabuga_customizer-controls.php:66
+msgid "Logo padding top (px)"
+msgstr ""
+
+#: framework/settings/budabuga_customizer-controls.php:70
+msgid "this is description"
+msgstr ""
+
+#: framework/settings/budabuga_customizer-controls.php:77
+msgid "Logo padding bottom (px)"
+msgstr ""
+
+#: framework/settings/budabuga_customizer-controls.php:87
+msgid "Main Menu margin from center (px)"
+msgstr ""
+
+#: framework/settings/budabuga_customizer-controls.php:94
+msgid "Header Background Color"
+msgstr ""
+
+#: framework/settings/budabuga_customizer-controls.php:102
+msgid "Header Font Color"
+msgstr ""
+
+#: framework/settings/budabuga_customizer-controls.php:109
+msgid "Fixed Header"
+msgstr ""
 
 #. Name of the theme
 msgid "Yael"

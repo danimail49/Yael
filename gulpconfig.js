@@ -18,7 +18,8 @@ module.exports = function () {
 			'pngSprites': './img/png-sprites/',
 			'js': './js/',
 			'svg': './img/svg/',
-			'svgSprites': './img/svg_sprites/'
+			'svgSprites': './img/svg_sprites/',
+			'font': './fonts/'
 		},
 		'srcPath': {
 			'img': ['./src/img/images/**/*.*', '!./src/img/png_sprites'],
@@ -27,7 +28,8 @@ module.exports = function () {
 			'less': ['./src/less/style.less', './src/less/vendor.less'],
 			'sass': ['./src/sass/main.scss', './src/sass/vendor.scss', './src/sass/admin.scss'],
 			'svg': './src/img/svg/**/*.svg',
-			'svgSprites': './src/img/svg_sprites/'
+			'svgSprites': './src/img/svg_sprites/',
+			'font': './src/fonts/**/*.{css,eot,ttf,woff,woff2}',
 		},
 		'helperVars': {
 			//IMG folder for clean IMG function
