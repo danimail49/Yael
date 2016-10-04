@@ -223,6 +223,7 @@ pip-log.txt
 .imdone/
 .idea/
 node_modules/
+src/vendor/
 
 #Files
 init-pc.bat
