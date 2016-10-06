@@ -42,7 +42,7 @@ module.exports = function () {
 		// Browser definitions for autoprefixer
 		'autoprefixerSettings': [
 			'> 3%',
-			'ie >= 10',
+			'ie >= 9',
 			'iOS >= 7',
 			'Android >= 4.1',
 			'bb >= 10'

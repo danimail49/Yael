@@ -39,16 +39,6 @@ if ( ! function_exists( 'bdbg_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
-		/*
-		 * Enable support for custom logo.
-		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 120,
-			'width'       => 240,
-			'flex-height' => true,
-			'flex-width'  => true,
-		) );
-
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails', array( 'post' ) );
 

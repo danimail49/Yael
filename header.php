@@ -9,6 +9,11 @@
  * @since 1.00
  */
 
+// Preventing direct script access.
+if ( ! defined( 'ABSPATH' ) ) :
+	die( 'No direct script access allowed' );
+endif;
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -24,28 +29,14 @@
 <body <?php body_class(); ?>>
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
-	<header class="mdl-layout__header bdbg-header ">
-		<div class="mdl-layout__header-row bdbg-header__row">
-			<!-- Title -->
-			<span class="mdl-layout-title bdbg-logo bdbg-logo--main"><?php bdbg_the_custom_logo(); ?></span>
-			<!-- Add spacer, to align navigation to the right -->
-			<div class="mdl-layout-spacer"></div>
-			<!-- Navigation. We hide it in small screens. -->
-			<?php
-			$type = 'main';
-			$position = 'left';
-				bdbg_menus();
-			?>
-		</div>
-	</header>
+
+	<?php bdbg_header(); ?>
+
 	<div class="mdl-layout__drawer">
 		<span class="mdl-layout-title"><?php _e( 'Main Menu', 'budabuga' ); ?></span>
-		<nav class="mdl-navigation">
-			<a class="mdl-navigation__link" href="">Link</a>
-			<a class="mdl-navigation__link" href="">Link</a>
-			<a class="mdl-navigation__link" href="">Link</a>
-			<a class="mdl-navigation__link" href="">Link</a>
-		</nav>
+		<div class="mdl-navigation">
+			<?php bdbg_menus( 'side' );	?>
+		</div>
 	</div>
 	<main class="mdl-layout__content">
 		<div class="page-content"><!-- Your content goes here -->

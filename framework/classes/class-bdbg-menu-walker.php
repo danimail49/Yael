@@ -64,7 +64,12 @@ class Bdbg_Menu_Walker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul class=\"bdbg-menu__submenu\">\n";
+		$backtxt = __( 'Back', 'budabuga' );
+		if ( $depth >= 1 ) :
+			$output .= "\n$indent<ul class=\"bdbg-menu__submenu\"><li class=\"bdbg-menu__item bdbg-menu__item--back bdbg-menu__item--level-$depth\"><a href=\"#\">$backtxt</a></li>\n";
+		else :
+			$output .= "\n$indent<ul class=\"bdbg-menu__submenu\">\n";
+		endif;
 	}
 
 }
