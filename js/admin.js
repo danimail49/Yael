@@ -2,10 +2,11 @@
  * Admin scripts
  */
 
-(function ($) {
-   'use strict';
+( function( $ ) {
+    "use strict";
 
-    $(function () {
+    $( function() {
+
         /**
          * Alpha Color Picker JS
          *
@@ -273,7 +274,8 @@
         
         	});
         });
-    });
 
-})(jQuery);
+    } );
+
+} )( jQuery );
 //# sourceMappingURL=admin.js.map

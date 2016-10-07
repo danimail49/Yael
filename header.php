@@ -28,9 +28,13 @@ endif;
 
 <body <?php body_class(); ?>>
 
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
+<?php
+$container_classes = ( ! get_theme_mod( 'bdbg_header_fixed' ) ) ? 'has-scrolling-header' : '';
+$header_classes = ( ! get_theme_mod( 'bdbg_header_fixed' ) ) ? 'mdl-layout__header--scroll' : '';
+?>
 
-	<?php bdbg_header(); ?>
+<div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button">
+	<?php bdbg_header( $header_classes, 'left', get_theme_mod( 'bdbg_header_fixed' ), true, false ); ?>
 
 	<div class="mdl-layout__drawer">
 		<span class="mdl-layout-title"><?php _e( 'Main Menu', 'budabuga' ); ?></span>

@@ -42,16 +42,14 @@ if ( ! function_exists( 'bdbg_header' ) ) :
 	 *
 	 * @since 1.00
 	 *
-	 * @param  string  $layout      Defines menu postion. Values: left, right, center.
-	 * @param  boolean $fixed       Is header sticky. Default = true.
-	 * @param  boolean $show_search Defines show search or not. Default = true.
+	 * @param  string  $custom_class	Defines menu postion. Values: left, right, center.
+	 * @param  string  $layout      	Defines menu postion. Values: left, right, center.
+	 * @param  boolean $fixed       	Is header sticky. Default = true.
+	 * @param  boolean $show_search 	Defines show search or not. Default = true.
+	 * @param  boolean $show_drawer 	Defines show drawer button on desktop viewport. Default = true.
 	 */
-	function bdbg_header( $layout = 'left', $fixed = true, $show_search = true ) {
-		$header_classes = null;
-		if ( ! $fixed && ! $header_classes ) :
-			$header_classes = 'mdl-layout__header--scroll';
-		endif; ?>
-		<header class="mdl-layout__header bdbg-header<?php echo ' ' . $header_classes; ?>">
+	function bdbg_header( $custom_class = '', $layout = 'left', $fixed = true, $show_search = true, $show_drawer = false ) { ?>
+		<header class="mdl-layout__header bdbg-header mdl-layout--fixed-header <?php echo $custom_class; ?>">
 			<div class="mdl-layout__header-row bdbg-header__row">
 				<!-- Header conditional loading -->
 				<?php if ( locate_template( 'template-parts/header/header-' . $layout . '.php' ) !== '' ) :
@@ -73,7 +71,13 @@ endif;
 if ( ! function_exists( 'bdbg_logo' ) ) :
 
 	function bdbg_logo() {
-		echo bloginfo( 'name' );
+		$logo = get_theme_mod( 'bdbg_header_logo' );
+
+		if ( $logo ) :
+			# code...
+		else :
+			echo get_bloginfo( 'name' );
+		endif;
 	}
 
 endif;

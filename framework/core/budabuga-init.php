@@ -46,7 +46,6 @@ if ( ! function_exists( 'bdbg_setup' ) ) :
 		register_nav_menus( array(
 			'main' => __( 'Primary Menu', 'budabuga' ),
 			'side' => __( 'Side Menu', 'budabuga' ),
-			'footer'  => __( 'Footer Menu', 'budabuga' ),
 		) );
 
 		/*

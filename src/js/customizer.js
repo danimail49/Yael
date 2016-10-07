@@ -1,36 +1,53 @@
 /**
- * Custom code for WP Customizer
- */
+* Custom code for WP Customizer
+*/
 
-(function ($) {
-    'use strict';
+( function( $ ) {
+    "use strict";
 
-    $(function () {
+    //= modules/bdbg_menu_plugin.js
 
-        wp.customize('bdbg_header_background', function (value) {
-            value.bind(function (newval) {
-                $('.bdbg-header').css('background-color', newval);
-            });
-        });
+    // Init Menus
+    $( "#bdbg-menu-main" ).bdbgMenu();
+    $( "#bdbg-menu-side" ).bdbgMenu();
 
-        wp.customize('bdbg_header_logo_padding_top', function (value) {
-            value.bind(function (newval) {
-                $('.bdbg-logo').css('padding-top', newval + 'px');
-            });
-        });
+    $( function() {
 
-        wp.customize('bdbg_header_logo_padding_bottom', function (value) {
-            value.bind(function (newval) {
-                $('.bdbg-logo').css('padding-bottom', newval + 'px');
-            });
-        });
+        wp.customize( "bdbg_header_background", function( value ) {
+            value.bind( function( newval ) {
+                $( ".bdbg-header" ).css( "background-color", newval );
+            } );
+        } );
 
-        wp.customize('bdbg_header_menu_vertical_margin', function (value) {
-            value.bind(function (newval) {
-                $('.bdbg-menu').css('margin-top', newval + 'px');
-            });
-        });
+        wp.customize( "bdbg_header_fontcolor", function( value ) {
+            value.bind( function( newval ) {
+                $( ".bdbg-header" ).css( "color", newval );
+                $( ".bdbg-header a" ).css( "color", newval );
+            } );
+        } );
 
-    });
+        wp.customize( "bdbg_header_logo_margin", function( value ) {
+            value.bind( function( newval ) {
+                $( ".bdbg-logo" ).css( "margin-top", newval + "px" );
+            } );
+        } );
 
-})(jQuery);
+        wp.customize( "bdbg_header_menu_vertical_margin", function( value ) {
+            value.bind( function( newval ) {
+                $( ".bdbg-menu" ).css( "margin-top", newval + "px" );
+            } );
+        } );
+
+        wp.customize( "bdbg_header_shadow", function( value ) {
+            value.bind( function( newval ) {
+                if ( newval === false ) {
+                    $( ".bdbg-header" ).css( "box-shadow", "none" );
+                } else {
+                    $( ".bdbg-header" ).css( "box-shadow", "" );
+                }
+            } );
+        } );
+
+    } );
+
+} )( jQuery );

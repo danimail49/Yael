@@ -39,7 +39,7 @@ require_once( FRAMEWORK_CORE . 'budabuda-css-customizer.php' );
 // Framework views.
 require_once( FRAMEWORK_CORE . 'budabuga-views.php' );
 // Framework views.
-require_once( FRAMEWORK_SETTINGS . 'budabuga_customizer-controls.php' );
+require_once( FRAMEWORK_SETTINGS . 'budabuga-customizer-controls.php' );
 // -------------------------------------------------
 // FRAMEWORK CLASSES
 // -------------------------------------------------

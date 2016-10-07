@@ -1,8 +1,12 @@
 .bdbg-header__row {
   height: auto;
+  width: 100%;
 }
 
 .bdbg-header {
+  flex-direction: row;
+  justify-content: space-between;
+
   .mdl-layout__drawer-button {
     position: relative;
     top: auto;

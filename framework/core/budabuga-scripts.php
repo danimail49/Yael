@@ -45,6 +45,7 @@ if ( ! function_exists( 'bdbg_enqueue_admin' ) ) :
 	 */
 	function bdbg_enqueue_admin() {
 		wp_enqueue_style( 'admin-style', THEMEDIR_URI . 'css/admin.css', array( 'wp-color-picker' ), false, 'all' );
+		wp_enqueue_style( 'main-style', THEMEDIR_URI . 'css/main.css', null, null, 'all' );
 
 		wp_enqueue_script( 'main-script', THEMEDIR_URI . 'js/admin.js',  array( 'jquery', 'wp-color-picker' ),  null, true );
 	}

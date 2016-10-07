@@ -77,11 +77,22 @@
 			// Call submenu reset, this will return submenus to initial level.
 			this.submenuReset();
 
-			$this.parent().siblings().find( ".bdbg-menu__submenu" )
-				.removeClass( "is-visible" )
-                .removeClass( "is-submenu-visible" );
+            // if ( $this.parent().hasClass( "is-submenu-visible" ) ) {
+            //     $this.parent().removeClass( "is-submenu-visible" );
+            // } else {
+            //     $this.parent().addClass( "is-submenu-visible" );
+            // }
 
-			$this.parent().toggleClass( "is-submenu-visible" );
+            // $this.parent().siblings()
+			// 	.removeClass( "is-submenu-visible" );
+
+			$this.parent().siblings( ".is-submenu-visible" )
+				.removeClass( "is-submenu-visible" );
+
+            $this.parent().toggleClass( "is-submenu-visible" );
+
+			$this.parent().siblings().find( ".bdbg-menu__submenu" )
+				.removeClass( "is-visible" );
 
 			$this.next( ".bdbg-menu__submenu" )
 				.stop( true, false, true )
@@ -90,13 +101,16 @@
 
 		forceCloseDropdown: function() {
 
+            // Dropping all open menus
 			if ( this.$element.find( ".is-visible" ).length ) {
 				this.$element.find( ".is-visible" ).removeClass( "is-visible" );
 			}
 
-			if ( this.$element.find( ".is-submenu-visible" ).length ) {
+            if ( this.$element.find( ".is-submenu-visible" ).length ) {
 				this.$element.find( ".is-submenu-visible" ).removeClass( "is-submenu-visible" );
 			}
+
+            // this.$element.find( "is-submenu-visible" ).removeClass( "is-submenu-visible" );
 		},
 
 		submenuLevelDown: function( $this ) {
@@ -118,7 +132,6 @@
 
 		submenuReset: function() {
 			this.$element.find( ".is-open" ).removeClass( "is-open" );
-			this.$element.find( ".is-submenu-visible" ).removeClass( "is-submenu-visible" );
 		},
 
 		buildCache: function() {

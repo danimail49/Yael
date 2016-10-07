@@ -2,11 +2,13 @@
  * Admin scripts
  */
 
-(function ($) {
-   'use strict';
+( function( $ ) {
+    "use strict";
 
-    $(function () {
+    $( function() {
+
         //= customizer/alpha_color_picker.js
-    });
 
-})(jQuery);
+    } );
+
+} )( jQuery );

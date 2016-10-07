@@ -7,16 +7,22 @@
 function bdbg_customizer_scripts() { ?>
 	<style type="text/css">
 
-		.bdbg-header { background-color: <?php echo get_theme_mod( 'bdbg_header_background' ); ?>; }
+		.bdbg-header {
+			background-color: <?php echo get_theme_mod( 'bdbg_header_background' ); ?>;
+			<?php
+			if( ! get_theme_mod( 'bdbg_header_shadow' ) ) { ?>
+				box-shadow: none;
+			<?php } ?>
+		}
 
-		.bdbg-menu__main > li a,
+		.bdbg-menu--main > li a,
+		.bdbg-logo--main,
 		.mdl-layout__header .mdl-layout__drawer-button {
-				color: <?php echo get_theme_mod( 'bdbg_header_fontcolor' ); ?>;
+			color: <?php echo get_theme_mod( 'bdbg_header_fontcolor' ); ?>;
 		}
 
 		.bdbg-logo {
-			padding-top: <?php echo get_theme_mod( 'bdbg_header_logo_padding_top' ); ?>px;
-			padding-bottom: <?php echo get_theme_mod( 'bdbg_header_logo_padding_bottom' ); ?>px;
+			margin: <?php echo get_theme_mod( 'bdbg_header_logo_margin' ); ?>px;
 		}
 
 	</style>
