@@ -59,7 +59,7 @@ if ( ! function_exists( 'bdbg_enqueue_customizer' ) ) :
 	 * @since 1.00
 	 */
 	function bdbg_enqueue_customizer() {
-		wp_enqueue_script( 'main-script', THEMEDIR_URI . 'js/customizer.js',  array( 'jquery', 'customize-preview' ),  null, true );
+		wp_enqueue_script( 'customizer-script', THEMEDIR_URI . 'js/customizer.js',  array( 'jquery', 'customize-preview' ),  null, true );
 	}
 	add_action( 'customize_preview_init', 'bdbg_enqueue_customizer' );
 endif;
