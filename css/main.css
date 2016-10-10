@@ -16,24 +16,17 @@ body {
 
 .bdbg-header__row {
   height: auto;
-  width: 100%;
 }
 
 .bdbg-header {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-          justify-content: space-between;
+  position: relative;
 }
 
 .bdbg-header .mdl-layout__drawer-button {
-  position: relative;
-  top: auto;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .bdbg-menu {
@@ -279,7 +272,10 @@ body {
 
 .bdbg-logo img {
   display: block;
-  width: auto;
-  height: auto;
+}
+
+.bdbg-logo--side {
+  padding: 0.5em;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
