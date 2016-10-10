@@ -29,15 +29,18 @@ endif;
 <body <?php body_class(); ?>>
 
 <?php
+$header_drawer_class = ( ! get_theme_mod( 'bdbg_header_showdrawer' ) ) ? 'mdl-layout--no-desktop-drawer-button' : '';
 $container_classes = ( ! get_theme_mod( 'bdbg_header_fixed' ) ) ? 'has-scrolling-header' : '';
 $header_classes = ( ! get_theme_mod( 'bdbg_header_fixed' ) ) ? 'mdl-layout__header--scroll' : '';
+$header_show_search = ( get_theme_mod( 'bdbg_header_showsearch' ) ) ? true : false;
+$header_layout = ( get_theme_mod( 'bdbg_header_layout' ) ) ? get_theme_mod( 'bdbg_header_layout' ) : 'left';
 ?>
 
-<div class="mdl-layout mdl-js-layout mdl-layout--no-desktop-drawer-button">
-	<?php bdbg_header( $header_classes, 'left', get_theme_mod( 'bdbg_header_fixed' ), true, false ); ?>
+<div class="mdl-layout mdl-js-layout  mdl-layout--fixed-header <?php echo $header_drawer_class; ?> is-small-screen">
+	<?php bdbg_header( $header_classes, $header_layout, get_theme_mod( 'bdbg_header_fixed' ), $header_show_search, false ); ?>
 
 	<div class="mdl-layout__drawer">
-		<span class="mdl-layout-title"><?php _e( 'Main Menu', 'budabuga' ); ?></span>
+		<span class="mdl-layout-title bdbg-logo--side"><?php bdbg_logo( 'side' ); ?></span>
 		<div class="mdl-navigation">
 			<?php bdbg_menus( 'side' );	?>
 		</div>

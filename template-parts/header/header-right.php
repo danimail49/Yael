@@ -24,4 +24,4 @@ endif; ?>
 <div class="mdl-layout-spacer"></div>
 
 <!-- Title -->
-<span class="mdl-layout-title bdbg-logo bdbg-logo--main"><?php bdbg_logo(); ?></span>
+<span class="mdl-layout-title bdbg-logo bdbg-logo--main"><?php bdbg_logo( 'header' ); ?></span>

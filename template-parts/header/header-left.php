@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) :
 endif; ?>
 
 <!-- Title -->
-<span class="mdl-layout-title bdbg-logo bdbg-logo--main"><?php bdbg_logo(); ?></span>
+<span class="mdl-layout-title bdbg-logo bdbg-logo--main"><?php bdbg_logo( 'header' ); ?></span>
 
 <!-- Add spacer, to align navigation to the right -->
 <div class="mdl-layout-spacer"></div>
