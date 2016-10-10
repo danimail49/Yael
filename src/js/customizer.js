@@ -2,16 +2,16 @@
 * Custom code for WP Customizer
 */
 
+//= modules/bdbg_menu_plugin.js
+
 ( function( $ ) {
     "use strict";
 
-    //= modules/bdbg_menu_plugin.js
-
-    // Init Menus
-    $( "#bdbg-menu-main" ).bdbgMenu();
-    $( "#bdbg-menu-side" ).bdbgMenu();
-
     $( function() {
+
+        // Init Menus
+        $( "#bdbg-menu-main" ).bdbgMenu();
+        $( "#bdbg-menu-side" ).bdbgMenu();
 
         wp.customize( "bdbg_header_background", function( value ) {
             value.bind( function( newval ) {
@@ -23,6 +23,7 @@
             value.bind( function( newval ) {
                 $( ".bdbg-header" ).css( "color", newval );
                 $( ".bdbg-header a" ).css( "color", newval );
+                $( ".bdbg-header .mdl-layout__drawer-button" ).css( "color", newval );
             } );
         } );
 
@@ -45,6 +46,30 @@
                 } else {
                     $( ".bdbg-header" ).css( "box-shadow", "" );
                 }
+            } );
+        } );
+
+        wp.customize( "bdbg_logo_header_width", function( value ) {
+            value.bind( function( newval ) {
+                $( ".bdbg-logo--main img" ).attr( "width", newval );
+            } );
+        } );
+
+        wp.customize( "bdbg_logo_header_height", function( value ) {
+            value.bind( function( newval ) {
+                $( ".bdbg-logo--main img" ).attr( "height", newval );
+            } );
+        } );
+
+        wp.customize( "bdbg_logo_side_width", function( value ) {
+            value.bind( function( newval ) {
+                $( ".bdbg-logo--side img" ).attr( "width", newval );
+            } );
+        } );
+
+        wp.customize( "bdbg_logo_side_height", function( value ) {
+            value.bind( function( newval ) {
+                $( ".bdbg-logo--side img" ).attr( "height", newval );
             } );
         } );
 
