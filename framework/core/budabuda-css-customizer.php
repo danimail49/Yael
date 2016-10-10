@@ -17,7 +17,7 @@ function bdbg_customizer_scripts() { ?>
 
 		.bdbg-menu--main > li a,
 		.bdbg-logo--main,
-		.mdl-layout__header .mdl-layout__drawer-button {
+		.bdbg-header .mdl-layout__drawer-button {
 			color: <?php echo get_theme_mod( 'bdbg_header_fontcolor' ); ?>;
 		}
 
