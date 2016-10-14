@@ -17,9 +17,8 @@
   "homepage": "www.site.com",
   "dependencies": {},
   "devDependencies": {
-    "material-design-icons": "latest",
-    "normalize-css": "latest",
-    "material-design-lite": "^1.2.1"
+    "materialize": "latest",
+    "font-awesome-sass": "latest"
   },
   "ignore": [
     "**/.*",

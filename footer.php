@@ -8,13 +8,9 @@
  * @subpackage Yael
  * @since 1.00
  */
-
 ?>
 
 
-	<footer class="mdl-mega-footer"> ... </footer>
-	</main>
-</div>
 <!-- /.mdl-layout mdl-js-layout -->
 <?php wp_footer(); ?>
 </body>

@@ -77,5 +77,6 @@ if ( ! function_exists( 'bdbg_setup' ) ) :
 			'chat',
 		) );
 	}
+
+	add_action( 'after_setup_theme', 'bdbg_setup' );
 endif; // budabuga_setup.
-add_action( 'after_setup_theme', 'bdbg_setup' );

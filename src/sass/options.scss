@@ -1,27 +1,23 @@
 //----------------------------------------------------------------------------
+// Vendor Options
+//---------------------------------------------------------------------------/
+// Materialize CSS options override.
+//-------------------------------------/
+// Grid breakpoints override.
+$small-screen-up: 601px;
+$medium-screen-up: 1025px;
+$large-screen-up: 1201px;
+$small-screen: 600px;
+$medium-screen: 1024px;
+$large-screen: 1200px;
+
+// Font path override
+$roboto-font-path: "../fonts/roboto/";
+
+//----------------------------------------------------------------------------
 // Project Options
 //---------------------------------------------------------------------------/
-// Module Site Menu
+// Navigation.
 //-------------------------------------/
-
-// Menu items
-$menuitem-pading-horizontal: 1em;
-$menuitem-pading-vertical: 0.5em;
-$menuitem-back-border: 1px solid rgba(0, 0, 0, .12);
-
-$mainmenu-submenuitem-padding: 0.5em 1em;
-$mainmenu-submenuitem-hover-background: #eee;
-$menulink-color: #fff;
-$menulink-color-subitem: #333;
-
-// Submenu
-$menusubmenu-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-$mainmenu-submenu-minwidth: 10em;
-$mainmenu-submenu-zindex: 99;
-$mainmenu-submenu-verticalpadding: 0.4em;
-$mainmenu-submenu-borderradius: 3px;
-$mainmenu-submenu-transition: 0.5s;
-
-$submenu-background: #fff;
-
-$transition-menu: .2s;
+// Side navigation options.
+$bdbg-nav--side-color: #000;

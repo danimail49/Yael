@@ -1,6 +1,31 @@
 //----------------------------------------------------------------------------
 // Site Menu modile
 //---------------------------------------------------------------------------/
+// Options
+//-------------------------------------/
+
+// Menu items
+$menuitem-pading-horizontal: 1em;
+$menuitem-pading-vertical: 0.5em;
+$menuitem-back-border: 1px solid rgba(0, 0, 0, .12);
+
+$mainmenu-submenuitem-padding: 0.5em 1em;
+$mainmenu-submenuitem-hover-background: #eee;
+$menulink-color: #fff;
+$menulink-color-subitem: #333;
+
+// Submenu
+$menusubmenu-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+$mainmenu-submenu-minwidth: 10em;
+$mainmenu-submenu-zindex: 99;
+$mainmenu-submenu-verticalpadding: 0.4em;
+$mainmenu-submenu-borderradius: 3px;
+$mainmenu-submenu-transition: 0.5s;
+
+$submenu-background: #fff;
+
+$transition-menu: .2s;
+
 // General styles
 //-------------------------------------/
 .bdbg-menu {
@@ -58,7 +83,7 @@
 
 .bdbg-menu__item--level-0 {
   &.bdbg-menu__item--has-children {
-    &.is-submenu-visible a:after{
+    &.is-submenu-visible a::after {
       transform: rotate(180deg);
     }
 
@@ -215,5 +240,11 @@
 // Modifying defailt styles
 //-------------------------------------/
 .mdl-layout__drawer {
-  width: auto;
+  width: 300px;
+	transform: translateX(-300px);
+
+	.bdbg-message {
+		max-width: 16em;
+		padding: 0 .5em;
+	}
 }

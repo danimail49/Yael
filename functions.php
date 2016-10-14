@@ -25,26 +25,15 @@ define( 'FRAMEWORK_ADMIN', THEMEDIR . 'framework/admin/', true ); // Framework T
 define( 'FRAMEWORK_CLASSES', THEMEDIR . 'framework/classes/', true ); // Framework Classes  path.
 define( 'FRAMEWORK_CORE', THEMEDIR . 'framework/core/', true ); // Framework Theme Modules base path.
 define( 'FRAMEWORK_SETTINGS', THEMEDIR . 'framework/settings/', true ); // Framework Theme Settings base path.
+define( 'THEME_VERSION', wp_get_theme()->get( 'Version' ) ); // Current Theme version.
 
-
-// -------------------------------------------------
-// FRAMEWORK FUNCTIONS
-// -------------------------------------------------
-// Framework init.
-require_once( FRAMEWORK_CORE . 'budabuga-init.php' );
-// Framework scripts.
-require_once( FRAMEWORK_CORE . 'budabuga-scripts.php' );
-// Customizer styles.
-require_once( FRAMEWORK_CORE . 'budabuda-css-customizer.php' );
-// Framework views.
-require_once( FRAMEWORK_CORE . 'budabuga-views.php' );
-// Framework views.
-require_once( FRAMEWORK_SETTINGS . 'budabuga-customizer-controls.php' );
-// -------------------------------------------------
-// FRAMEWORK CLASSES
-// -------------------------------------------------
-// Custom navigation walker
-require_once( FRAMEWORK_CLASSES . 'class-bdbg-menu-walker.php' );
+/*----------------------------------------------------------------------------
+   FRAMEWORK CLASSES
+----------------------------------------------------------------------------*/
+// Main navigation walker.
+require_once( FRAMEWORK_CLASSES . 'class-bdbg-menu-walker-main.php' );
+// Side navigation walker.
+require_once( FRAMEWORK_CLASSES . 'class-bdbg-menu-walker-side.php' );
 
 /**
  * Incule custom controls classes.
@@ -59,6 +48,26 @@ function customizer_register_classes( $wp_customize ) {
 }
 add_action( 'customize_register', 'customizer_register_classes' );
 
+// Customizer controls settings.
+require_once( FRAMEWORK_SETTINGS . 'budabuga-customizer-controls.php' );
 // Creating theme customizer controls.
 require_once( FRAMEWORK_CLASSES . 'class-bdbg-theme-customizer.php' );
 Bdbg_Theme_Customizer::init( $sections, $settings, $controls );
+
+// Theme dynamic sidebars settings.
+require_once( FRAMEWORK_SETTINGS . 'budabuga-dynamic-sidebars.php' );
+// Creating theme widget areas.
+require_once( FRAMEWORK_CLASSES . 'class-bdbg-dynamic-sidebar.php' );
+Bdbg_Dynamic_Sidebar::init( $widget_list, $widget_args );
+
+/*----------------------------------------------------------------------------
+   FRAMEWORK FUNCTIONS
+----------------------------------------------------------------------------*/
+// Framework init.
+require_once( FRAMEWORK_CORE . 'budabuga-init.php' );
+// Framework scripts.
+require_once( FRAMEWORK_CORE . 'budabuga-scripts.php' );
+// Customizer styles.
+require_once( FRAMEWORK_CORE . 'budabuda-css-customizer.php' );
+// Framework views.
+require_once( FRAMEWORK_CORE . 'budabuga-views.php' );

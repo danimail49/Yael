@@ -54,9 +54,9 @@ class Bdbg_Theme_Customizer {
 		$this->settings = $settings;
 		$this->controls = $controls;
 
-		add_action( 'customize_register', array( $this, 'create_sections' ), 970 );
-		add_action( 'customize_register', array( $this, 'create_settings' ), 970 );
-		add_action( 'customize_register', array( $this, 'create_controls' ), 970 );
+		add_action( 'customize_register', array( $this, 'create_sections' ) );
+		add_action( 'customize_register', array( $this, 'create_settings' ) );
+		add_action( 'customize_register', array( $this, 'create_controls' ) );
 	}
 
 	/**

@@ -1,0 +1,15 @@
+// Main Nav
+.bdbg-menu--main {
+  height: auto;
+}
+
+// Side Nav
+.bdbg-nav--side {
+  padding-top: 3em;
+  padding-bottom: 5em;
+  color: $bdbg-nav--side-color;
+
+  li {
+    line-height: inherit;
+  }
+}

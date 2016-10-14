@@ -29,7 +29,7 @@ module.exports = function () {
 			'sass': ['./src/sass/main.scss', './src/sass/vendor.scss', './src/sass/admin.scss'],
 			'svg': './src/img/svg/**/*.svg',
 			'svgSprites': './src/img/svg_sprites/',
-			'font': './src/fonts/**/*.{css,eot,ttf,woff,woff2}',
+			'font': './src/fonts/**/*.{scss,css,eot,ttf,woff,woff2,svg}',
 		},
 		'helperVars': {
 			//IMG folder for clean IMG function

@@ -2,4 +2,4 @@
  * Yael 3rd party scripts
  */
 
-//= ../vendor/material-design-lite/material.js
+//= ../vendor/materialize/dist/js/materialize.js

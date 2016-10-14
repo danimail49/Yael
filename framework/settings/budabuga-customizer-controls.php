@@ -11,17 +11,32 @@ if ( ! defined( 'ABSPATH' ) ) :
 	die( 'No direct script access allowed' );
 endif;
 
+/*----------------------------------------------------------------------------
+   Sections
+----------------------------------------------------------------------------*/
 $sections = array(
 	'bdbg_header' =>
 		array(
 			'title'       => __( 'Header', 'budabuga' ),
 			// 'description' => __( 'Header color options', 'budabuga' ),
 			'capability'  => 'edit_theme_options',
+			'priority'   => 20,
+		),
+	'bdbg_footer' =>
+		array(
+			'title'       => __( 'Footer', 'budabuga' ),
+			// 'description' => __( 'Footer color options', 'budabuga' ),
+			'capability'  => 'edit_theme_options',
 		),
 );
 
+/*----------------------------------------------------------------------------
+   Settings
+----------------------------------------------------------------------------*/
 $settings = array(
 
+	/* Header Settings
+	-------------------------------------*/
 	'bdbg_header_layout' =>
 		array(
 			'type'              => 'theme_mod',
@@ -67,13 +82,13 @@ $settings = array(
 		array(
 			'type'      => 'theme_mod',
 			'transport' => 'refresh',
-			'default'   => true,
+			'default'   => false,
 		),
 	'bdbg_header_showsearch' =>
 		array(
 			'type'      => 'theme_mod',
 			'transport' => 'refresh',
-			'default'   => true,
+			'default'   => false,
 		),
 	'bdbg_header_shadow' =>
 		array(
@@ -121,6 +136,31 @@ $settings = array(
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		),
+
+	/* Footer
+	-------------------------------------*/
+	'bdbg_footer_top_columns' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'           => 3,
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_text_field',
+		),
+	'bdbg_footer_middle_columns' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'           => 3,
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_text_field',
+		),
+	'bdbg_footer_bottom_columns' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'           => 3,
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_text_field',
+		),
+
 
 );
 
@@ -269,4 +309,56 @@ $controls = array(
 		    'width'       => 194,
 		    'height'      => 87,
 			),
+
+	/* Footer
+	-------------------------------------*/
+
+	'bdbg_footer_top_columns' =>
+		array(
+			'label'       => __( 'Footer top section columns', 'budabuga' ),
+			'type'        => 'select',
+			'section'     => 'bdbg_footer',
+			'setting'     => 'bdbg_footer_top_columns',
+			// 'description' => __( 'this is description', 'budabuga' ),
+			'choices' => array(
+				'1' => 1,
+				'2' => 2,
+				'3' => 3,
+				'4' => 4,
+				'5' => 5,
+				'6' => 6,
+			),
+		),
+	'bdbg_footer_middle_columns' =>
+		array(
+			'label'       => __( 'Footer middle section columns', 'budabuga' ),
+			'type'        => 'select',
+			'section'     => 'bdbg_footer',
+			'setting'     => 'bdbg_footer_middle_columns',
+			// 'description' => __( 'this is description', 'budabuga' ),
+			'choices' => array(
+				'1' => 1,
+				'2' => 2,
+				'3' => 3,
+				'4' => 4,
+				'5' => 5,
+				'6' => 6,
+			),
+		),
+	'bdbg_footer_bottom_columns' =>
+		array(
+			'label'       => __( 'Footer bottom section columns', 'budabuga' ),
+			'type'        => 'select',
+			'section'     => 'bdbg_footer',
+			'setting'     => 'bdbg_footer_bottom_columns',
+			// 'description' => __( 'this is description', 'budabuga' ),
+			'choices' => array(
+				'1' => 1,
+				'2' => 2,
+				'3' => 3,
+				'4' => 4,
+				'5' => 5,
+				'6' => 6,
+			),
+		),
 );

@@ -19,7 +19,6 @@ endif; ?>
 	</label>
 	<div class="mdl-textfield__expandable-holder">
 		<input class="mdl-textfield__input" type="text" id="search-expandable" />
-		<!-- <label class="mdl-textfield__label" for="search-expandable"><?php // _e( 'Search', 'budabuga' ); ?></label> -->
 	</div>
 </form>
 <!-- end search form -->
