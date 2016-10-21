@@ -22,19 +22,25 @@ class Bdbg_Menu_Walker_Side extends Walker_Nav_Menu {
 	// OOKK Structure pass
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul  data-collapsible=\"accordion\" class=\"bdbg-menu__submenu collapsible\">\n";
+		if ( 0 === $depth ) :
+			$output .= "<ul  data-collapsible=\"accordion\" class=\"bdbg-menu__submenu collapsible\">\n";
+		elseif( 1 === $depth ) :
+			$output .= "\n$indent<ul class=\"bdbg-menu__submenu collapsible-body\">\n";
+		else :
+			$output .= "\n$indent<ul class=\"bdbg-menu__submenu\">\n";
+		endif;
 	}
 
 	// OOKK Structure pass
 	public function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat( $t, $depth );
-		$output .= "$indent</ul>{$n}";
+		$indent = str_repeat( "\t", $depth );
+		$output .= "$indent</ul>\n";
 	}
 
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$this->cur_item = $item;
 
-		$indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'bdbg-menu__item menu-item-' . $item->ID;
 
@@ -71,16 +77,22 @@ class Bdbg_Menu_Walker_Side extends Walker_Nav_Menu {
 		$atts['rel'] = ! empty( $item->xfn ) ? $item->xfn : '';
 		$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 
+		if ( ! empty( $children & 1 === $depth ) ) :
+			$atts['href'] = '#';
+		endif;
+
 		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
 		$attributes = '';
+
 		foreach ( $atts as $attr => $value ) {
 			if ( ! empty( $value ) ) {
 				$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 			}
 		}
-		if ( ! empty( $children & 0 === $depth ) ) :
-			$attributes .= ' class="collapsible-header" ';
+
+		if ( ! empty( $children & 1 === $depth ) ) :
+			$attributes .= " class=\"collapsible-header bdbg-menu__item--level-$depth\" ";
 	 	endif;
 
 		$title = apply_filters( 'the_title', $item->title, $item->ID );

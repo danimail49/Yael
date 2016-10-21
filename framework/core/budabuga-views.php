@@ -22,7 +22,7 @@ if ( ! function_exists( 'bdbg_header_layout' ) ) :
 		$from_to = array( 'left', 'right' );
 		$keys = array( 'from', 'to' );
 
-		$header_direction_setting = get_theme_mod( 'bdbg_header_layout' );
+		$header_direction_setting = get_theme_mod( 'bdbg_header_general_layout' );
 
 		if ( 'left' === $header_direction_setting ) :
 			$layout = $from_to;
@@ -53,28 +53,34 @@ if ( ! function_exists( 'bdbg_menus' ) ) :
 		$menu_type = ( in_array( $menu_type, $acceptable_menus, true ) ) ?
 			$menu_type : $default_menu;
 
+		$data_attrs = '';
+
 		if ( has_nav_menu( $menu_type ) ) :
 			$args = array(
-				'container'		  => '',
+				'container'		  => false,
 				'menu_class'      => "bdbg-menu bdbg-menu--$menu_type $menu_direction",
 				'menu_id'         => "bdbg-menu-$menu_type",
 				'echo'            => true,
 				'theme_location'  => $menu_type,
-				'items_wrap'      => '<ul data-edge="right" id="%1$s" class="%2$s">%3$s</ul>',
+				'items_wrap'      => '<ul id="bdbg-menu-' . $menu_type . '" id="%1$s" ' . $data_attrs . ' class="%2$s">%3$s</ul>',
 				'depth'			  => 2,
 				'walker' 		  => new $walker(),
 			);
-			// Additional params for side nav.
+			// Conditional params for navs.
 			if ( 'side' === $menu_type ) :
 				$args['menu_class'] .= ' side-nav';
-				$args['depth'] = 3;
+				$args['depth']		 = 3;
+				$args['items_wrap']	 = '%3$s';
+			endif;
+			if ( 'main' === $menu_type ) :
+				$args['menu_class'] .= ' hide-on-med-and-down';
 			endif;
 
 			wp_nav_menu( $args );
 		else :
 			$menu_link_start = '<a href="' . admin_url() . 'nav-menus.php">';
 			$message = __( '%4$sTheme Menu is not set for %1$s. You can set it in %2$s Menu Editor %3$s.%5$s', 'budabuga' );
-			echo sprintf( esc_html( $message ), esc_html( $menu_type ), esc_url( $menu_link_start ), '</a>', '<span class="bdbg-message">', '</span>' );
+			echo sprintf( esc_html( $message ), esc_html( $menu_type ), $menu_link_start, '</a>', '<span class="bdbg-message">', '</span>' );
 		endif;
 	}
 endif;
@@ -89,9 +95,10 @@ if ( ! function_exists( 'bdbg_logo' ) ) :
 	 * @param string
 	 * @param string $logo_name	Name of logo to be retrived.
 	 */
-	function bdbg_logo( $logo_name ) {
-		$logo_name = "bdbg_logo_$logo_name";
+	function bdbg_logo( $logo_name, $logo_echo = true ) {
+		$logo_name = $logo_name . '_upload';
 		$logo_id = get_theme_mod( $logo_name );
+		$logo_obj ='';
 
 		if ( $logo_id ) :
 			$logo = wp_get_attachment_image_src( $logo_id );
@@ -101,10 +108,16 @@ if ( ! function_exists( 'bdbg_logo' ) ) :
 				'class' => "bdbg-logo__img",
 			);
 
-			echo sprintf( '<img src="%1$s" width="%2$d" height="%3$d" class="%4$s" />', $logo[0], $attr['width'], $attr['height'], $attr['class'] );
+			$logo_obj =  sprintf( '<img src="%1$s" width="%2$d" height="%3$d" class="%4$s" />', esc_url( $logo[0] ), esc_attr( $attr['width'] ), esc_attr( $attr['height'] ), esc_attr( $attr['class'] ) );
 		else :
-			echo esc_html( get_bloginfo( 'name' ) );
+			$logo_obj =  esc_html( get_bloginfo( 'name' ) );
 		endif;
+
+		if ( ! $logo_echo ) :
+			return $logo_echo;
+		endif;
+
+		echo $logo_obj;
 	}
 
 endif;
@@ -120,5 +133,34 @@ if ( ! function_exists( 'bdbg_dynamic_sidebar' ) ) :
 			echo sprintf( esc_html( $message ), 'Widget Area', $menu_link_start, '</a>', '<span class="bdbg-message">', '</span>' );
 		endif;
 	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_search_modal' ) ) :
+	/**
+	 * Append search modal in footer.
+	 *
+	 * @since 1.00
+	 */
+	function bdbg_search_modal() {
+		$searchform = get_search_form( false );
+		$text_search = __( 'Searching', 'budabuga' );
+		$modal_title = __( 'Type Anything & Press "Enter"', 'budabuga' );
+
+		$output = <<<HEREDOC
+			<div class="bdbg-overlay bdbg-overlay--search">
+				<div class="bdbg-overlay__button bdbg-overlay__button--close">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</div>
+				<div class="bdbg-modal bdbg-modal--search">
+					<h3 data-textsearch="{$text_search}" class="bdbg-modal__heading center-align">{$modal_title}</h3>
+					{$searchform}
+				</div>
+			</div>
+HEREDOC;
+
+		echo balanceTags( $output );
+	}
+	add_action( 'wp_footer', 'bdbg_search_modal', 100 );
 
 endif;

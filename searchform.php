@@ -13,12 +13,13 @@ if ( ! defined( 'ABSPATH' ) ) :
 endif; ?>
 
 <!-- start search form -->
-<form class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right" method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable">
-		<i class="material-icons">search</i>
-	</label>
-	<div class="mdl-textfield__expandable-holder">
-		<input class="mdl-textfield__input" type="text" id="search-expandable" />
-	</div>
-</form>
+<div class="row">
+	<form class="col s12 bdbg-form bdbg-form--search" method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<div class="input-field bdbg-input-group col s12">
+			<input name="search-big" id="search-big" type="text" class="validate bdbg-input-group__field" autofocus />
+          	<!-- <label for="search-big" class="bdbg-input-group__label">First Name</label> -->
+		</div>
+	</form>
+</div>
+<!-- /.row -->
 <!-- end search form -->

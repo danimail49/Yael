@@ -52,7 +52,7 @@ add_action( 'customize_register', 'customizer_register_classes' );
 require_once( FRAMEWORK_SETTINGS . 'budabuga-customizer-controls.php' );
 // Creating theme customizer controls.
 require_once( FRAMEWORK_CLASSES . 'class-bdbg-theme-customizer.php' );
-Bdbg_Theme_Customizer::init( $sections, $settings, $controls );
+Bdbg_Theme_Customizer::init( $panels, $sections, $settings, $controls );
 
 // Theme dynamic sidebars settings.
 require_once( FRAMEWORK_SETTINGS . 'budabuga-dynamic-sidebars.php' );

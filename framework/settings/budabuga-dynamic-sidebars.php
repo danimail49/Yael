@@ -7,51 +7,82 @@
  */
 
 // Preventing direct script access.
-//if ( ! defined( 'ABSPATH' ) ) :
-//	die( 'No direct script access allowed' );
-//endif;
+if ( ! defined( 'ABSPATH' ) ) :
+	die( 'No direct script access allowed' );
+endif;
 
-function widgetarea_generator( $maxcolumns, $id_part, $name_part ) {
-	$maxcolumns++;
-	$result = array();
+/*----------------------------------------------------------------------------
+   Footer widgets width options from customizer
+----------------------------------------------------------------------------*/
+if ( ! function_exists( 'bdbg_width_widget_class' ) ) :
+	/**
+	 * Counts column num, depending on columns in theme used & customizer param for section.
+	 *
+	 * @since 1.00
+	 *
+	 * @param  string  $widget_area_customizer_param Customizer setting name.
+	 * @param  integer $columns                      Max columns used in theme.
+	 *
+	 * @return string                                Set of HTML classes.
+	 */
+	function bdbg_width_widget_class( $widget_area_customizer_param, $columns = 12 ) {
 
-	for ($i=1; $i < $maxcolumns; $i++) {
-		$id = "$id_part-$i";
-		$name = "$name_part $i Column";
+		$widget_columns = get_theme_mod( $widget_area_customizer_param );
 
-		$result = $result + array(
-			$id => array(
-				'name' => $name,
-			),
-		) ;
+		switch ( $widget_columns ) :
+			case 4:
+				return 'l3 m6 s12';
+				break;
+			case 3:
+				return 'l4 m6 s12';
+				break;
+			case 2:
+				return 'm6 s12';
+				break;
+			case 1:
+				return 's12';
+				break;
+			default:
+				return 's12';
+				break;
+		endswitch;
 	}
+endif;
 
-	return $result;
-}
+$footer_top_classes =
+	bdbg_width_widget_class( 'bdbg_footer_top_columns' );
+$footer_middle_classes =
+	bdbg_width_widget_class( 'bdbg_footer_middle_columns' );
+$footer_bottom_classes =
+	bdbg_width_widget_class( 'bdbg_footer_bottom_columns' );
 
 /*----------------------------------------------------------------------------
    Global Widget Areas Args
 ----------------------------------------------------------------------------*/
 $widget_args = array(
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'before_widget' => '<div id="%1$s" class="widget bdbg-widget %2$s">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widget-title">',
-	'after_title' => '</h3>',
+	'before_title' => '<h5 class="widget-title bdbg-widget__title">',
+	'after_title' => '</h5>',
 );
 
 /*----------------------------------------------------------------------------
    Theme Widget Areas List
 ----------------------------------------------------------------------------*/
 $widget_list = array(
-	'test1' => array(
-		'name' => 'Test 1'
+	'footer_top' => array(
+		'name' => 'Footer Top',
+		'before_widget' => '<div id="%1$s" class="' . $footer_top_classes . ' col widget bdbg-widget %2$s">',
+		'after_widget' => '</div>',
 	),
-);
-
-/* Footer
--------------------------------------*/
-$widget_list = $widget_list + widgetarea_generator(
-	get_theme_mod( 'bdbg_footer_middle_columns' ),
-	'footer-top',
-	'Footer Top'
+	'footer_middle' => array(
+		'name' => 'Footer Middle',
+		'before_widget' => '<div id="%1$s" class="' . $footer_middle_classes . ' col widget bdbg-widget %2$s">',
+		'after_widget' => '</div>',
+	),
+	'footer_bottom' => array(
+		'name' => 'Footer Bottom',
+		'before_widget' => '<div id="%1$s" class="' . $footer_bottom_classes . ' col widget bdbg-widget %2$s">',
+		'after_widget' => '</div>',
+	),
 );

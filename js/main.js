@@ -6,38 +6,62 @@
     "use strict";
 
     $( function() {
-        /*----------------------------------------------------------------------------
-        Main Scripts
-        ----------------------------------------------------------------------------*/
-        /* Menu Desktop & Mobile Module
-        --------------------------------------*/
+        // Sidemenu data caching.
+        let menuSide = $( ".button-collapse" ).data( "menuside" );
 
-		// ./modules/bdbg_menu_plugin.js
-		// $( "#bdbg-menu-main" ).bdbgMenu();
-        // $( "#bdbg-menu-side" ).bdbgMenu();
-        $('.button-collapse')
-            .sideNav({
-                menuWidth: 300, // Default is 240
-                edge: 'right', // Choose the horizontal origin
-                closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        // Main menu dropdown initialization
+        $( ".button-collapse" )
+            .sideNav( {
+                menuWidth: 300, // Default is 240.
+                edge: menuSide,
+                closeOnClick: true // Closes side-nav on <a> clicks.
             }
         );
 
-        $('.collapsible').collapsible({
-            accordion: true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-        });
-
-        // main dropdown initialization
-        $( ".dropdown-button" ).dropdown( {
-            inDuration: 300,
-            outDuration: 225,
-            constrainWidth: true, // Does not change width of dropdown to that of the activator
-            hover: true, // Activate on hover
-            belowOrigin: true, // Displays dropdown below the button
-            alignment: "left" // Displays dropdown with edge aligned to the left of button
+        // Side menu dropdown initialization.
+        $( ".collapsible" ).collapsible( {
+            /**
+             * A setting that changes the collapsible behavior to expandable,
+             * instead of the default accordion style.
+             */
+            accordion: true
         } );
 
+        // Dropdown initialization
+        $( ".dropdown-button" ).dropdown();
 
+        // Search for header part.
+        /**
+         * Search Modal
+         */
+        $( ".bdbg-js-search" ).on( "click", function() {
+            $( ".bdbg-overlay" ).addClass( "bdbg-overlay--visible" );
+            $( "#search-big" ).focus();
+        } );
+        
+        $( ".bdbg-overlay__button--close" ).on( "click", function() {
+            $( ".bdbg-overlay" ).removeClass( "bdbg-overlay--visible" );
+        } );
+        
+        $( "#search-big" ).on( "keypress", function( event ) {
+            if ( 13 === event.keyCode ) {
+                let modalHeading = $( ".bdbg-modal__heading" );
+                let count = 0;
+        
+                modalHeading.html( modalHeading.data( "textsearch" ) );
+                setInterval( function() {
+                    if ( 0 === count ) {
+                        modalHeading.html( modalHeading.data( "textsearch" ) );
+                        count++;
+                    } else if ( 2 === count ) {
+                        count = 0;
+                    } else {
+                        count++;
+                    }
+                    modalHeading.append( "." );
+                }, 500 );
+            }
+        } );
 
     } );
 

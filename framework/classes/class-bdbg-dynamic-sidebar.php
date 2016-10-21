@@ -20,8 +20,8 @@ endif;
  */
 class Bdbg_Dynamic_Sidebar {
 
-	public $widgets;
-	public $args;
+	private $widgets;
+	private $args;
 
 	function __construct( $widgets, $args ) {
 		$this->widgets = $widgets;
@@ -34,8 +34,10 @@ class Bdbg_Dynamic_Sidebar {
 		foreach ( $this->widgets as $id => $params ) :
 			$params['id'] = $id;
 
-			foreach ($this->args as $argkey => $argval ) :
-				$params[$argkey] = ( $params[$argkey] ) ? ( $params[$argkey] ) : $argval;
+			foreach ( $this->args as $argkey => $argval ) :
+				if ( ! array_key_exists( $argkey, $params ) ) :
+					$params[ $argkey ] = $argval;
+				endif;
 			endforeach;
 
 			register_sidebar( $params );

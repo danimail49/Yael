@@ -1,0 +1,69 @@
+.bdbg-overlay {
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(238, 110, 115, 0.6);
+  color: #fff;
+  padding: 3em;
+  transition: transform 1s;
+  bottom: 0;
+  left: 0;
+  transform: translateY(-100%);
+
+  &.bdbg-overlay--visible {
+    transform: translateY(0);
+  }
+
+  #searchform {
+
+    .bdbg-input-group__label {
+      color: #fff;
+    }
+
+    .bdbg-input-group__field {
+      color: #fff;
+      border-bottom: 0;
+      box-shadow: none;
+      font-size: 2em;
+      text-align: center;
+      height: auto;
+
+      &:focus {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        box-shadow: none;
+      }
+
+      &:focus + label {
+        color: #fff;
+      }
+
+    }
+  }
+
+}
+
+.bdbg-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 80%;
+  max-width: 50rem;
+}
+
+.bdbg-overlay__button {
+  text-align: right;
+  font-size: 3em;
+  cursor: pointer;
+
+  .fa {
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.5);
+      transform-origin: 50% 50%;
+    }
+  }
+}

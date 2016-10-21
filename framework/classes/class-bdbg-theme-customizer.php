@@ -21,6 +21,12 @@ endif;
 class Bdbg_Theme_Customizer {
 
 	/**
+	 * Array of customizer panels.
+	 *
+	 * @var array
+	 */
+	public $panels;
+	/**
 	 * Array of customizer sections.
 	 *
 	 * @var array
@@ -49,14 +55,29 @@ class Bdbg_Theme_Customizer {
 	 *
 	 * @since 1.00
 	 */
-	public function __construct( $sections, $settings, $controls ) {
+	public function __construct( $panels, $sections, $settings, $controls ) {
+		$this->panels 	= $panels;
 		$this->sections = $sections;
 		$this->settings = $settings;
 		$this->controls = $controls;
 
+		add_action( 'customize_register', array( $this, 'create_panels' ) );
 		add_action( 'customize_register', array( $this, 'create_sections' ) );
 		add_action( 'customize_register', array( $this, 'create_settings' ) );
 		add_action( 'customize_register', array( $this, 'create_controls' ) );
+	}
+
+	/**
+	 * Creates custom sections.
+	 *
+	 * @since 1.00
+	 *
+	 * @param object $wp_customize Customizr manager object.
+	 */
+	public function create_panels( $wp_customize ) {
+		foreach ( $this->panels as $panel_id => $panel_params ) :
+			$wp_customize->add_panel( $panel_id, $panel_params );
+		endforeach;
 	}
 
 	/**
@@ -112,14 +133,15 @@ class Bdbg_Theme_Customizer {
 	/**
 	 * Creates new instance of Bdbg_Theme_Customizer.
 	 *
+	 * @param array $panels Customizer panels.
 	 * @param array $sections Customizer sections.
 	 * @param array $settings Customizer settings.
 	 * @param array $controls Customizer controls.
 	 *
 	 * @return object New instance of Bdbg_Theme_Customizer.
 	 */
-	public static function init( $sections, $settings, $controls ) {
-		return new static( $sections, $settings, $controls );
+	public static function init( $panels, $sections, $settings, $controls ) {
+		return new static( $panels, $sections, $settings, $controls );
 	}
 
 }

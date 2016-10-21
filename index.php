@@ -9,9 +9,10 @@
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
+ * @since 1.00
+ *
  * @package Budabuga
  * @subpackage Yael
- * @since 1.00
  */
 
 get_header(); ?>
@@ -31,6 +32,10 @@ get_header(); ?>
 
 	endwhile;
 	// End the loop. ?>
+
+<?php else :
+	// If no content, include the "No posts found" template.
+	get_template_part( 'template-parts/content', 'content-none' ); ?>
 
 <?php endif; ?>
 

@@ -6,31 +6,32 @@
     "use strict";
 
     $( function() {
-        /*----------------------------------------------------------------------------
-        Main Scripts
-        ----------------------------------------------------------------------------*/
-        /* Menu Desktop & Mobile Module
-        --------------------------------------*/
+        // Sidemenu data caching.
+        let menuSide = $( ".button-collapse" ).data( "menuside" );
 
-		// ./modules/bdbg_menu_plugin.js
-		// $( "#bdbg-menu-main" ).bdbgMenu();
-        // $( "#bdbg-menu-side" ).bdbgMenu();
-        $('.button-collapse')
-            .sideNav({
-                menuWidth: 300, // Default is 240
-                // edge: 'right', // Choose the horizontal origin
-                closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        // Main menu dropdown initialization
+        $( ".button-collapse" )
+            .sideNav( {
+                menuWidth: 300, // Default is 240.
+                edge: menuSide,
+                closeOnClick: true // Closes side-nav on <a> clicks.
             }
         );
 
-        $('.collapsible').collapsible({
-            accordion: true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-        });
+        // Side menu dropdown initialization.
+        $( ".collapsible" ).collapsible( {
+            /**
+             * A setting that changes the collapsible behavior to expandable,
+             * instead of the default accordion style.
+             */
+            accordion: true
+        } );
 
-        // main dropdown initialization
+        // Dropdown initialization
         $( ".dropdown-button" ).dropdown();
 
-
+        // Search for header part.
+        //= modules/bdbg-modal.js
 
     } );
 

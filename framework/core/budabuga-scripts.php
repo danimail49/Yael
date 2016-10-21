@@ -7,9 +7,17 @@
  */
 
 // Preventing direct script access.
-//if ( ! defined( 'ABSPATH' ) ) :
-//	die( 'No direct script access allowed' );
-//endif;
+if ( ! defined( 'ABSPATH' ) ) :
+	die( 'No direct script access allowed' );
+endif;
+
+// if ( ! function_exists( 'bdbg_preloader_scripts' ) ) :
+// 	function bdbg_preloader_scripts() {
+// 		wp_enqueue_style( 'preloader-style', THEMEDIR_URI . 'css/preloader.css', false, THEME_VERSION );
+// 		wp_enqueue_script( 'preloader-script', THEMEDIR_URI . 'js/preloader.js',  false,  THEME_VERSION );
+// 	}
+// 	add_action( 'wp_enqueue_scripts', 'bdbg_preloader_scripts', 999 );
+// endif;
 
 if ( ! function_exists( 'bdbg_enqueue_scripts' ) ) :
 	/**
@@ -32,6 +40,7 @@ if ( ! function_exists( 'bdbg_enqueue_scripts' ) ) :
 
 		wp_enqueue_script( 'vendor-script', THEMEDIR_URI . 'js/vendor.js', array( 'jquery' ),  THEME_VERSION, true );
 		wp_enqueue_script( 'main-script', THEMEDIR_URI . 'js/main.js',  array( 'jquery' ),  THEME_VERSION, true );
+
 	}
 	add_action( 'wp_enqueue_scripts', 'bdbg_enqueue_scripts' );
 endif;
@@ -44,7 +53,7 @@ if ( ! function_exists( 'bdbg_enqueue_admin' ) ) :
 	 */
 	function bdbg_enqueue_admin() {
 		wp_enqueue_style( 'admin-style', THEMEDIR_URI . 'css/admin.css', array( 'wp-color-picker' ), THEME_VERSION, 'all' );
-		wp_enqueue_style( 'main-style', THEMEDIR_URI . 'css/main.css', null, THEME_VERSION, 'all' );
+		// wp_enqueue_style( 'main-style', THEMEDIR_URI . 'css/main.css', null, THEME_VERSION, 'all' );
 
 		wp_enqueue_script( 'main-script', THEMEDIR_URI . 'js/admin.js',  array( 'jquery', 'wp-color-picker' ),  THEME_VERSION, true );
 	}

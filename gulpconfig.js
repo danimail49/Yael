@@ -24,9 +24,9 @@ module.exports = function () {
 		'srcPath': {
 			'img': ['./src/img/images/**/*.*', '!./src/img/png_sprites'],
 			'pngSprites': './src/img/png_sprites/',
-			'js': ['./src/js/main.js', './src/js/vendor.js', './src/js/admin.js', './src/js/customizer.js'],
+			'js': ['./src/js/main.js', './src/js/vendor.js', './src/js/admin.js', './src/js/customizer.js', './src/js/preloader.js'],
 			'less': ['./src/less/style.less', './src/less/vendor.less'],
-			'sass': ['./src/sass/main.scss', './src/sass/vendor.scss', './src/sass/admin.scss'],
+			'sass': ['./src/sass/main.scss', './src/sass/vendor.scss', './src/sass/admin.scss', './src/sass/preloader.scss'],
 			'svg': './src/img/svg/**/*.svg',
 			'svgSprites': './src/img/svg_sprites/',
 			'font': './src/fonts/**/*.{scss,css,eot,ttf,woff,woff2,svg}',

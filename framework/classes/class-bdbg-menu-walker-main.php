@@ -35,7 +35,7 @@ class Bdbg_Menu_Walker_Main extends Walker_Nav_Menu {
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$this->cur_item = $item;
 
-		$indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'bdbg-menu__item menu-item-' . $item->ID;
 
@@ -56,7 +56,7 @@ class Bdbg_Menu_Walker_Main extends Walker_Nav_Menu {
 		$children = get_posts( $navitem_args );
 
 		if ( ! empty( $children ) && 0 === $depth ) :
-			$classes[] = 'dropdown-button bdbg-menu__item--has-children';
+			$classes[] = 'bdbg-menu__item--has-children';
 		endif;
 
 		$class_names = implode( ' ', $classes );
@@ -74,12 +74,14 @@ class Bdbg_Menu_Walker_Main extends Walker_Nav_Menu {
 
 		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
 		$attributes = '';
+
 		foreach ( $atts as $attr => $value ) {
 			if ( ! empty( $value ) ) {
 				$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 			}
 		}
+
 		if ( ! empty( $children & 0 === $depth ) ) :
 			$attributes .= ' data-activates="dropdown-' . $item->ID . '"';
 			$attributes .= ' data-constrainwidth="false"';

@@ -17,6 +17,8 @@ endif;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
+	<script src="<?php echo THEMEDIR_URI; ?>js/preloader.js"></script>
+  	<link href="<?php echo THEMEDIR_URI; ?>css/preloader.css" rel="stylesheet" />
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -29,47 +31,34 @@ endif;
 <body <?php body_class(); ?>>
 
 <?php
-// $header_drawer_class = ( ! get_theme_mod( 'bdbg_header_showdrawer' ) ) ? 'mdl-layout--no-desktop-drawer-button' : '';
-// $container_classes = ( ! get_theme_mod( 'bdbg_header_fixed' ) ) ? 'has-scrolling-header' : '';
-// $header_classes = ( ! get_theme_mod( 'bdbg_header_fixed' ) ) ? 'mdl-layout__header--scroll' : '';
-// $header_show_search = ( get_theme_mod( 'bdbg_header_showsearch' ) ) ? true : false;
 $header_direction = bdbg_header_layout();
-
+$header_fixed_class = ( get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar-fixed' : '';
 ?>
 
-<header role="banner" class="bdbg-header navbar-fixed">
+<header role="banner" class="bdbg-header <?php echo $header_fixed_class; ?>">
 	<nav class="bdbg-nav" role="navigation">
 		<div class="nav-wrapper container">
+			<?php
+			if ( get_theme_mod( 'bdbg_header_search_display' ) ) :
+				echo '<ul class="' . esc_html( $header_direction['to'] ) . '"><li><a href="#" class="bdbg-iconbutton bdbg-js-search"><i class="fa fa-search" aria-hidden="true"></i></a></li></ul>';
+			endif;
+			?>
+
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-				class="brand-logo bdbg-logo <?php echo esc_html( $header_direction['from'] ); ?>"><?php bdbg_logo( 'bdbg_logo_header' ); ?></a>
-			<a href="#" data-activates="mobile-demo"
-				class="button-collapse <?php echo esc_html( $header_direction['from'] ); ?>"><i class="fa fa-bars" aria-hidden="true"></i></a>
+				class="brand-logo bdbg-logo bdbg-logo--main <?php echo esc_html( $header_direction['from'] ); ?>"><?php bdbg_logo( 'bdbg_header_logo_main' ); ?></a>
+			<a href="#" data-activates="bdbg-menu-side"
+				class="button-collapse <?php echo esc_html( $header_direction['from'] ); ?>" data-menuside="<?php echo esc_html( $header_direction['from'] ); ?>"><i class="fa fa-bars" aria-hidden="true"></i></a>
 
 			<?php bdbg_menus( 'main', esc_html( $header_direction['to'] ) ); ?>
+			<ul id="bdbg-menu-side"
+				class="bdbg-menu bdbg-menu--side <?php echo esc_html( $header_direction['from'] ); ?>
+				side-nav">
 
-			<!-- <ul class="bdbg-nav bdbg-nav--side side-nav right" role="navigation" id="mobile-demo">
-				<li class="menu-item"><a href="#">Link Item</a></li>
-				<li class="menu-item"><a href="#">Link Item</a></li>
-				<li class="menu-item">
-					<ul class="collapsible" data-collapsible="accordion">
-						<li>
-							<div class="collapsible-header">First</div>
-							<div class="collapsible-body">
-								<ul>
-									<li><a href="#">Menu-Item</a></li>
-									<li class="active"><a href="#">Menu-Item</a></li>
-									<li><a href="#">Menu-Item</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</li>
-				<li class="menu-item"><a href="#">Link Item</a></li>
-			</ul> -->
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+					class="bdbg-logo bdbg-logo--side"><?php bdbg_logo( 'bdbg_header_logo_side' ); ?></a>
 
-			<?php bdbg_menus( 'side', esc_html( $header_direction['to'] ) ); ?>
-
-
+				<?php bdbg_menus( 'side', esc_html( $header_direction['from'] ) ); ?>
+			</ul>
 		</div>
 		<!-- /.nav-wrapper container -->
 	</nav>
