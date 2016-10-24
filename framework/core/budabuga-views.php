@@ -43,12 +43,12 @@ if ( ! function_exists( 'bdbg_menus' ) ) :
 	 * @param	string $menu_type		Defines type of menu. Values: main, side, footer.
 	 * @param	string $menu_direction	Defines menu direction, align to left or right side.
 	 */
-	function bdbg_menus( $menu_type = 'main', $menu_direction = 'left' ) {
+	function bdbg_menus( $menu_type = 'main', $menu_direction ) {
 
 		$acceptable_menus = array( 'main', 'side' );
 		$default_menu = 'main';
 		$walker = 'Bdbg_Menu_Walker_' . ucfirst( $menu_type );
-
+		$to = $menu_direction['to'];
 		// Parameter check.
 		$menu_type = ( in_array( $menu_type, $acceptable_menus, true ) ) ?
 			$menu_type : $default_menu;
@@ -58,7 +58,7 @@ if ( ! function_exists( 'bdbg_menus' ) ) :
 		if ( has_nav_menu( $menu_type ) ) :
 			$args = array(
 				'container'		  => false,
-				'menu_class'      => "bdbg-menu bdbg-menu--$menu_type $menu_direction",
+				'menu_class'      => 'bdbg-menu bdbg-menu--' . $menu_type . ' ' . $to,
 				'menu_id'         => "bdbg-menu-$menu_type",
 				'echo'            => true,
 				'theme_location'  => $menu_type,
@@ -80,7 +80,7 @@ if ( ! function_exists( 'bdbg_menus' ) ) :
 		else :
 			$menu_link_start = '<a href="' . admin_url() . 'nav-menus.php">';
 			$message = __( '%4$sTheme Menu is not set for %1$s. You can set it in %2$s Menu Editor %3$s.%5$s', 'budabuga' );
-			echo sprintf( esc_html( $message ), esc_html( $menu_type ), $menu_link_start, '</a>', '<span class="bdbg-message">', '</span>' );
+			echo sprintf( esc_html( $message ), esc_html( $menu_type ), $menu_link_start, '</a>', '<span class="bdbg-message ' . $to . '">', '</span>' );
 		endif;
 	}
 endif;
