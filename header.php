@@ -36,6 +36,15 @@ $header_fixed_class = ( get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar
 ?>
 
 <header role="banner" class="bdbg-header <?php echo $header_fixed_class; ?>">
+	<ul id="bdbg-menu-side"
+		class="bdbg-menu bdbg-menu--side <?php echo esc_html( $header_direction['from'] ); ?>
+		side-nav">
+
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+			class="bdbg-logo bdbg-logo--side"><?php bdbg_logo( 'bdbg_header_logo_side' ); ?></a>
+
+		<?php bdbg_menus( 'side', $header_direction ); ?>
+	</ul>
 	<nav class="bdbg-nav" role="navigation">
 		<div class="nav-wrapper container">
 			<?php
@@ -49,16 +58,7 @@ $header_fixed_class = ( get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar
 			<a href="#" data-activates="bdbg-menu-side"
 				class="button-collapse <?php echo esc_html( $header_direction['from'] ); ?>" data-menuside="<?php echo esc_html( $header_direction['from'] ); ?>"><i class="fa fa-bars" aria-hidden="true"></i></a>
 
-			<?php bdbg_menus( 'main', esc_html( $header_direction['to'] ) ); ?>
-			<ul id="bdbg-menu-side"
-				class="bdbg-menu bdbg-menu--side <?php echo esc_html( $header_direction['from'] ); ?>
-				side-nav">
-
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-					class="bdbg-logo bdbg-logo--side"><?php bdbg_logo( 'bdbg_header_logo_side' ); ?></a>
-
-				<?php bdbg_menus( 'side', esc_html( $header_direction['from'] ) ); ?>
-			</ul>
+			<?php bdbg_menus( 'main', $header_direction ); ?>
 		</div>
 		<!-- /.nav-wrapper container -->
 	</nav>

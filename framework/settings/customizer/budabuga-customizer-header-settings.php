@@ -26,7 +26,7 @@ $header_settings = array(
 		array(
 			'type'         => 'theme_mod',
 			'default'      => true,
-			'transport'    => 'postMessage',
+			'transport'    => 'refresh',
 		),
 	'bdbg_header_general_fixed' =>
 		array(
@@ -50,7 +50,7 @@ $header_settings = array(
 	'bdbg_header_general_background' =>
 		array(
 			'type'         => 'theme_mod',
-			'default'      => 'rgba(238, 110, 115, 1)',
+			'default'      => '#404eb9',
 			'transport'    => 'postMessage',
 			'show_opacity' => 'true',
 		),

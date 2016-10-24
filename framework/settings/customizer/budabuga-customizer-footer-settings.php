@@ -26,7 +26,7 @@ $footer_settings = array(
 	'bdbg_footer_top_background' =>
 		array(
 			'type'         => 'theme_mod',
-			'default'      => 'rgba(238, 110, 115, 1)',
+			'default'      => '#3d3d3d',
 			'transport'    => 'postMessage',
 			'show_opacity' => 'true',
 		),
@@ -55,7 +55,8 @@ $footer_settings = array(
 			'type'              => 'theme_mod',
 			'default'           => 0,
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'absint',
+			'validate_callback'	=> 'validate_numeric_input',
 		),
 
 	/*----------------------------------------------------------------------------
@@ -71,7 +72,7 @@ $footer_settings = array(
 		'bdbg_footer_middle_background' =>
 			array(
 				'type'         => 'theme_mod',
-				'default'      => 'rgba(238, 110, 115, 1)',
+				'default'      => '#3d3d3d',
 				'transport'    => 'postMessage',
 				'show_opacity' => 'true',
 			),
@@ -116,7 +117,7 @@ $footer_settings = array(
 		'bdbg_footer_bottom_background' =>
 			array(
 				'type'         => 'theme_mod',
-				'default'      => 'rgba(238, 110, 115, 1)',
+				'default'      => '#3d3d3d',
 				'transport'    => 'postMessage',
 				'show_opacity' => 'true',
 			),

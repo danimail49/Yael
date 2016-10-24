@@ -20,7 +20,7 @@ $footer_panels = array(
 		array(
 			'title'       => __( 'Footer', 'budabuga' ),
 			'description' => __( 'Customize footer areas here.', 'budabuga' ),
-			'priority'   => 22,
+			'priority'   => 120,
 		),
 );
 
@@ -31,7 +31,7 @@ $footer_panels = array(
 $footer_sections = array(
 	'bdbg_footer_top' =>
 		array(
-			'title'       => __( 'Footer Top', 'budabuga' ),
+			'title'       => __( 'Top Footer', 'budabuga' ),
 			// 'description' => __( 'General section description', 'budabuga' ),
 			'panel' => 'bdbg_footer',
 			'capability'  => 'edit_theme_options',
@@ -39,14 +39,14 @@ $footer_sections = array(
 		),
 	'bdbg_footer_middle' =>
 		array(
-			'title'       => __( 'Footer Middle', 'budabuga' ),
+			'title'       => __( 'Middle Footer', 'budabuga' ),
 			// 'description' => __( 'Logo section description', 'budabuga' ),
 			'panel'		  => 'bdbg_footer',
 			'priority'   => 20,
 		),
 	'bdbg_footer_bottom' =>
 		array(
-			'title'       => __( 'Footer Bottom', 'budabuga' ),
+			'title'       => __( 'Bottom Footer', 'budabuga' ),
 			// 'description' => __( 'Logo section description', 'budabuga' ),
 			'panel' => 'bdbg_footer',
 			'capability'  => 'edit_theme_options',

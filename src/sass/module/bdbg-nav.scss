@@ -34,6 +34,7 @@
   color: $bdbg-nav--side-color;
   display: block;
   width: 300px;
+  // z-index: 999;
 
   a {
     padding: 0 32px;
@@ -41,10 +42,6 @@
 
   .collapsible-header {
     padding: 0 32px;
-  }
-
-  .bdbg-menu__submenu {
-
   }
 
   .bdbg-logo--side {
@@ -88,6 +85,10 @@
 
 .dropdown-content {
   width: 180px;
+}
+
+.bdbg-header .button-collapse i {
+  font-size: 1.95rem;
 }
 
 @media screen and (max-width: 1024px) {

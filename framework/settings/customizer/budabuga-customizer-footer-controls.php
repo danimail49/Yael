@@ -63,7 +63,7 @@ $footer_controls = array(
 	'bdbg_footer_top_letterspace' =>
 		array(
 			'label'       => __( 'Top Footer text letterspace (px)', 'budabuga' ),
-			'type'        => 'number',
+			'type'        => 'numeric_input',
 			'section'     => 'bdbg_footer_top',
 			'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
 			'input_attrs' => array(

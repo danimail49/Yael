@@ -1,10 +1,12 @@
 .bdbg-header {
   top: 0;
   height: 64px;
+  position: static;
+  // z-index: 10;
 }
 
 .bdbg-header.navbar-fixed {
-  position: fixed;
+  // position: static;
 
   @include admin-sticky-fix;
 }

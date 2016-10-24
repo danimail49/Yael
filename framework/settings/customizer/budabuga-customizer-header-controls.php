@@ -18,7 +18,7 @@ $header_controls = array(
 ----------------------------------------------------------------------------*/
 	'bdbg_header_general_showdrawer' =>
 		array(
-			'label'       => __( 'Show Drawer Button on Desktop viewport', 'budabuga' ),
+			'label'       => __( 'Show SideMenu on Desktop', 'budabuga' ),
 			'type'        => 'checkbox',
 			'section'     => 'bdbg_header_general',
 			'input_attrs' => array(

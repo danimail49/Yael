@@ -71,3 +71,15 @@ if ( ! function_exists( 'bdbg_enqueue_customizer' ) ) :
 	}
 	add_action( 'customize_preview_init', 'bdbg_enqueue_customizer' );
 endif;
+
+if ( ! function_exists( 'bdbg_enqueue_customizer_validation' ) ) :
+	/**
+	 * Enqueues Customizer scripts and styles
+	 *
+	 * @since 1.00
+	 */
+	function bdbg_enqueue_customizer_validation() {
+		wp_enqueue_script( 'customizer-script', THEMEDIR_URI . 'js/customizer_validator.js',  array( 'jquery', 'customize-controls' ),  THEME_VERSION, true );
+	}
+	add_action( 'customize_controls_enqueue_scripts', 'bdbg_enqueue_customizer_validation' );
+endif;

@@ -2254,11 +2254,9 @@ body {
 }
 
 .bdbg-header {
+  top: 0;
   height: 64px;
-}
-
-.bdbg-header.navbar-fixed {
-  position: fixed;
+  position: static;
 }
 
 .admin-bar .bdbg-header.navbar-fixed {
@@ -2284,6 +2282,11 @@ html #wpadminbar {
 
 .row {
   margin-bottom: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
 }
 
 .bdbg-nav {
@@ -2374,6 +2377,10 @@ html #wpadminbar {
   width: 180px;
 }
 
+.bdbg-header .button-collapse i {
+  font-size: 1.95rem;
+}
+
 .bdbg-overlay {
   position: absolute;
   z-index: 9999;
@@ -2456,7 +2463,8 @@ html #wpadminbar {
 }
 
 .bdbg-message a {
-  color: #039be5;
+  color: #ffc0cb;
+  line-height: 60px;
 }
 
 @media screen and (min-width: 783px) {

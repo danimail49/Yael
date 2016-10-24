@@ -45,8 +45,12 @@ require_once( FRAMEWORK_CLASSES . 'class-bdbg-menu-walker-side.php' );
  */
 function customizer_register_classes( $wp_customize ) {
 	require_once( FRAMEWORK_CLASSES . 'class-bdbg-alpha-color-picker.php' );
+	require_once( FRAMEWORK_CLASSES . 'class-bdbg-int-customizer-control.php' );
 }
 add_action( 'customize_register', 'customizer_register_classes' );
+
+// Customizer controls custom validation.
+// require_once( FRAMEWORK_SETTINGS . 'budabuga_customizer_validator.php' );
 
 // Customizer controls settings.
 require_once( FRAMEWORK_SETTINGS . 'budabuga-customizer-controls.php' );
