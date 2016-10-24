@@ -40,20 +40,45 @@
   font-family: "Helvetica Neue", sans-serif;
   font-weight: 100;
   text-align: center;
-  animation: pace-theme-center-circle-spin linear infinite 2s;
+  animation: pace-theme-center-circle-buble linear infinite 1s;
   transform-style: preserve-3d;
 }
 
 .pace .pace-progress:after {
   content: attr(data-progress-text);
   display: block;
+  animation: pace-theme-center-circle-debuble linear infinite 1s;
+  transform-style: preserve-3d;
+  font-size: 1.8rem;
 }
 
-@keyframes pace-theme-center-circle-spin {
-  from {
-    transform: rotateY(0deg);
+@keyframes pace-theme-center-circle-buble {
+  0% {
+    transform: scale(1);
+    background: rgba(233, 15, 146, 0.8);
   }
-  to {
-    transform: rotateY(360deg);
+
+  50% {
+    transform: scale(1.1);
+    background: rgba(233, 15, 146, 0.7);
+  }
+
+  100% {
+    transform: scale(1);
+    background: rgba(233, 15, 146, 0.8);
+  }
+}
+
+@keyframes pace-theme-center-circle-debuble {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.91);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
