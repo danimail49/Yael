@@ -49,9 +49,6 @@ function customizer_register_classes( $wp_customize ) {
 }
 add_action( 'customize_register', 'customizer_register_classes' );
 
-// Customizer controls custom validation.
-// require_once( FRAMEWORK_SETTINGS . 'budabuga_customizer_validator.php' );
-
 // Customizer controls settings.
 require_once( FRAMEWORK_SETTINGS . 'budabuga-customizer-controls.php' );
 // Creating theme customizer controls.
