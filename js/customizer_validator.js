@@ -1,19 +1,21 @@
-wp.customize( 'bdbg_footer_top_letterspace', function ( setting ) {
+wp.customize( "bdbg_footer_top_letterspace", function( setting ) {
+    setting.validate = function( value ) {
 
-    setting.validate = function ( value ) {
         var code, notification;
-        var year = parseInt( value, 10 );
+        var intVal = parseInt( value, 10 );
 
-        code = 'required';
-        if ( isNaN( year ) ) {
-            notification = new wp.customize.Notification( code, {message: "myPlugin.l10n.yearRequired"} );
+        code = "required";
+        if ( isNaN( intVal ) ) {
+            notification = new wp.customize.Notification( code, { message: customizerErrors.isint_isreq } );
             setting.notifications.add( code, notification );
-            value = 0;
+
+            setting.value = 0;
+            return NaN;
         } else {
             setting.notifications.remove( code );
         }
 
-        return 0;
+        return intVal;
     };
 } );
 //# sourceMappingURL=customizer_validator.js.map
