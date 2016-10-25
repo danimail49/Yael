@@ -40,7 +40,7 @@ class Bdbg_Int_Customizer_control extends WP_Customize_Control {
 			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<input type="number" style="width: 100%;" <?php $this->input_attrs(); ?>
 				<?php $this->link(); ?> id="<?php echo $this->id; ?>"
-				name="<?php echo $this->id; ?>"
+				name="<?php echo $this->id; ?>" class="bdbg-customizer-input bdbg-customizer-input--numeric"
 				value="<?php echo esc_html( $this->value() ); ?>" />
 		</label>
 	<?php }
