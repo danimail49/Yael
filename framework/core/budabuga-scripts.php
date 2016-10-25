@@ -79,7 +79,12 @@ if ( ! function_exists( 'bdbg_enqueue_customizer_validation' ) ) :
 	 * @since 1.00
 	 */
 	function bdbg_enqueue_customizer_validation() {
-		wp_enqueue_script( 'customizer-script', THEMEDIR_URI . 'js/customizer_validator.js',  array( 'jquery', 'customize-controls' ),  THEME_VERSION, true );
+		$customizer_validator_errors = array(
+			'isint_isreq' => __( 'Valid numeric value required!', 'budabuga' ),
+		);
+
+		wp_enqueue_script( 'customizer-validator', THEMEDIR_URI . 'js/customizer_validator.js',  array( 'jquery', 'customize-controls' ),  THEME_VERSION, true );
+		wp_localize_script( 'customizer-validator', 'customizerErrors', $customizer_validator_errors );
 	}
 	add_action( 'customize_controls_enqueue_scripts', 'bdbg_enqueue_customizer_validation' );
 endif;
