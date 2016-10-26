@@ -14,5 +14,5 @@ endif;
 function bdbg_get_theme_mod( $setting ) {
 	global $defaults;
 
-	return $defaults[ $setting ];
+	return get_theme_mod( $setting, $defaults[ $setting ] );
 }
