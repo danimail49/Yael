@@ -32,7 +32,7 @@ endif;
 
 <?php
 $header_direction = bdbg_header_layout();
-$header_fixed_class = ( get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar-fixed' : '';
+$header_fixed_class = ( bdbg_get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar-fixed' : '';
 ?>
 
 <header role="banner" class="bdbg-header <?php echo $header_fixed_class; ?>">
@@ -48,7 +48,7 @@ $header_fixed_class = ( get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar
 	<nav class="bdbg-nav" role="navigation">
 		<div class="nav-wrapper container">
 			<?php
-			if ( get_theme_mod( 'bdbg_header_search_display' ) ) :
+			if ( bdbg_get_theme_mod( 'bdbg_header_search_display' ) ) :
 				echo '<ul class="' . esc_html( $header_direction['to'] ) . '"><li><a href="#" class="bdbg-iconbutton bdbg-js-search"><i class="fa fa-search" aria-hidden="true"></i></a></li></ul>';
 			endif;
 			?>
@@ -64,3 +64,4 @@ $header_fixed_class = ( get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar
 	</nav>
 	<!-- /.bdbg-nav -->
 </header>
+<main class="container bdbg-content" role="main">
