@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) :
 	die( 'No direct script access allowed' );
 endif; ?>
 
+</main>
+<!-- /.container bdbg-content -->
 
 <footer class="bdbg-footer" role="contentinfo">
 	<?php if ( is_active_sidebar( 'footer_top' ) ) : ?>
