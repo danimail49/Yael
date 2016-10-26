@@ -22,7 +22,7 @@ if ( ! function_exists( 'bdbg_header_layout' ) ) :
 		$from_to = array( 'left', 'right' );
 		$keys = array( 'from', 'to' );
 
-		$header_direction_setting = get_theme_mod( 'bdbg_header_general_layout' );
+		$header_direction_setting = bdbg_get_theme_mod( 'bdbg_header_general_layout' );
 
 		if ( 'left' === $header_direction_setting ) :
 			$layout = $from_to;
@@ -97,7 +97,7 @@ if ( ! function_exists( 'bdbg_logo' ) ) :
 	 */
 	function bdbg_logo( $logo_name, $logo_echo = true ) {
 		$logo_name = $logo_name . '_upload';
-		$logo_id = get_theme_mod( $logo_name );
+		$logo_id = bdbg_get_theme_mod( $logo_name );
 		$logo_obj ='';
 
 		if ( $logo_id ) :
@@ -162,5 +162,37 @@ HEREDOC;
 		echo balanceTags( $output );
 	}
 	add_action( 'wp_footer', 'bdbg_search_modal', 100 );
+
+endif;
+
+if ( ! function_exists( 'bdbg_post_header' ) ) :
+
+	function bdbg_post_header( $layout = 'left' ) {
+		echo 'bdbg_post_header';
+	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_post_excerpt' ) ) :
+
+	function bdbg_post_excerpt() {
+		echo 'bdbg_post_excerpt';
+	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_post_footer' ) ) :
+
+	function bdbg_post_footer() {
+		echo 'bdbg_post_footer';
+	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_post_thumbnail' ) ) :
+
+	function bdbg_post_thumbnail( $size = null, $classes = '' ) {
+		echo 'bdbg_post_thumbnail';
+	}
 
 endif;
