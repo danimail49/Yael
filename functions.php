@@ -54,6 +54,8 @@ require_once( FRAMEWORK_SETTINGS . 'budabuga-customizer-controls.php' );
 // Creating theme customizer controls.
 require_once( FRAMEWORK_CLASSES . 'class-bdbg-theme-customizer.php' );
 Bdbg_Theme_Customizer::init( $panels, $sections, $settings, $controls );
+// Framework defaults for customizer.
+require_once( FRAMEWORK_SETTINGS . 'budabuga_customizer_defaults.php' );
 
 // Theme dynamic sidebars settings.
 require_once( FRAMEWORK_SETTINGS . 'budabuga-dynamic-sidebars.php' );
