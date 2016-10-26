@@ -39,6 +39,16 @@ require_once( 'customizer/budabuga-customizer-footer-settings.php' );
 -------------------------------------*/
 $settings = $header_settings + $footer_settings;
 
+global $defaults; // Because we need defaults
+$defaults = array();
+foreach ( $settings as $key => $value ) {
+	$value['default'] = ( array_key_exists( 'default', $value ) ) ? $value['default'] : false;
+
+	$defaults[ $key ] = $value['default'];
+}
+
+
+
 /*----------------------------------------------------------------------------
    Controls
 ----------------------------------------------------------------------------*/
