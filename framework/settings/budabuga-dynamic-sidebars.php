@@ -27,7 +27,7 @@ if ( ! function_exists( 'bdbg_width_widget_class' ) ) :
 	 */
 	function bdbg_width_widget_class( $widget_area_customizer_param, $columns = 12 ) {
 
-		$widget_columns = get_theme_mod( $widget_area_customizer_param );
+		$widget_columns = bdbg_get_theme_mod( $widget_area_customizer_param );
 
 		switch ( $widget_columns ) :
 			case 4:
