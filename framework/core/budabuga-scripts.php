@@ -26,7 +26,7 @@ if ( ! function_exists( 'bdbg_enqueue_scripts' ) ) :
 	 * @since 1.00
 	 */
 	function bdbg_enqueue_scripts() {
-		$icon_font = 'http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css';
+		$icon_font = '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css';
 		// Check if remote CDN available. If no, fallback to local resource.
 		if ( wp_remote_retrieve_response_code( wp_safe_remote_get( $icon_font ) ) !== 200 ) :
 			$icon_font = THEMEDIR_URI . 'fonts/font-awesome/font-awesome.css';
