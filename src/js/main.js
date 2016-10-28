@@ -6,6 +6,20 @@
     "use strict";
 
     $( function() {
+
+        // Modal
+        //= modules/bdbg-modal.js
+        // Grid Height Plugin
+        //= modules/bdbg_grid_height.js
+
+        $( ".bdbg-row-set" )
+            .bdbgGridHeight( {
+                elementSelector: ".type-post .card-content"
+            } )
+            .bdbgGridHeight( {
+                elementSelector: ".type-post .card-image"
+            } );
+
         // Sidemenu data caching.
         let menuSide = $( ".button-collapse" ).data( "menuside" );
 
@@ -29,9 +43,6 @@
 
         // Dropdown initialization
         $( ".dropdown-button" ).dropdown();
-
-        // Search for header part.
-        //= modules/bdbg-modal.js
 
     } );
 

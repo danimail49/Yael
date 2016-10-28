@@ -22,29 +22,49 @@ endif;
 
 get_header(); ?>
 
-<section class="bdbg-post-archive row">
+<section class="bdbg-post-archive">
 
-	<?php if ( have_posts() ) : ?>
+	<?php
+	$post_layout = 'grid-50'; // Values: grid-100, grid-50, 'list'.
+	?>
 
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
-			/*
-			* Include the Post-Format-specific template for the content.
-			* If you want to override this in a child theme, then include a file
-			* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-			*/
-			get_template_part( 'template-parts/content/content', get_post_format() );
+	<div class="row bdbg-row-set">
 
-		endwhile;
-		// End the loop. ?>
+		<?php if ( have_posts() ) :
+			$index = 1;
+			?>
 
-	<?php else :
-		// If no content, include the "No posts found" template.
-		get_template_part( 'template-parts/content', 'none' ); ?>
+			<?php
+			// Start the loop.
+			while ( have_posts() ) : the_post();
+				$index++;
 
-	<?php endif; ?>
+				/**
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content/content', get_post_format() );
 
+				/**
+				 * Closing row for grid-50 layout to avoid float left collapses
+				 * when divs has different keys.
+				 */
+				if ( $index % 2 && 'grid-50' === $post_layout ) :
+					echo '</div><div class="row bdbg-row-set">';
+				endif;
+
+			endwhile;
+			// End the loop. ?>
+
+		<?php else :
+			// If no content, include the "No posts found" template.
+			get_template_part( 'template-parts/content', 'none' ); ?>
+
+		<?php endif; ?>
+
+	</div>
+	<!-- /.row -->
 </section>
 <!-- /.bdbg-post-archive -->
 

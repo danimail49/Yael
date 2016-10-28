@@ -42,6 +42,8 @@ if ( ! function_exists( 'bdbg_setup' ) ) :
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails', array( 'post' ) );
 
+		set_post_thumbnail_size( 540, 304, true );
+
 		// This theme uses wp_nav_menu() in three locations.
 		register_nav_menus( array(
 			'main' => __( 'Primary Menu', 'budabuga' ),
@@ -80,3 +82,20 @@ if ( ! function_exists( 'bdbg_setup' ) ) :
 
 	add_action( 'after_setup_theme', 'bdbg_setup' );
 endif; // budabuga_setup.
+
+if ( function_exists( 'bdbg_adjust_image_sizes_attr' ) ) :
+	/**
+	 * Set default srcset img sizes.
+	 *
+	 * @since 1.00
+	 *
+	 * @param  array  $sizes Image sizes.
+	 * @param  string $size  Default size.
+	 * @return array         Image sizes for srcset.
+	 */
+	function bdbg_adjust_image_sizes_attr( $sizes, $size ) {
+		$sizes = '(max-width: 600px) 90vw, (max-width: 1024px) 90vw, (max-width: 1200px) 90vw, 1024px';
+		return $sizes;
+	}
+	add_filter( 'wp_calculate_image_sizes', 'bdbg_adjust_image_sizes_attr', 10 , 2 );
+endif;

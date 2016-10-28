@@ -2253,6 +2253,11 @@ body {
   z-index: 1;
 }
 
+img {
+  height: auto;
+  width: auto;
+}
+
 .bdbg-header {
   top: 0;
   height: 64px;
@@ -2291,6 +2296,8 @@ html #wpadminbar {
 
 .bdbg-nav {
   height: 64px;
+  z-index: 20;
+  position: relative;
 }
 
 .bdbg-menu--main {
@@ -2465,6 +2472,17 @@ html #wpadminbar {
 .bdbg-message a {
   color: #ffc0cb;
   line-height: 60px;
+}
+
+.bdbg-post__featured {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  line-height: 1;
+}
+
+.bdbg-post__featured i {
+  font-size: 3rem;
 }
 
 @media screen and (min-width: 783px) {

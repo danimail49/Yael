@@ -130,7 +130,7 @@ if ( ! function_exists( 'bdbg_dynamic_sidebar' ) ) :
 		else :
 			$menu_link_start = '<a href="' . admin_url() . 'widgets.php">';
 			$message = __( '%4$sNo active widgets found for %1$s. You can set them in %2$s Theme Widgets %3$s.%5$s', 'budabuga' );
-			echo sprintf( esc_html( $message ), 'Widget Area', $menu_link_start, '</a>', '<span class="bdbg-message">', '</span>' );
+			echo '<div class="col s12">' . sprintf( esc_html( $message ), 'Widget Area', $menu_link_start, '</a>', '<span class="bdbg-message">', '</span>' ) . '</div>';
 		endif;
 	}
 
@@ -165,34 +165,64 @@ HEREDOC;
 
 endif;
 
-if ( ! function_exists( 'bdbg_post_header' ) ) :
-
-	function bdbg_post_header( $layout = 'left' ) {
-		echo 'bdbg_post_header';
-	}
-
-endif;
-
-if ( ! function_exists( 'bdbg_post_excerpt' ) ) :
-
-	function bdbg_post_excerpt() {
-		echo 'bdbg_post_excerpt';
-	}
-
-endif;
-
-if ( ! function_exists( 'bdbg_post_footer' ) ) :
-
-	function bdbg_post_footer() {
-		echo 'bdbg_post_footer';
-	}
-
-endif;
-
 if ( ! function_exists( 'bdbg_post_thumbnail' ) ) :
 
 	function bdbg_post_thumbnail( $size = null, $classes = '' ) {
-		echo 'bdbg_post_thumbnail';
+		if ( ! has_post_thumbnail() && 'video' !== get_post_format() || ( ! has_post_thumbnail() && 'video' === get_post_format() && empty( get_post_meta( get_the_ID(), 'bdbg_video_url', true ) ) ) ) :
+			echo '<img src ="' . THEMEDIR_URI . 'img/images/bdbg-img-placeholder.png"
+				width="1920" height="1080" alt="' . get_the_title() . '">';
+		elseif( ! has_post_thumbnail() && 'video' === get_post_format() && ! empty( get_post_meta( get_the_ID(), 'bdbg_video_url', true ) ) ) :
+			$video = wp_oembed_get( get_post_meta( get_the_ID(), 'bdbg_video_url', true ) );
+			echo <<<VIDEO
+				<div class="video-container">
+					{$video}
+	  			</div>
+VIDEO;
+		else :
+			the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) );
+		endif;
+	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_post_meta' ) ) :
+
+	function bdbg_post_meta() {
+		if ( in_array( get_post_type(), array( 'post', 'attachment' ), true ) ) {
+
+			// Post Date
+			$archive_year  = get_the_time('Y');
+			$archive_month = get_the_time('m');
+			$time_string = '<a href="' . get_month_link( $archive_year, $archive_month ) . '"><time class="entry-date published" datetime="%1$s">
+				<i class="fa fa-calendar" aria-hidden="true"></i> %1$s
+			</time></a>';
+
+			$time_string = sprintf( $time_string, esc_attr( get_the_date( 'F jS, Y' ) )	);
+
+			// Post Author
+			$author_url = get_author_posts_url( get_the_author_meta( 'ID' ) );
+			$author_name = get_the_author_meta( 'nicename' );
+			$author = "<a href=\"{$author_url}\" rel=\"author\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {$author_name}</a>";
+
+			$num_comments = get_comments_number(); // Get_comments_number returns only a numeric value
+
+			if ( comments_open() ) :
+				if ( $num_comments == 0 ) :
+					$comments = __( 'No Comments' );
+				elseif ( $num_comments > 1 ) :
+					$comments = $num_comments . __( ' Comments' );
+				else :
+					$comments = __( '1 Comment' );
+				endif;
+				$write_comments = '<a href="' . get_comments_link() .'">
+					<i class="fa fa-commenting-o" aria-hidden="true"></i> ' . $comments . '
+				</a>';
+			else :
+				$write_comments = __( 'Comments are off for this post.' );
+			endif;
+
+			echo "{$time_string} {$author} {$write_comments}";
+		}
 	}
 
 endif;
