@@ -201,7 +201,7 @@ if ( ! function_exists( 'bdbg_post_meta' ) ) :
 
 			// Post Author
 			$author_url = get_author_posts_url( get_the_author_meta( 'ID' ) );
-			$author_name = get_the_author_meta( 'nicename' );
+			$author_name = get_the_author_meta( 'display_name' );
 			$author = "<a href=\"{$author_url}\" rel=\"author\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {$author_name}</a>";
 
 			$num_comments = get_comments_number(); // Get_comments_number returns only a numeric value
@@ -227,95 +227,85 @@ if ( ! function_exists( 'bdbg_post_meta' ) ) :
 
 endif;
 
-/**
- * [bdbg_pagination description]
- * @return [type] [description]
- */
-function bdbg_pagination() {
+if ( ! function_exists( 'bdbg_pagination' ) ) :
+	/**
+	 * Outputs pagination markup.
+	 */
+	function bdbg_pagination() {
 
-	if ( is_singular() ) :
-		return;
-	endif;
+		if ( is_singular() ) :
+			return;
+		endif;
 
-	global $wp_query;
+		global $wp_query;
 
-	/** Stop execution if there's only 1 page */
-	if ( $wp_query->max_num_pages <= 1 ) :
-		return;
-	endif;
+		/** Stop execution if there's only 1 page */
+		if ( $wp_query->max_num_pages <= 1 ) :
+			return;
+		endif;
 
-	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-	$max   = intval( $wp_query->max_num_pages );
+		$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+		$max   = intval( $wp_query->max_num_pages );
 
-	/**	Add current page to the array */
-	if ( $paged >= 1 ) :
-		$links[] = $paged;
-	endif;
+		/**	Add current page to the array */
+		if ( $paged >= 1 ) :
+			$links[] = $paged;
+		endif;
 
-	/**	Add the pages around the current page to the array */
-	if ( $paged >= 3 ) :
-		$links[] = $paged - 1;
-		$links[] = $paged - 2;
-	endif;
+		/**	Add the pages around the current page to the array */
+		if ( $paged >= 3 ) :
+			$links[] = $paged - 1;
+			$links[] = $paged - 2;
+		endif;
 
-	if ( ( $paged + 2 ) <= $max ) :
-		$links[] = $paged + 2;
-		$links[] = $paged + 1;
-	endif;
+		if ( ( $paged + 2 ) <= $max ) :
+			$links[] = $paged + 2;
+			$links[] = $paged + 1;
+		endif;
 
-	echo '<ul class="pagination bdbg-pagination">' . "\n";
+		echo '<ul class="pagination bdbg-pagination">' . "\n";
 
-	/**	Previous Post Link */
-	if ( get_previous_posts_link() ) :
-		printf( '<li class="waves-effect">%s</li>' . "\n", get_previous_posts_link( '<i class="fa fa-chevron-left" aria-hidden="true"></i>' ) );
-	else :
-		print('<li class="disabled"><a href="#!"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>');
-	endif;
+		/**	Previous Post Link */
+		if ( get_previous_posts_link() ) :
+			printf( '<li class="waves-effect">%s</li>' . "\n", get_previous_posts_link( '<i class="fa fa-chevron-left" aria-hidden="true"></i>' ) );
+		else :
+			print('<li class="disabled"><a href="#!"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>');
+		endif;
 
-	/**	Link to first page, plus ellipses if necessary */
-	if ( ! in_array( 1, $links ) ) {
-		$class = 1 == $paged ? ' class="active"' : '';
+		/**	Link to first page, plus ellipses if necessary */
+		if ( ! in_array( 1, $links ) ) {
+			$class = 1 == $paged ? ' class="active"' : '';
 
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+			printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
 
-		if ( ! in_array( 2, $links ) )
-		echo '<li>…</li>';
+			if ( ! in_array( 2, $links ) )
+			echo '<li>…</li>';
+		}
+
+		/**	Link to current page, plus 2 pages in either direction if necessary */
+		sort( $links );
+		foreach ( (array) $links as $link ) {
+			$class = $paged == $link ? ' class="active waves-effect"' : ' class="waves-effect"';
+			printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+		}
+
+		/**	Link to last page, plus ellipses if necessary */
+		if ( ! in_array( $max, $links ) ) {
+			if ( ! in_array( $max - 1, $links ) )
+			echo '<li class="waves-effect">…</li>' . "\n";
+
+			$class = $paged == $max ? ' class="active waves-effect"' : ' class="waves-effect"';
+			printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+		}
+
+		/**	Next Post Link */
+		if ( get_next_posts_link() ) :
+			printf( '<li class="waves-effect">%s</li>' . "\n", get_next_posts_link( '<i class="fa fa-chevron-right" aria-hidden="true"></i>' ) );
+		else :
+			print('<li class="disabled"><a href="#!"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>');
+		endif;
+
+		echo '</ul>' . "\n";
+
 	}
-
-	/**	Link to current page, plus 2 pages in either direction if necessary */
-	sort( $links );
-	foreach ( (array) $links as $link ) {
-		$class = $paged == $link ? ' class="active waves-effect"' : ' class="waves-effect"';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
-	}
-
-	/**	Link to last page, plus ellipses if necessary */
-	if ( ! in_array( $max, $links ) ) {
-		if ( ! in_array( $max - 1, $links ) )
-		echo '<li class="waves-effect">…</li>' . "\n";
-
-		$class = $paged == $max ? ' class="active waves-effect"' : ' class="waves-effect"';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
-	}
-
-	/**	Next Post Link */
-	if ( get_next_posts_link() ) :
-		printf( '<li class="waves-effect">%s</li>' . "\n", get_next_posts_link( '<i class="fa fa-chevron-right" aria-hidden="true"></i>' ) );
-	else :
-		print('<li class="disabled"><a href="#!"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>');
-	endif;
-
-	echo '</ul>' . "\n";
-
-}
-
-/**
- * Adds CSS class to previous/next links.
- *
- * @return string Css classes.
- */
-// function bdbg_posts_link_attributes() {
-// 	return 'class="waves-effect"';
-// }
-// add_filter( 'next_posts_link_attributes', 'bdbg_posts_link_attributes' );
-// add_filter( 'previous_posts_link_attributes', 'bdbg_posts_link_attributes' );
+endif;
