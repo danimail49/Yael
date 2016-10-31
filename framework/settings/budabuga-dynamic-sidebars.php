@@ -71,17 +71,17 @@ $widget_args = array(
 ----------------------------------------------------------------------------*/
 $widget_list = array(
 	'footer_top' => array(
-		'name' => 'Footer Top',
+		'name' => 'Top Footer',
 		'before_widget' => '<div id="%1$s" class="' . $footer_top_classes . ' col widget bdbg-widget %2$s">',
 		'after_widget' => '</div>',
 	),
 	'footer_middle' => array(
-		'name' => 'Footer Middle',
+		'name' => 'Middle Footer',
 		'before_widget' => '<div id="%1$s" class="' . $footer_middle_classes . ' col widget bdbg-widget %2$s">',
 		'after_widget' => '</div>',
 	),
 	'footer_bottom' => array(
-		'name' => 'Footer Bottom',
+		'name' => 'Bottom Footer',
 		'before_widget' => '<div id="%1$s" class="' . $footer_bottom_classes . ' col widget bdbg-widget %2$s">',
 		'after_widget' => '</div>',
 	),

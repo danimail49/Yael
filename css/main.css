@@ -2474,6 +2474,14 @@ html #wpadminbar {
   line-height: 60px;
 }
 
+.bdbg-pagination {
+  display: inline-block;
+}
+
+.bdbg-pagination li i {
+  font-size: 1em;
+}
+
 .bdbg-post__featured {
   position: absolute;
   top: 1rem;

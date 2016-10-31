@@ -26,7 +26,7 @@ $footer_settings = array(
 	'bdbg_footer_top_background' =>
 		array(
 			'type'         => 'theme_mod',
-			'default'      => '#3d3d3d',
+			'default'      => 'rgba(61, 61, 61, 0.8)',
 			'transport'    => 'postMessage',
 			'show_opacity' => 'true',
 		),
@@ -72,7 +72,7 @@ $footer_settings = array(
 		'bdbg_footer_middle_background' =>
 			array(
 				'type'         => 'theme_mod',
-				'default'      => '#3d3d3d',
+				'default'      => 'rgba(61, 61, 61, 0.9)',
 				'transport'    => 'postMessage',
 				'show_opacity' => 'true',
 			),
@@ -117,7 +117,7 @@ $footer_settings = array(
 		'bdbg_footer_bottom_background' =>
 			array(
 				'type'         => 'theme_mod',
-				'default'      => '#3d3d3d',
+				'default'      => 'rgba(61, 61, 61, 1)',
 				'transport'    => 'postMessage',
 				'show_opacity' => 'true',
 			),

@@ -132,9 +132,9 @@ $header_controls = array(
 			'label'   => __( 'Logo Upload', 'budabuga' ),
 			'type'    => 'cropped_image',
 			'section' => 'bdbg_header_logo_main',
-			'flex_width'  => true, // True = recommended, false = required.
-		    'flex_height' => true, // True = recommended, false = required.
-		    'width'       => 128,
+			// 'flex_width'  => true, // True = recommended, false = required.
+		    // 'flex_height' => true, // True = recommended, false = required.
+		    'width'       => 64,
 		    'height'      => 64,
 		),
 	'bdbg_header_logo_main_height' =>

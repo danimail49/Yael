@@ -64,4 +64,6 @@ $header_fixed_class = ( bdbg_get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'n
 	</nav>
 	<!-- /.bdbg-nav -->
 </header>
-<main class="container bdbg-content" role="main">
+
+<div class="container">
+<div class="row">

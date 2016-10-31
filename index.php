@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) :
 endif;
 
 get_header(); ?>
-
+<main class="bdbg-content col s12" role="main">
 <section class="bdbg-post-archive">
 
 	<?php
@@ -57,6 +57,11 @@ get_header(); ?>
 			endwhile;
 			// End the loop. ?>
 
+			<div class="col s12 center-align">
+				<?php bdbg_pagination(); ?>
+			</div>
+			<!-- /.col s12 -->
+
 		<?php else :
 			// If no content, include the "No posts found" template.
 			get_template_part( 'template-parts/content', 'none' ); ?>
@@ -67,6 +72,8 @@ get_header(); ?>
 	<!-- /.row -->
 </section>
 <!-- /.bdbg-post-archive -->
+</main>
+<!-- /.container bdbg-content -->
 
 <?php
 get_footer();
