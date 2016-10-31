@@ -69,20 +69,35 @@ $widget_args = array(
 /*----------------------------------------------------------------------------
    Theme Widget Areas List
 ----------------------------------------------------------------------------*/
+/* Footer
+-------------------------------------*/
 $widget_list = array(
 	'footer_top' => array(
-		'name' => 'Top Footer',
+		'name' => __( 'Top Footer', 'budabuga' ),
 		'before_widget' => '<div id="%1$s" class="' . $footer_top_classes . ' col widget bdbg-widget %2$s">',
 		'after_widget' => '</div>',
 	),
 	'footer_middle' => array(
-		'name' => 'Middle Footer',
+		'name' => __( 'Middle Footer', 'budabuga' ),
 		'before_widget' => '<div id="%1$s" class="' . $footer_middle_classes . ' col widget bdbg-widget %2$s">',
 		'after_widget' => '</div>',
 	),
 	'footer_bottom' => array(
-		'name' => 'Bottom Footer',
+		'name' => __( 'Bottom Footer', 'budabuga' ),
 		'before_widget' => '<div id="%1$s" class="' . $footer_bottom_classes . ' col widget bdbg-widget %2$s">',
+		'after_widget' => '</div>',
+	),
+
+/* Page
+-------------------------------------*/
+	'page_left' => array(
+		'name' => __( 'Left Page', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
+		'after_widget' => '</div>',
+	),
+	'page_right' => array(
+		'name' => __( 'Right Page', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
 		'after_widget' => '</div>',
 	),
 );

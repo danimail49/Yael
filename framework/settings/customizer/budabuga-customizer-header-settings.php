@@ -50,7 +50,7 @@ $header_settings = array(
 	'bdbg_header_general_background' =>
 		array(
 			'type'         => 'theme_mod',
-			'default'      => '#404eb9',
+			'default'      => 'rgb(255, 64, 129)',
 			'transport'    => 'postMessage',
 			'show_opacity' => 'true',
 		),
@@ -232,7 +232,7 @@ $header_settings = array(
 	'bdbg_header_search_background' =>
 		array(
 			'type'         => 'theme_mod',
-			'default'      => 'rgba(238, 110, 115, 0.6);',
+			'default'      => 'rgba(255, 64, 129, 0.6);',
 			'transport'    => 'postMessage',
 			'show_opacity' => 'true',
 		),

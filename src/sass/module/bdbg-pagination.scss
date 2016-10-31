@@ -2,6 +2,11 @@
   display: inline-block;
 
   li {
+
+  &.active {
+    background-color: #FF4081;
+  }
+
     i {
       font-size: 1em;
     }

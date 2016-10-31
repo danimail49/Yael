@@ -2478,6 +2478,10 @@ html #wpadminbar {
   display: inline-block;
 }
 
+.bdbg-pagination li.active {
+  background-color: #ff4081;
+}
+
 .bdbg-pagination li i {
   font-size: 1em;
 }
@@ -2491,6 +2495,10 @@ html #wpadminbar {
 
 .bdbg-post__featured i {
   font-size: 3rem;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: #ff4081;
 }
 
 @media screen and (min-width: 783px) {

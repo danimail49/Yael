@@ -98,19 +98,19 @@ if ( ! function_exists( 'bdbg_logo' ) ) :
 	function bdbg_logo( $logo_name, $logo_echo = true ) {
 		$logo_name = $logo_name . '_upload';
 		$logo_id = bdbg_get_theme_mod( $logo_name );
-		$logo_obj ='';
+		$logo_obj = '';
 
 		if ( $logo_id ) :
 			$logo = wp_get_attachment_image_src( $logo_id );
 			$attr = array(
 				'width' => $logo[1],
 				'height' => $logo[2],
-				'class' => "bdbg-logo__img",
+				'class' => 'bdbg-logo__img',
 			);
 
-			$logo_obj =  sprintf( '<img src="%1$s" width="%2$d" height="%3$d" class="%4$s" />', esc_url( $logo[0] ), esc_attr( $attr['width'] ), esc_attr( $attr['height'] ), esc_attr( $attr['class'] ) );
+			$logo_obj = sprintf( '<img src="%1$s" width="%2$d" height="%3$d" class="%4$s" />', esc_url( $logo[0] ), esc_attr( $attr['width'] ), esc_attr( $attr['height'] ), esc_attr( $attr['class'] ) );
 		else :
-			$logo_obj =  esc_html( get_bloginfo( 'name' ) );
+			$logo_obj = esc_html( get_bloginfo( 'name' ) );
 		endif;
 
 		if ( ! $logo_echo ) :
@@ -186,39 +186,41 @@ VIDEO;
 endif;
 
 if ( ! function_exists( 'bdbg_post_meta' ) ) :
-
+	/**
+	 * Outputs post meta for archive.
+	 */
 	function bdbg_post_meta() {
 		if ( in_array( get_post_type(), array( 'post', 'attachment' ), true ) ) {
 
-			// Post Date
-			$archive_year  = get_the_time('Y');
-			$archive_month = get_the_time('m');
+			// Post Date.
+			$archive_year  = get_the_time( 'Y' );
+			$archive_month = get_the_time( 'm' );
 			$time_string = '<a href="' . get_month_link( $archive_year, $archive_month ) . '"><time class="entry-date published" datetime="%1$s">
 				<i class="fa fa-calendar" aria-hidden="true"></i> %1$s
 			</time></a>';
 
-			$time_string = sprintf( $time_string, esc_attr( get_the_date( 'F jS, Y' ) )	);
+			$time_string = sprintf( $time_string, esc_attr( get_the_date( 'F jS, Y' ) ) );
 
-			// Post Author
+			// Post Author.
 			$author_url = get_author_posts_url( get_the_author_meta( 'ID' ) );
 			$author_name = get_the_author_meta( 'display_name' );
 			$author = "<a href=\"{$author_url}\" rel=\"author\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {$author_name}</a>";
 
-			$num_comments = get_comments_number(); // Get_comments_number returns only a numeric value
+			$num_comments = get_comments_number(); // Get_comments_number returns only a numeric value.
 
 			if ( comments_open() ) :
-				if ( $num_comments == 0 ) :
-					$comments = __( 'No Comments' );
+				if ( 0 === $num_comments ) :
+					$comments = __( 'No Comments', 'budabuga' );
 				elseif ( $num_comments > 1 ) :
-					$comments = $num_comments . __( ' Comments' );
+					$comments = $num_comments . __( ' Comments', 'budabuga' );
 				else :
-					$comments = __( '1 Comment' );
+					$comments = __( '1 Comment', 'budabuga' );
 				endif;
-				$write_comments = '<a href="' . get_comments_link() .'">
+				$write_comments = '<a href="' . get_comments_link() . '">
 					<i class="fa fa-commenting-o" aria-hidden="true"></i> ' . $comments . '
 				</a>';
 			else :
-				$write_comments = __( 'Comments are off for this post.' );
+				$write_comments = __( 'Comments are off for this post.', 'budabuga' );
 			endif;
 
 			echo "{$author} {$time_string} {$write_comments}";
@@ -274,7 +276,7 @@ if ( ! function_exists( 'bdbg_pagination' ) ) :
 
 		/**	Link to first page, plus ellipses if necessary */
 		if ( ! in_array( 1, $links ) ) {
-			$class = 1 == $paged ? ' class="active"' : '';
+			$class = ( 1 === $paged ) ? ' class="active"' : '';
 
 			printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
 
@@ -285,7 +287,7 @@ if ( ! function_exists( 'bdbg_pagination' ) ) :
 		/**	Link to current page, plus 2 pages in either direction if necessary */
 		sort( $links );
 		foreach ( (array) $links as $link ) {
-			$class = $paged == $link ? ' class="active waves-effect"' : ' class="waves-effect"';
+			$class = ( $paged === $link ) ? ' class="active waves-effect"' : ' class="waves-effect"';
 			printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
 		}
 
@@ -294,7 +296,7 @@ if ( ! function_exists( 'bdbg_pagination' ) ) :
 			if ( ! in_array( $max - 1, $links ) )
 			echo '<li class="waves-effect">…</li>' . "\n";
 
-			$class = $paged == $max ? ' class="active waves-effect"' : ' class="waves-effect"';
+			$class = ( $paged === $max ) ? ' class="active waves-effect"' : ' class="waves-effect"';
 			printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
 		}
 

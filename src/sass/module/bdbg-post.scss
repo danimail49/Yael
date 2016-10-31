@@ -8,3 +8,7 @@
     font-size: 3rem;
   }
 }
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: #FF4081;
+}
