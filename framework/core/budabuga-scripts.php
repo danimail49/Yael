@@ -40,6 +40,9 @@ if ( ! function_exists( 'bdbg_enqueue_scripts' ) ) :
 
 		wp_enqueue_script( 'vendor-script', THEMEDIR_URI . 'js/vendor.js', array( 'jquery' ),  THEME_VERSION, true );
 		wp_enqueue_script( 'main-script', THEMEDIR_URI . 'js/main.js',  array( 'jquery' ),  THEME_VERSION, true );
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 
 	}
 	add_action( 'wp_enqueue_scripts', 'bdbg_enqueue_scripts' );

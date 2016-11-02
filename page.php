@@ -7,6 +7,11 @@
  * @since 1.00
  */
 
+// Preventing direct script access.
+if ( ! defined( 'ABSPATH' ) ) :
+	die( 'No direct script access allowed' );
+endif;
+
 get_header(); ?>
 
 <?php
@@ -19,57 +24,41 @@ $main_width = 12 - $left_sidebar - $right_sidebar;
 <div class="bdbg-page">
 
 	<?php if ( 0 !== $left_sidebar ) : ?>
-		<div class="col l3">
-			<div class="card">
-				<div class="card-content bdbg-page--item">
-					<?php dynamic_sidebar( 'page_left' ); ?>
-				</div>
-				<!-- /.card-content -->
-			</div>
-			<!-- /.card -->
+		<div class="col l3 m12 s12">
+			<?php dynamic_sidebar( 'page_left' ); ?>
 		</div>
 		<!-- /.col l3 -->
 	<?php endif; ?>
 
-	<main class="bdbg-content col <?php echo "l{$main_width}"; ?>" role="main">
-		<section class="bdbg-page card">
-			<div class="card-content bdbg-page--item">
-				<?php
-				// Start the loop.
-				while ( have_posts() ) : the_post();
+	<div class="col <?php echo "l{$main_width} m12 s12"; ?>">
 
-					// Include the page content template.
-					// get_template_part( 'template-parts/content/content', 'page' );
-					the_title();
-					the_content();
-					// If comments are open or we have at least one comment, load up the comment template.
-					// if ( comments_open() || get_comments_number() ) {
-					// 	comments_template();
-					// }
 
-					// End of the loop.
-				endwhile;
-				?>
-			</div>
-			<!-- /.card-content -->
-		</section>
-		<!-- /.bdbg-post-archive -->
-	</main>
-	<!-- /.container bdbg-content -->
+		<?php
+		// Start the loop.
+		while ( have_posts() ) : the_post();
+
+			// Include the page content template.
+			get_template_part( 'template-parts/content/content', 'page' );
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
+
+		// End of the loop.
+		endwhile;
+		?>
+
+	</div>
+	<!-- /.col -->
 
 	<?php if ( 0 !== $right_sidebar ) : ?>
-		<div class="col l3">
-			<div class="card">
-				<div class="card-content bdbg-page--item">
-					<?php dynamic_sidebar( 'page_right' ); ?>
-				</div>
-				<!-- /.card-content -->
-			</div>
-			<!-- /.card -->
+		<div class="col l3 m12 s12">
+			<?php dynamic_sidebar( 'page_right' ); ?>
 		</div>
 		<!-- /.col l3 -->
 	<?php endif; ?>
-	
+
 </div>
 <!-- /.bdbg-page -->
 

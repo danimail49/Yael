@@ -311,3 +311,197 @@ if ( ! function_exists( 'bdbg_pagination' ) ) :
 
 	}
 endif;
+
+if ( ! function_exists( 'bdbg_list_comments' ) ) :
+
+	function bdbg_list_comments( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+
+		if ( 'div' === $args['style'] ) {
+			$add_below = 'comment';
+		} else {
+			$add_below = 'div-comment';
+		}
+
+		$item_class = 'bdbg-comments__item row valign-wrapper';
+		$avatar_args = array(
+			'size' 	=> $args['avatar_size'],
+			'alt'	=> 'User Avatar',
+			'args'	=> array(
+				'width' => 48,
+				'height' => 48,
+			),
+		);
+
+		if ( ! empty( $args['has_children'] ) ) :
+			$item_class .= ' bdbg-comments__item--parent';
+		endif;
+		?>
+
+		<li id="<?php echo 'comment-' . comment_ID(); ?>"
+			<?php comment_class( $item_class ); ?>>
+
+			<div class="bdbg-comments__author col l3 m3 s12">
+				<div class="bdbg-comments__avatar">
+					<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, 64 ); ?>
+					<br />
+					<span class="title"><b><?php echo get_comment_author_link(); ?></b></span>
+				</div>
+				<!-- /.bdbg-comments__avatar -->
+			</div>
+			<!-- /.bdbg-comments__author -->
+
+			<div class="bdbg-comments__text col l9 m9 s12">
+				<div class="bdbg-comments__body">
+					<?php if ( $comment->comment_approved == '0' ) : ?>
+						<em class="comment-awaiting-moderation">
+							<i class="fa fa-info-circle" aria-hidden="true"></i>
+							<?php _e( 'Your comment is awaiting moderation.', 'budabuga' ); ?>
+						</em><br /><br />
+					<?php endif; ?>
+					<div class="bdbg-commets__text-row">
+						<?php comment_text(); ?>
+						<div class="bdbg-comments__meta">
+							<?php printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time() ); ?></a>
+						</div>
+						<!-- /.bdbg-comments__meta -->
+					</div>
+					<!-- /.bdbg-commets__text-row -->
+					<div class="bdbg-commets__text-row">
+						<div class="bdbg-commetns__reply">
+							<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+						</div>
+						<!-- /.bdbg-comments__reply -->
+					</div>
+					<!-- /.bdbg-commets__text-row -->
+				</div>
+				<!-- /.bdbg-comments__body -->
+			</div>
+			<!-- /.bdbg-comments__text -->
+		</li>
+	<?php }
+
+endif;
+
+if ( ! function_exists( 'bdbg_gravatar_class' ) ) :
+
+	/**
+	 * Adds custom classes to wp avatar.
+	 *
+	 * @since 1.00
+	 *
+	 * @param  string $class Avatar class list.
+	 *
+	 * @return string        Avatar class list.
+	 */
+	function bdbg_gravatar_class( $class ) {
+		$class = str_replace( "class='avatar", "class='bdbg-comments__avatar", $class );
+		return $class;
+	}
+	add_filter( 'get_avatar','bdbg_gravatar_class' );
+
+endif;
+
+if ( ! function_exists( 'bdbg_reply_link_class' ) ) :
+
+	function bdbg_reply_link_class( $class ){
+		$new_classes = 'comment-reply-link btn waves-effect waves-light red';
+		$new_title = __( 'Reply', 'budabuga' );
+
+	    $class = str_replace( "class='comment-reply-link", "class='{$new_classes}", $class );
+	    return $class;
+	}
+	add_filter( 'comment_reply_link', 'bdbg_reply_link_class' );
+
+endif;
+
+if ( ! function_exists( 'bdbg_move_comment_field_to_bottom' ) ) :
+
+	function bdbg_move_comment_field_to_bottom( $fields ) {
+		$comment_field = $fields['comment'];
+		unset( $fields['comment'] );
+		$fields['comment'] = $comment_field;
+		return $fields;
+	}
+	add_filter( 'comment_form_fields', 'bdbg_move_comment_field_to_bottom' );
+
+endif;
+
+if( ! function_exists( 'bdbg_comment_form' ) ) :
+
+	function bdbg_comment_form() {
+		$commenter = wp_get_current_commenter();
+		$req = get_option( 'require_name_email' );
+		$aria_req = ( $req ? "aria-required=\"true\"" : '' );
+
+		$value_author = esc_attr( $commenter['comment_author'] );
+		$value_email = esc_attr( $commenter['comment_author_email'] );
+		$value_url = esc_attr( $commenter['comment_author_url'] );
+
+		$label_email = __( 'Email *', 'budabuga' );
+		$label_url = __( 'Url', 'budabuga' );
+		$label_name = __( 'Name *', 'budabuga' );
+		$label_comment = __( 'Comment *', 'budabuga' );
+
+		$args = array(
+			'id_form'           => 'commentform',
+			'class_form'      	=> 'bdbg-commentform row',
+			'id_submit'         => 'submit',
+			'class_submit'      => 'bdbg-commentform__submit col btn-large waves-effect waves-light',
+			'name_submit'       => 'submit',
+			'title_reply_before'=> '<h5>',
+			'title_reply_after'	=> '</h5>',
+			'title_reply'       => __( 'Leave a Reply', 'budabuga' ),
+			'title_reply_to'    => __( 'Leave a Reply to %s', 'budabuga' ),
+			'cancel_reply_link' => __( 'Cancel Reply', 'budabuga' ),
+			'label_submit'      => __( 'Post Comment', 'budabuga' ),
+			'fields' 			=> array(
+			    'author' => "
+					<div class=\"comment-form-author input-field col s6\">
+					  <input id=\"author\" name=\"author\" type=\"text\" class=\"validate\"
+					  value=\"{$value_email}\" {$aria_req} />
+					  <label for=\"author\">{$label_name}</label>
+					</div>",
+
+			    'email' => "
+					<div class=\"comment-form-email input-field col s6\">
+				  		<input id=\"email\" name=\"email\" type=\"text\" class=\"validate\"
+						value=\"{$value_author}\" {$aria_req} />
+				  		<label for=\"email\">{$label_email}</label>
+					</div>",
+
+			   'url' => "
+					<div class=\"comment-form-url input-field col s12\">
+					  <input id=\"url\" name=\"url\" type=\"text\" class=\"validate\"
+						value=\"{$value_url}\">
+					  <label for=\"url\">{$label_url}</label>
+					</div>",
+
+			),
+
+			'comment_field' => "
+			<div class=\"comment-form-comment input-field col s12\">
+			  <textarea id=\"comment\" name=\"comment\" class=\"materialize-textarea\" value=\"\" aria-required=\"true\" required></textarea>
+			  <label for=\"comment\">{$label_comment}</label>
+			</div>",
+		);
+		comment_form( $args );
+	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_comments_pagination' ) ) :
+
+	function bdbg_comments_pagination() {
+		$args = array(
+			'echo' => false,
+			'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+			'next_text' => '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+		);
+
+		$pagination = paginate_comments_links( $args );
+
+		echo $pagination = str_replace( "page-numbers", "page-numbers waves-effect", $pagination );
+	}
+
+endif;

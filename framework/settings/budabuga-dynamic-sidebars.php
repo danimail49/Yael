@@ -60,8 +60,8 @@ $footer_bottom_classes =
    Global Widget Areas Args
 ----------------------------------------------------------------------------*/
 $widget_args = array(
-	'before_widget' => '<div id="%1$s" class="widget bdbg-widget %2$s">',
-	'after_widget' => '</div>',
+	'before_widget' => '<div class="card"><div class="card-content"><div id="%1$s" class="widget bdbg-widget %2$s">',
+	'after_widget' => '</div></div></div>',
 	'before_title' => '<h5 class="widget-title bdbg-widget__title">',
 	'after_title' => '</h5>',
 );
@@ -90,14 +90,19 @@ $widget_list = array(
 
 /* Page
 -------------------------------------*/
-	'page_left' => array(
-		'name' => __( 'Left Page', 'budabuga' ),
-		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
-		'after_widget' => '</div>',
-	),
+	// 'page_left' => array(
+	// 	'name' => __( 'Left Page', 'budabuga' ),
+	// 	'before_widget' => '<div class="card"><div class="card-content"><div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
+	// 	'after_widget' => '</div></div></div>',
+	// ),
 	'page_right' => array(
-		'name' => __( 'Right Page', 'budabuga' ),
-		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
+		'name' => __( 'Main Sidebar', 'budabuga' ),
+		'before_widget' => '<div class="card"><div class="card-content"><div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
+		'after_widget' => '</div></div></div>',
+	),
+	'precomments' => array(
+		'name' => __( 'Precomments', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--comments %2$s">',
 		'after_widget' => '</div>',
 	),
 );

@@ -151,11 +151,6 @@
                 elementSelector: ".type-post .card-image"
             } );
 
-        $( ".page" )
-            .bdbgGridHeight( {
-                elementSelector: ".bdbg-page--item"
-            } );
-
         // Sidemenu data caching.
         let menuSide = $( ".button-collapse" ).data( "menuside" );
 
