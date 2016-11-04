@@ -91,11 +91,11 @@ $header_controls = array(
 				'label'       => __( 'Header font weight (px)', 'budabuga' ),
 				'type'        => 'select',
 				'section'     => 'bdbg_header_general',
-				'description' => __( 'Choose font weight. Can be bold, bolder, lighter or normal', 'budabuga' ),
+				// 'description' => __( 'Choose font weight. Can be bold, bolder, lighter or normal', 'budabuga' ),
 				'choices' => array(
-					'bold' 	  => 'Bold',
 					'lighter' => 'Lighter',
 					'normal'  => 'Normal',
+					'bold' 	  => 'Bold',
 				),
 			),
 		'bdbg_header_general_fontsize' =>
@@ -112,16 +112,10 @@ $header_controls = array(
 				'label'       => __( 'Header text letterspace (px)', 'budabuga' ),
 				'type'        => 'number',
 				'section'     => 'bdbg_header_general',
-				'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
+				// 'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
 				'input_attrs' => array(
 					'min' => 0,
 				),
-			),
-		'bdbg_header_general_margin' =>
-			array(
-				'label'       => __( 'Header Menu margin from center (px)', 'budabuga' ),
-				'type'        => 'number',
-				'section'     => 'bdbg_header_general',
 			),
 
 /*----------------------------------------------------------------------------
@@ -132,8 +126,8 @@ $header_controls = array(
 			'label'   => __( 'Logo Upload', 'budabuga' ),
 			'type'    => 'cropped_image',
 			'section' => 'bdbg_header_logo_main',
-			// 'flex_width'  => true, // True = recommended, false = required.
-		    // 'flex_height' => true, // True = recommended, false = required.
+			'flex_width'  => true, // True = recommended, false = required.
+		    'flex_height' => true, // True = recommended, false = required.
 		    'width'       => 64,
 		    'height'      => 64,
 		),
@@ -157,11 +151,11 @@ $header_controls = array(
 			'label'       => __( 'Header Title font weight (px)', 'budabuga' ),
 			'type'        => 'select',
 			'section'     => 'bdbg_header_logo_main',
-			'description' => __( 'Choose font weight. Can be bold, bolder, lighter or normal', 'budabuga' ),
+			// 'description' => __( 'Choose font weight. Can be bold, bolder, lighter or normal', 'budabuga' ),
 			'choices' => array(
-				'bold' 	  => 'Bold',
 				'lighter' => 'Lighter',
 				'normal'  => 'Normal',
+				'bold' 	  => 'Bold',
 			),
 		),
 	'bdbg_header_logo_main_fontsize' =>
@@ -178,16 +172,7 @@ $header_controls = array(
 			'label'       => __( 'Header Title letterspace (px)', 'budabuga' ),
 			'type'        => 'number',
 			'section'     => 'bdbg_header_logo_main',
-			'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
-			'input_attrs' => array(
-				'min' => 0,
-			),
-		),
-	'bdbg_header_logo_main_margin' =>
-		array(
-			'label'       => __( 'Header Logo margin from center (px)', 'budabuga' ),
-			'type'        => 'number',
-			'section'     => 'bdbg_header_logo_main',
+			// 'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
 			'input_attrs' => array(
 				'min' => 0,
 			),
@@ -226,12 +211,11 @@ $header_controls = array(
 			'label'       => __( 'Side Title font weight (px)', 'budabuga' ),
 			'type'        => 'select',
 			'section'     => 'bdbg_header_logo_side',
-			'description' => __( 'Choose font weight. Can be bold, bolder, lighter or normal', 'budabuga' ),
+			// 'description' => __( 'Choose font weight. Can be bold, bolder, lighter or normal', 'budabuga' ),
 			'choices' => array(
-				'bold' 	  => 'Bold',
-				'bolder'  => 'Bolder',
 				'lighter' => 'Lighter',
 				'normal'  => 'Normal',
+				'bold' 	  => 'Bold',
 			),
 		),
 	'bdbg_header_logo_side_fontsize' =>
@@ -248,7 +232,7 @@ $header_controls = array(
 			'label'       => __( 'Side Title letterspace (px)', 'budabuga' ),
 			'type'        => 'number',
 			'section'     => 'bdbg_header_logo_side',
-			'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
+			// 'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
 			'input_attrs' => array(
 				'min' => 0,
 			),

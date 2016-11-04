@@ -2251,6 +2251,7 @@ header a {
 
 body {
   z-index: 1;
+  word-wrap: break-word;
 }
 
 img {
@@ -2258,10 +2259,15 @@ img {
   width: auto;
 }
 
+.bdbg-footer {
+  margin-top: 1rem;
+}
+
 .bdbg-header {
   top: 0;
   height: 64px;
   position: static;
+  margin-bottom: 1rem;
 }
 
 .admin-bar .bdbg-header.navbar-fixed {
@@ -2292,6 +2298,15 @@ html #wpadminbar {
 .container {
   width: 90%;
   max-width: 1280px;
+}
+
+.card {
+  display: inline-block;
+  width: 100%;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  text-transform: none;
 }
 
 .bdbg-comments .bdbg-comments__avatar {
@@ -2387,7 +2402,101 @@ html #wpadminbar {
 
 .logged-in-as,
 .comment-notes {
-  padding: 0 0.75em;
+  padding: 0 1rem;
+}
+
+.bdbg-logo--main {
+  vertical-align: middle;
+}
+
+.bdbg-logo--main .bdbg-logo__img {
+  vertical-align: middle;
+}
+
+.bdbg-message a {
+  color: #ffc0cb;
+  line-height: 60px;
+}
+
+.bdbg-overlay {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(238, 110, 115, 0.6);
+  color: #fff;
+  padding: 3em;
+  -webkit-transition: -webkit-transform 1s;
+          transition: -webkit-transform 1s;
+          transition:         transform 1s;
+          transition:         transform 1s, -webkit-transform 1s;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.bdbg-overlay.bdbg-overlay--visible {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.bdbg-overlay #searchform .bdbg-input-group__label {
+  color: #fff;
+}
+
+.bdbg-overlay #searchform .bdbg-input-group__field {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+  font-size: 2em;
+  text-align: center;
+  height: auto;
+}
+
+.bdbg-overlay #searchform .bdbg-input-group__field:focus {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  box-shadow: none;
+}
+
+.bdbg-overlay #searchform .bdbg-input-group__field:focus + label {
+  color: #fff;
+}
+
+.bdbg-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  width: 80%;
+  max-width: 50rem;
+}
+
+.bdbg-overlay__button {
+  text-align: right;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.bdbg-overlay__button .fa {
+  -webkit-transition: -webkit-transform 0.5s;
+          transition: -webkit-transform 0.5s;
+          transition:         transform 0.5s;
+          transition:         transform 0.5s, -webkit-transform 0.5s;
+}
+
+.bdbg-overlay__button .fa:hover {
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
 }
 
 .bdbg-nav {
@@ -2431,6 +2540,17 @@ html #wpadminbar {
 
 .bdbg-menu--side a {
   padding: 0 32px;
+}
+
+.bdbg-menu--side .bdbg-message {
+  padding: 1rem 32px;
+  display: block;
+  line-height: 1;
+}
+
+.bdbg-menu--side .bdbg-message a {
+  display: inline;
+  padding: 0;
 }
 
 .bdbg-menu--side .collapsible-header {
@@ -2482,96 +2602,12 @@ html #wpadminbar {
 
 .bdbg-header .button-collapse i {
   font-size: 1.95rem;
-}
-
-.bdbg-overlay {
-  position: absolute;
-  z-index: 9999;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(238, 110, 115, 0.6);
-  color: #fff;
-  padding: 3em;
-  -webkit-transition: -webkit-transform 1s;
-          transition: -webkit-transform 1s;
-          transition:         transform 1s;
-          transition:         transform 1s, -webkit-transform 1s;
-  bottom: 0;
-  left: 0;
-  -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-          transform: translateY(-100%);
-}
-
-.bdbg-overlay.bdbg-overlay--visible {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
-}
-
-.bdbg-overlay #searchform .bdbg-input-group__label {
-  color: #fff;
-}
-
-.bdbg-overlay #searchform .bdbg-input-group__field {
-  color: #fff;
-  border-bottom: 0;
-  box-shadow: none;
-  font-size: 2em;
-  text-align: center;
-  height: auto;
-}
-
-.bdbg-overlay #searchform .bdbg-input-group__field:focus {
-  color: #fff;
-  border-bottom: 1px solid #fff;
-  box-shadow: none;
-}
-
-.bdbg-overlay #searchform .bdbg-input-group__field:focus + label {
-  color: #fff;
-}
-
-.bdbg-modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-      -ms-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
-  width: 80%;
-  max-width: 50rem;
-}
-
-.bdbg-overlay__button {
-  text-align: right;
-  font-size: 3em;
-  cursor: pointer;
-}
-
-.bdbg-overlay__button .fa {
-  -webkit-transition: -webkit-transform 0.5s;
-          transition: -webkit-transform 0.5s;
-          transition:         transform 0.5s;
-          transition:         transform 0.5s, -webkit-transform 0.5s;
-}
-
-.bdbg-overlay__button .fa:hover {
-  -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-          transform: scale(1.5);
-  -webkit-transform-origin: 50% 50%;
-      -ms-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-}
-
-.bdbg-message a {
-  color: #ffc0cb;
-  line-height: 60px;
+  vertical-align: middle;
 }
 
 .bdbg-pagination {
   display: inline-block;
+  margin-bottom: 2rem;
 }
 
 .bdbg-pagination li.active {
@@ -2595,6 +2631,24 @@ html #wpadminbar {
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: #ff4081;
+}
+
+.bdbg-content__single .card-action {
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+}
+
+.card .card-action .cat-links {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.card .card-action .cat-links i {
+  color: #ff4081;
+}
+
+.card .card-action .cat-links a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  margin-right: 0;
 }
 
 @media screen and (min-width: 783px) {
@@ -2621,6 +2675,18 @@ html #wpadminbar {
 }
 
 @media screen and (max-width: 600px) {
+  .bdbg-footer {
+    margin-top: 0.5rem;
+  }
+
+  .bdbg-header {
+    margin-bottom: 0.5rem;
+  }
+
+  .card {
+    margin: 1rem 0;
+  }
+
   .bdbg-comments .bdbg-comments__item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

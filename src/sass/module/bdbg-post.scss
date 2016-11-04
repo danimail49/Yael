@@ -12,3 +12,25 @@
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: #FF4081;
 }
+
+.bdbg-content__single {
+  .card-action {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+  }
+}
+
+.card .card-action {
+  .cat-links {
+    display: inline-block;
+    margin-right: 20px;
+
+    i {
+      color: #FF4081;
+    }
+
+    a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+      margin-right: 0;
+    }
+  }
+}

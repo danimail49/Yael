@@ -53,9 +53,9 @@ $main_width = 12 - $left_sidebar - $right_sidebar;
 	<!-- /.col -->
 
 	<?php if ( 0 !== $right_sidebar ) : ?>
-		<div class="col l3 m12 s12">
+		<aside class="col l3 m12 s12">
 			<?php dynamic_sidebar( 'page_right' ); ?>
-		</div>
+		</aside>
 		<!-- /.col l3 -->
 	<?php endif; ?>
 

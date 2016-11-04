@@ -1,5 +1,5 @@
 .bdbg-overlay {
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   width: 100%;
   height: 100%;
@@ -23,7 +23,7 @@
 
     .bdbg-input-group__field {
       color: #fff;
-      border-bottom: 0;
+      border-color: rgba(255, 255, 255, 0.5);
       box-shadow: none;
       font-size: 2em;
       text-align: center;
@@ -55,7 +55,7 @@
 
 .bdbg-overlay__button {
   text-align: right;
-  font-size: 3em;
+  font-size: 2.5rem;
   cursor: pointer;
 
   .fa {

@@ -25,6 +25,11 @@ if ( ! function_exists( 'bdbg_setup' ) ) :
 		// Hide WordPress version.
 		remove_action( 'wp_head', 'wp_generator' );
 
+		// Set defaults content width.
+		if ( ! isset( $content_width ) ) {
+			$content_width = 1280;
+		}
+
 		// Make theme available for translation.
 		load_theme_textdomain( 'budabuga', trailingslashit( THEMEDIR ) . 'languages' );
 
@@ -42,7 +47,7 @@ if ( ! function_exists( 'bdbg_setup' ) ) :
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails', array( 'post' ) );
 
-		set_post_thumbnail_size( 540, 304, true );
+		set_post_thumbnail_size( 1280, 720, true );
 
 		// This theme uses wp_nav_menu() in three locations.
 		register_nav_menus( array(

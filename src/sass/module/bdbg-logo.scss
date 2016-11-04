@@ -1,17 +1,7 @@
-.bdbg-logo {
-  padding: 0.5em;
+.bdbg-logo--main {
+  vertical-align: middle;
 
-  a {
-    color: #fff;
-    display: block;
+  .bdbg-logo__img {
+    vertical-align: middle;
   }
-
-  img {
-    display: block;
-  }
-}
-
-.bdbg-logo--side {
-  padding: 0.5em;
-  text-align: center;
 }

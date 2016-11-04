@@ -95,13 +95,6 @@ $header_settings = array(
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		),
-	'bdbg_header_general_margin' =>
-		array(
-			'type'              => 'theme_mod',
-			'default'           => 0,
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
-		),
 
 /*----------------------------------------------------------------------------
    Logo Main Section
@@ -140,13 +133,6 @@ $header_settings = array(
 			'sanitize_callback' => 'sanitize_text_field',
 		),
 	'bdbg_header_logo_main_letterspace' =>
-		array(
-			'type'              => 'theme_mod',
-			'default'           => 0,
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
-		),
-	'bdbg_header_logo_main_margin' =>
 		array(
 			'type'              => 'theme_mod',
 			'default'           => 0,

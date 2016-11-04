@@ -1,18 +1,10 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @since 1.00
+ * The template part for displaying search results.
  *
  * @package Budabuga
  * @subpackage Yael
+ * @since 1.00
  */
 
 // Preventing direct script access.
@@ -29,7 +21,7 @@ $right_sidebar = ( is_active_sidebar( 'page_right' ) ) ? 3 : 0;
 $main_width = 12 - $left_sidebar - $right_sidebar;
 ?>
 
-<div class="bdbg-index">
+<div class="bdbg-search-results">
 
 	<?php if ( 0 !== $left_sidebar ) : ?>
 		<aside class="col l3 m12 s12">
@@ -42,6 +34,11 @@ $main_width = 12 - $left_sidebar - $right_sidebar;
 		<?php if ( have_posts() ) : ?>
 
 			<div class="row">
+
+				<div class="col s12 bdbg-archive__title">
+					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'budabuga' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+				</div>
+				<!-- /.s12 -->
 
 				<?php
 				// Start the loop.
@@ -85,7 +82,9 @@ $main_width = 12 - $left_sidebar - $right_sidebar;
 		<!-- /.col l3 -->
 	<?php endif; ?>
 
+
 </div>
-<!-- /.bdbg-index -->
+<!-- /.bdbg-search-results -->
+
 
 <?php get_footer();

@@ -39,9 +39,9 @@ if ( post_password_required() ) {
 				<?php  bdbg_comments_pagination();?>
 			</div>
 
-			<?php bdbg_comment_form(); ?>
-
 		<?php endif; // Check for have_comments(). ?>
+
+		<?php bdbg_comment_form(); ?>
 
 		<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?

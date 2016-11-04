@@ -1,18 +1,10 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @since 1.00
+ * The template part for displaying author archive.
  *
  * @package Budabuga
  * @subpackage Yael
+ * @since 1.00
  */
 
 // Preventing direct script access.
@@ -23,13 +15,19 @@ endif; ?>
 <?php get_header(); ?>
 
 <?php
+$title = __( 'Posts by', 'budabuga' );
+$author_name = get_the_author_meta( 'display_name' );
+$author_bio = get_the_author_meta( 'description' );
+$author_url = get_the_author_meta( 'url' );
+$author_avatar_url = get_avatar_url( get_the_author_meta( 'ID' ), 64 );
+
 $left_sidebar = ( is_active_sidebar( 'page_left' ) ) ? 3 : 0;
 $right_sidebar = ( is_active_sidebar( 'page_right' ) ) ? 3 : 0;
 
 $main_width = 12 - $left_sidebar - $right_sidebar;
 ?>
 
-<div class="bdbg-index">
+<div class="bdbg-archive bdbg-archive--author">
 
 	<?php if ( 0 !== $left_sidebar ) : ?>
 		<aside class="col l3 m12 s12">
@@ -42,6 +40,34 @@ $main_width = 12 - $left_sidebar - $right_sidebar;
 		<?php if ( have_posts() ) : ?>
 
 			<div class="row">
+
+				<div class="col s12 bdbg-archive__title">
+					<h1><?php echo "{$title} {$author_name}"; ?></h1>
+				</div>
+				<!-- /.s12 -->
+
+				<?php if ( ! empty( get_the_author_meta( 'description' ) ) ) : ?>
+
+					<div class="col s12 bdbg-author">
+						<div class="card-panel grey lighten-5 z-depth-1">
+							<div class="card-content row valign-wrapper">
+								<div class="col l2 m3 s12">
+									<img src="<?php echo $author_avatar_url; ?>" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+					            </div>
+								<div class="col l10 m9 s12">
+									<span class="bdbg-author__bio black-text">
+					                	<?php echo $author_bio; ?>
+					              	</span>
+									<br /><br />
+					              	<span class="bdbg-author__url black-text">
+										<a rel="nofollow" target="_blank" href="<?php echo $author_url; ?>"><?php echo $author_url; ?></a>
+					              	</span>
+					            </div>
+							</div>
+						</div>
+					</div>
+					<!-- /.col s12 bdbg-author -->
+				<?php endif; ?>
 
 				<?php
 				// Start the loop.

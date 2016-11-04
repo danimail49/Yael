@@ -19,6 +19,8 @@
 @import "base/base";
 // Layout
 //-------------------------------------/
+// Footer
+@import "layout/bdbg-footer";
 // Header
 @import "layout/bdbg-header";
 //Grid
@@ -26,14 +28,18 @@
 
 // Module
 //-------------------------------------/
+// Cards
+@import "module/bdbg-cards";
 // Comments
 @import "module/bdbg-comments";
-// Navigation
-@import "module/bdbg-nav";
-// Modal
-@import "module/bdbg-modal";
+// Logo
+@import "module/bdbg-logo";
 // Message
 @import "module/bdbg-message";
+// Modal
+@import "module/bdbg-modal";
+// Navigation
+@import "module/bdbg-nav";
 // Pagination
 @import "module/bdbg-pagination";
 // Posts

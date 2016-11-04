@@ -1,0 +1,7 @@
+.bdbg-footer {
+  margin-top: $gutter-width / 2;
+
+  @media screen and (max-width: $small-screen) {
+    margin-top: $gutter-width / 4;
+  }
+}

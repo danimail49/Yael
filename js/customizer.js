@@ -37,6 +37,10 @@
            value.bind( function( newval ) {
                $( ".bdbg-nav" ).css( "height", parseInt( newval ) );
        		$( ".bdbg-header" ).css( "height", parseInt( newval ) );
+               $( ".bdbg-logo--main" ).css( "line-height", parseInt( newval ) + "px" );
+               $( ".button-collapse" ).css( "line-height", parseInt( newval ) + "px" );
+               $( ".bdbg-js-search" ).css( "line-height", parseInt( newval ) + "px" );
+               $( ".bdbg-menu--main > li > a" ).css( "line-height", parseInt( newval ) + "px" );
            } );
        } );
        
@@ -149,41 +153,41 @@
        -------------------------------------*/
        wp.customize( "bdbg_header_logo_main_height", function( value ) {
            value.bind( function( newval ) {
-               $( ".bdbg-logo__img" ).css( "height", parseInt( newval ) );
+               $( ".bdbg-logo--main .bdbg-logo__img" ).css( "height", parseInt( newval ) );
            } );
        } );
        
        wp.customize( "bdbg_header_logo_main_fontcolor", function( value ) {
            value.bind( function( newval ) {
-               $( ".bdbg-logo" ).css( "color", newval );
+               $( ".bdbg-logo--main" ).css( "color", newval );
            } );
        } );
        
        wp.customize( "bdbg_header_logo_main_weight", function( value ) {
            value.bind( function( newval ) {
-               $( ".bdbg-logo" ).css( "font-weight", newval );
+               $( ".bdbg-logo--main" ).css( "font-weight", newval );
            } );
        } );
        
        wp.customize( "bdbg_header_logo_main_fontsize", function( value ) {
            value.bind( function( newval ) {
-               $( ".bdbg-logo" ).css( "font-size", parseInt( newval ) );
+               $( ".bdbg-logo--main" ).css( "font-size", parseInt( newval ) );
            } );
        } );
        
        wp.customize( "bdbg_header_logo_main_letterspace", function( value ) {
            value.bind( function( newval ) {
                if ( 0 !== newval ) {
-                   $( ".bdbg-logo" ).css( "letter-spacing", parseInt( newval ) );
+                   $( ".bdbg-logo--main" ).css( "letter-spacing", parseInt( newval ) );
                } else {
-                   $( ".bdbg-logo" ).css( "letter-spacing", "" );
+                   $( ".bdbg-logo--main" ).css( "letter-spacing", "" );
                }
            } );
        } );
        
        wp.customize( "bdbg_header_logo_main_margin", function( value ) {
            value.bind( function( newval ) {
-               $( ".bdbg-logo" ).css( "margin-top", parseInt( newval ) );
+               $( ".bdbg-logo--main" ).css( "margin-top", parseInt( newval ) );
            } );
        } );
        

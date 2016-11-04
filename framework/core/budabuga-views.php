@@ -193,38 +193,115 @@ if ( ! function_exists( 'bdbg_post_meta' ) ) :
 		if ( in_array( get_post_type(), array( 'post', 'attachment' ), true ) ) {
 
 			// Post Date.
-			$archive_year  = get_the_time( 'Y' );
-			$archive_month = get_the_time( 'm' );
-			$time_string = '<a href="' . get_month_link( $archive_year, $archive_month ) . '"><time class="entry-date published" datetime="%1$s">
-				<i class="fa fa-calendar" aria-hidden="true"></i> %1$s
-			</time></a>';
-
-			$time_string = sprintf( $time_string, esc_attr( get_the_date( 'F jS, Y' ) ) );
-
+			$time_string = bdbg_post_meta_date();
 			// Post Author.
-			$author_url = get_author_posts_url( get_the_author_meta( 'ID' ) );
-			$author_name = get_the_author_meta( 'display_name' );
-			$author = "<a href=\"{$author_url}\" rel=\"author\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {$author_name}</a>";
+			$author = bdbg_post_meta_author();
+			// Post comments.
+			$write_comments = bdbg_post_meta_comments();
+			// Categories
+			$categories = bdbg_post_meta_categories();
 
-			$num_comments = get_comments_number(); // Get_comments_number returns only a numeric value.
-
-			if ( comments_open() ) :
-				if ( 0 === $num_comments ) :
-					$comments = __( 'No Comments', 'budabuga' );
-				elseif ( $num_comments > 1 ) :
-					$comments = $num_comments . __( ' Comments', 'budabuga' );
-				else :
-					$comments = __( '1 Comment', 'budabuga' );
-				endif;
-				$write_comments = '<a href="' . get_comments_link() . '">
-					<i class="fa fa-commenting-o" aria-hidden="true"></i> ' . $comments . '
-				</a>';
+			if ( ! is_singular() ) :
+				echo "{$author} {$time_string} {$write_comments}";
 			else :
-				$write_comments = __( 'Comments are off for this post.', 'budabuga' );
+				echo "{$author} {$time_string} {$categories} {$write_comments}";
 			endif;
-
-			echo "{$author} {$time_string} {$write_comments}";
 		}
+	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_post_meta_date' ) ) :
+
+	function bdbg_post_meta_date() {
+		// Post Date.
+		$archive_year  = get_the_time( 'Y' );
+		$archive_month = get_the_time( 'm' );
+		$time_string = '<a href="' . get_month_link( $archive_year, $archive_month ) . '"><time class="entry-date published" datetime="%1$s">
+			<i class="fa fa-calendar" aria-hidden="true"></i> %1$s
+		</time></a>';
+
+		$time_string = sprintf( $time_string, esc_attr( get_the_date( 'F jS, Y' ) ) );
+
+		return $time_string;
+	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_post_meta_author' ) ) :
+
+	function bdbg_post_meta_author() {
+		// Post Date.
+		$author_url = get_author_posts_url( get_the_author_meta( 'ID' ) );
+		$author_name = get_the_author_meta( 'display_name' );
+		$author = "<a href=\"{$author_url}\" rel=\"author\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {$author_name}</a>";
+
+		return $author;
+	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_post_meta_comments' ) ) :
+
+	function bdbg_post_meta_comments() {
+
+		$num_comments = get_comments_number(); // Get_comments_number returns only a numeric value.
+
+		if ( comments_open() ) :
+			if ( 0 === $num_comments ) :
+				$comments = __( 'No Comments', 'budabuga' );
+			elseif ( $num_comments > 1 ) :
+				$comments = $num_comments . __( ' Comments', 'budabuga' );
+			else :
+				$comments = __( '1 Comment', 'budabuga' );
+			endif;
+			$write_comments = '<a href="' . get_comments_link() . '">
+				<i class="fa fa-commenting-o" aria-hidden="true"></i> ' . $comments . '
+			</a>';
+		else :
+			$write_comments = __( 'Comments are off for this post.', 'budabuga' );
+		endif;
+
+		return $write_comments;
+	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_post_meta_categories' ) ) :
+
+	function bdbg_post_meta_categories() {
+
+		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'budabuga' ) );
+		if ( $categories_list ) {
+			$categories = sprintf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span><i class="fa fa-folder-o" aria-hidden="true"></i>
+ %2$s</span>',
+				_x( 'Categories', 'Used before category names.', 'budabuga' ),
+				$categories_list
+			);
+		}
+
+		return $categories;
+
+	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_post_meta_tags' ) ) :
+
+	function bdbg_post_meta_tags() {
+		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'budabuga' ) );
+
+		if ( $tags_list ) {
+			$taxonomies = sprintf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span><i class="fa fa-tags" aria-hidden="true"></i>
+ %2$s</span>',
+				_x( 'Tags', 'Used before tag names.', 'budabuga' ),
+				$tags_list
+			);
+			
+			return $taxonomies;
+		}
+
+		return false;
 	}
 
 endif;
@@ -503,5 +580,15 @@ if ( ! function_exists( 'bdbg_comments_pagination' ) ) :
 
 		echo $pagination = str_replace( "page-numbers", "page-numbers waves-effect", $pagination );
 	}
+
+endif;
+
+if ( ! function_exists( 'bdbg_embed_wrapper' ) ) :
+
+	function bdbg_embed_wrapper( $html, $url, $attr, $post_id ) {
+		return '<div class="video-container">' . $html . '</div>';
+	}
+
+	add_filter( 'embed_oembed_html', 'bdbg_embed_wrapper', 10, 4 );
 
 endif;

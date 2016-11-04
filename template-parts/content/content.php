@@ -12,13 +12,13 @@ if ( ! defined( 'ABSPATH' ) ) :
 	die( 'No direct script access allowed' );
 endif;
 
-$post_layout = 'grid-50'; // Values: grid-100, grid-50, 'list'.
+$post_layout = 'grid-100'; // Values: grid-100, grid-50, 'list'.
 $desktop_class = ( 'grid-50' === $post_layout ) ? 'l6' : 'l12';
 $card_type = ( 'list' === $post_layout ) ? 'horizontal' : '';
 $post_url = esc_url( get_permalink() );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( "col s12 m12 $desktop_class" ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( "col s12 m12 l{$desktop_class}" ); ?>>
 	<div class="card bdbg-post <?php echo $card_type; ?>">
 		<a href="<?php echo $post_url; ?>" class="card-image bdbg-post__thumbnail waves-effect waves-block waves-light">
 			<?php bdbg_post_thumbnail( 'bdbg-img bdbg-img--responsive' ); ?>
@@ -35,10 +35,8 @@ $post_url = esc_url( get_permalink() );
 			<?php the_excerpt(); ?>
 		</div>
 		<div class="card-action">
-					<?php bdbg_post_meta(); ?>
-
+			<?php bdbg_post_meta(); ?>
 		</div>
 	</div>
 	<!-- /.card bdbg-entry bdbg-entry--post -->
 </article>
-<!-- /.col s12 m12 l12 -->

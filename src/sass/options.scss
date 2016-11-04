@@ -11,6 +11,11 @@ $small-screen: 600px;
 $medium-screen: 1024px;
 $large-screen: 1200px;
 
+// Grid gutter
+$gutter-width: 2rem;
+$element-top-margin: $gutter-width / 2;
+$element-bottom-margin: $gutter-width / 2;
+
 // Font path override
 $roboto-font-path: "../fonts/roboto/";
 

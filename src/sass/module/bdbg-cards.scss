@@ -1,0 +1,15 @@
+// Preventing margin collapsing on cards.
+.card {
+  display: inline-block;
+  width: 100%;
+
+  @media screen and (max-width: $small-screen) {
+    margin: $gutter-width / 2 0;
+  }
+
+  .card-action {
+    a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+      text-transform: none;
+    }
+  }
+}

@@ -55,7 +55,7 @@ $header_sections = array(
 	'bdbg_header_search' =>
 		array(
 			'title'       => __( 'Search', 'budabuga' ),
-			// 'description' => __( 'Search section description', 'budabuga' ),
+			'description' => __( 'Click on Search Icon to see your change', 'budabuga' ),
 			'panel' => 'bdbg_header',
 			'capability'  => 'edit_theme_options',
 			'priority'   => 40,
