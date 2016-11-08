@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) :
 endif;
 
 $post_layout = 'grid-100'; // Values: grid-100, grid-50, 'list'.
-$desktop_class = ( 'grid-50' === $post_layout ) ? 'l6' : 'l12';
+$desktop_class = ( 'grid-50' === $post_layout ) ? '6' : '12';
 $card_type = ( 'list' === $post_layout ) ? 'horizontal' : '';
 $post_url = esc_url( get_permalink() );
 ?>
@@ -31,8 +31,12 @@ $post_url = esc_url( get_permalink() );
 		</a>
 		<!-- /.card-image bdbg-post__thumbnail -->
 		<div class="card-content">
-			<?php the_title( '<h3 class="card-title bdbg-post__title"><a href="' . $post_url . '">', '</a></h3>' ); ?>
+			<?php the_title( '<h2 class="card-title bdbg-post__title"><a href="' . $post_url . '">', '</a></h2>' ); ?>
 			<?php the_excerpt(); ?>
+			<div class="bdbg-post__readmore">
+				<a href="<?php echo $post_url; ?>" class="btn"><?php _e( 'Read More', 'budabuga' ); ?></a>
+			</div>
+			<!-- /.readmore-action -->
 		</div>
 		<div class="card-action">
 			<?php bdbg_post_meta(); ?>

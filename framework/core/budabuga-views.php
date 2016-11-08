@@ -218,7 +218,7 @@ if ( ! function_exists( 'bdbg_post_meta_date' ) ) :
 		$archive_year  = get_the_time( 'Y' );
 		$archive_month = get_the_time( 'm' );
 		$time_string = '<a href="' . get_month_link( $archive_year, $archive_month ) . '"><time class="entry-date published" datetime="%1$s">
-			<i class="fa fa-calendar" aria-hidden="true"></i> %1$s
+			<i class="fa fa-clock-o" aria-hidden="true"></i> %1$s
 		</time></a>';
 
 		$time_string = sprintf( $time_string, esc_attr( get_the_date( 'F jS, Y' ) ) );
@@ -273,10 +273,10 @@ if ( ! function_exists( 'bdbg_post_meta_categories' ) ) :
 
 		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'budabuga' ) );
 		if ( $categories_list ) {
-			$categories = sprintf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span><i class="fa fa-folder-o" aria-hidden="true"></i>
+			$categories = sprintf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>
  %2$s</span>',
 				_x( 'Categories', 'Used before category names.', 'budabuga' ),
-				$categories_list
+				'<i class="fa fa-folder-o" aria-hidden="true"></i> ' . $categories_list
 			);
 		}
 
@@ -297,7 +297,7 @@ if ( ! function_exists( 'bdbg_post_meta_tags' ) ) :
 				_x( 'Tags', 'Used before tag names.', 'budabuga' ),
 				$tags_list
 			);
-			
+
 			return $taxonomies;
 		}
 
@@ -482,7 +482,7 @@ endif;
 if ( ! function_exists( 'bdbg_reply_link_class' ) ) :
 
 	function bdbg_reply_link_class( $class ){
-		$new_classes = 'comment-reply-link btn waves-effect waves-light red';
+		$new_classes = 'comment-reply-link btn waves-effect waves-light';
 		$new_title = __( 'Reply', 'budabuga' );
 
 	    $class = str_replace( "class='comment-reply-link", "class='{$new_classes}", $class );

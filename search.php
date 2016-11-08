@@ -15,8 +15,8 @@ endif; ?>
 <?php get_header(); ?>
 
 <?php
-$left_sidebar = ( is_active_sidebar( 'page_left' ) ) ? 3 : 0;
-$right_sidebar = ( is_active_sidebar( 'page_right' ) ) ? 3 : 0;
+$left_sidebar = ( is_active_sidebar( 'page_left' ) ) ? 4 : 0;
+$right_sidebar = ( is_active_sidebar( 'page_right' ) ) ? 4 : 0;
 
 $main_width = 12 - $left_sidebar - $right_sidebar;
 ?>
@@ -24,7 +24,7 @@ $main_width = 12 - $left_sidebar - $right_sidebar;
 <div class="bdbg-search-results">
 
 	<?php if ( 0 !== $left_sidebar ) : ?>
-		<aside class="col l3 m12 s12">
+		<aside class="col l4 m12 s12">
 			<?php dynamic_sidebar( 'page_left' ); ?>
 		</aside>
 		<!-- /.col l3 -->
@@ -76,7 +76,7 @@ $main_width = 12 - $left_sidebar - $right_sidebar;
 	<!-- /.col s12 m12 -->
 
 	<?php if ( 0 !== $right_sidebar ) : ?>
-		<aside class="col l3 m12 s12">
+		<aside class="col l4 m12 s12">
 			<?php dynamic_sidebar( 'page_right' ); ?>
 		</aside>
 		<!-- /.col l3 -->

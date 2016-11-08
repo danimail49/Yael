@@ -20,7 +20,7 @@ $header_panels = array(
 		array(
 			'title'       => __( 'Header', 'budabuga' ),
 			'description' => __( 'Customize Main & Side logo, Menus, Header fonts & backgrounds here.', 'budabuga' ),
-			'priority'   => 21,
+			'priority'   => 22,
 		),
 );
 

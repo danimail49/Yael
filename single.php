@@ -16,15 +16,15 @@ endif;
 <?php get_header(); ?>
 
 <?php
-$left_sidebar = ( is_active_sidebar( 'page_left' ) ) ? 3 : 0;
-$right_sidebar = ( is_active_sidebar( 'page_right' ) ) ? 3 : 0;
+$left_sidebar = ( is_active_sidebar( 'page_left' ) ) ? 4 : 0;
+$right_sidebar = ( is_active_sidebar( 'page_right' ) ) ? 4 : 0;
 
 $main_width = 12 - $left_sidebar - $right_sidebar; ?>
 
 <div class="bdbg-single bdbg-single--post">
 
 	<?php if ( 0 !== $left_sidebar ) : ?>
-		<div class="col l3 m12 s12">
+		<div class="col l4 m12 s12">
 			<?php dynamic_sidebar( 'page_left' ); ?>
 		</div>
 		<!-- /.col l3 -->
@@ -52,10 +52,10 @@ $main_width = 12 - $left_sidebar - $right_sidebar; ?>
 	<!-- /.col -->
 
 	<?php if ( 0 !== $right_sidebar ) : ?>
-		<aside class="col l3 m12 s12">
+		<aside class="col l4 m12 s12">
 			<?php dynamic_sidebar( 'page_right' ); ?>
 		</aside>
-		<!-- /.col l3 -->
+		<!-- /.col l4 -->
 	<?php endif; ?>
 
 </div>

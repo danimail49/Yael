@@ -192,6 +192,62 @@ function bdbg_customizer_scripts() { ?>
 			font-size: 1.64em;
 		}
 
+		/**
+		 * General Settings
+		 */
+		 body {
+			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_main_fontsize' ) . 'px;'; ?>
+			 background-color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_background' ) . ';'; ?>
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_fontcolor' ) . ';'; ?>
+		 }
+
+		 a {
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_linkcolor' ) . ';'; ?>
+		 }
+
+		 a:hover:not(.btn) {
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_linkhovercolor' ) . ';'; ?>
+		 }
+
+		 input[type="button"],
+		 button,
+		 .btn,
+		 .btn-large {
+			 background-color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_activeelem_background' ) . '!important;'; ?>
+		 }
+
+		 h1 {
+			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h1_fontsize' ) . 'px;'; ?>
+			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h1_weight' ) . ';'; ?>
+			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h1_letterspace' ) . 'px;'; ?>
+		 }
+		 .bdbg-post h2.bdbg-post__title,
+		 h2 {
+			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h2_fontsize' ) . 'px;'; ?>
+			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h2_weight' ) . ';'; ?>
+			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h2_letterspace' ) . 'px;'; ?>
+		 }
+		 h3 {
+			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h3_fontsize' ) . 'px;'; ?>
+			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h3_weight' ) . ';'; ?>
+			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h3_letterspace' ) . 'px;'; ?>
+		 }
+		 h4 {
+			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h4_fontsize' ) . 'px;'; ?>
+			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h4_weight' ) . ';'; ?>
+			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h4_letterspace' ) . 'px;'; ?>
+		 }
+		 h5 {
+			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h5_fontsize' ) . 'px;'; ?>
+			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h5_weight' ) . ';'; ?>
+			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h5_letterspace' ) . 'px;'; ?>
+		 }
+		 h6 {
+			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h6_fontsize' ) . 'px;'; ?>
+			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h6_weight' ) . ';'; ?>
+			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h6_letterspace' ) . 'px;'; ?>
+		 }
+
 	</style>
 <?php }
 add_action( 'wp_head', 'bdbg_customizer_scripts' );

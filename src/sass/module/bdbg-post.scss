@@ -9,8 +9,13 @@
   }
 }
 
+.card .card-action,
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: #FF4081;
+  color: rgb(158,158,158);
+}
+
+.card .card-action a:hover:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: #ff4081;
 }
 
 .bdbg-content__single {
@@ -25,12 +30,23 @@
     display: inline-block;
     margin-right: 20px;
 
-    i {
-      color: #FF4081;
-    }
-
     a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
       margin-right: 0;
     }
   }
+}
+
+.bdbg-post__readmore {
+  padding-top: 1rem
+}
+
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }
