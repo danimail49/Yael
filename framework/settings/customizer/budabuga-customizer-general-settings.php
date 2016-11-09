@@ -172,14 +172,14 @@ $general_settings = array(
 		array(
 			'type'         => 'theme_mod',
 			'default'      => 'rgba(255, 255, 255, 1)',
-			'transport'    => 'postMessage',
+			'transport'    => 'refresh',
 			'show_opacity' => 'true',
 		),
 	'bdbg_general_colors_activeelem_background' =>
 		array(
 			'type'         => 'theme_mod',
 			'default'      => 'rgba(255, 64, 129, 1)',
-			'transport'    => 'postMessage',
+			'transport'    => 'refresh',
 			'show_opacity' => 'true',
 		),
 );

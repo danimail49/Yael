@@ -205,15 +205,27 @@ function bdbg_customizer_scripts() { ?>
 			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_linkcolor' ) . ';'; ?>
 		 }
 
-		 a:hover:not(.btn) {
+		 a:hover:not(.btn):not(.bdbg-js-search):not(.button-collapse):not(.bdbg-menu__item a) {
 			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_linkhovercolor' ) . ';'; ?>
 		 }
 
 		 input[type="button"],
 		 button,
 		 .btn,
-		 .btn-large {
+		 .btn-large,
+		 .pagination li.active,
+		 .paginate-com a.page-numbers {
 			 background-color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_activeelem_background' ) . '!important;'; ?>
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_activeelem_fontcolor' ) . '!important;'; ?>
+		 }
+
+		 .pagination li.active a {
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_activeelem_fontcolor' ) . '!important;'; ?>
+		 }
+
+		 .pagination li:not(.active) a,
+		 .paginate-com span.page-numbers {
+	 		color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_activeelem_background' ) . '!important;'; ?>
 		 }
 
 		 h1 {

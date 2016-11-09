@@ -510,6 +510,8 @@
                $( "button" ).css( "background-color", newval );
                $( ".btn" ).css( "background-color", newval );
                $( ".btn-large" ).css( "background-color", newval );
+               $( ".pagination .active" ).css( "background-color", newval );
+               $( ".pagination li a " ).not( ".active" ).css( "color", newval );
            } );
        } );
        
