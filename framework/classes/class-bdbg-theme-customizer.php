@@ -126,6 +126,8 @@ class Bdbg_Theme_Customizer {
 				$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, $ctrl_id, $ctrl_params ) );
 			elseif ( 'numeric_input' === $ctrl_params['type'] ) :
 				$wp_customize->add_control( new Bdbg_Int_Customizer_control( $wp_customize, $ctrl_id, $ctrl_params ) );
+			elseif ( 'header_image' === $ctrl_params['type'] ):
+				$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $ctrl_id, $ctrl_params ) );
 			else :
 				$wp_customize->add_control( $ctrl_id, $ctrl_params );
 			endif;
