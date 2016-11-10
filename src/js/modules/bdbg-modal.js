@@ -3,7 +3,7 @@
  */
 $( ".bdbg-js-search" ).on( "click", function() {
     $( ".bdbg-overlay" ).addClass( "bdbg-overlay--visible" );
-    $( "#search-big" ).focus();
+    $( ".bdbg-form--search #s" ).focus();
 } );
 
 $( ".bdbg-overlay__button--close" ).on( "click", function() {

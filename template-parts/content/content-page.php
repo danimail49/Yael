@@ -24,14 +24,4 @@ endif; ?>
 </main>
 <!-- /.container bdbg-content -->
 
-<?php if ( is_active_sidebar( 'precomments' ) ) : ?>
-	<div class="aside card">
-		<div class="card-content">
-			<?php dynamic_sidebar( 'precomments' ); ?>
-		</div>
-		<!-- /.card-content -->
-	</div>
-	<!-- /.aside card -->
-<?php endif; ?>
-
 <?php

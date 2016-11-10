@@ -46,29 +46,29 @@
   position: relative;
 
   &:before {
-    width: 1em;
-    height: 1em;
-    border-top: 1rem solid #fff;
-    border-bottom: 1rem solid #fff;
+    width: 1rem;
+    height: 1rem;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
     border-right: 1rem solid rgba(255, 64, 129, 0.75);
     position: absolute;
-    left: -0.95rem;
+    left: -1rem;
     top: 50%;
     content: "";
     display: block;
-    margin-top: -1em;
+    margin-top: -1rem;
   }
 }
 
 .bdbg-commentform {
   .bdbg-commentform__submit {
-    margin: 0.75em;
+    margin: 0.75rem;
   }
 }
 
 .paginate-com {
   text-align: center;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.5rem;
 
   .page-numbers {
     color: white;

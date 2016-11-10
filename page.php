@@ -14,24 +14,9 @@ endif;
 
 get_header(); ?>
 
-<?php
-$left_sidebar = ( is_active_sidebar( 'page_left' ) ) ? 4 : 0;
-$right_sidebar = ( is_active_sidebar( 'page_right' ) ) ? 4 : 0;
-
-$main_width = 12 - $left_sidebar - $right_sidebar;
-?>
-
 <div class="bdbg-page">
 
-	<?php if ( 0 !== $left_sidebar ) : ?>
-		<div class="col l4 m12 s12">
-			<?php dynamic_sidebar( 'page_left' ); ?>
-		</div>
-		<!-- /.col l3 -->
-	<?php endif; ?>
-
-	<div class="col <?php echo "l{$main_width} m12 s12"; ?>">
-
+	<div class="col <?php echo "l12 m12 s12"; ?>">
 
 		<?php
 		// Start the loop.
@@ -51,13 +36,6 @@ $main_width = 12 - $left_sidebar - $right_sidebar;
 
 	</div>
 	<!-- /.col -->
-
-	<?php if ( 0 !== $right_sidebar ) : ?>
-		<aside class="col l4 m12 s12">
-			<?php dynamic_sidebar( 'page_right' ); ?>
-		</aside>
-		<!-- /.col l3 -->
-	<?php endif; ?>
 
 </div>
 <!-- /.bdbg-page -->

@@ -16,7 +16,7 @@ endif; ?>
 <div class="row">
 	<form role="search" class="col search-form s12 bdbg-form bdbg-form--search" method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<div class="input-field bdbg-input-group">
-			<input name="s" id="s" type="text" class="validate bdbg-input-group__field" autofocus />
+			<input name="s" id="s" type="text" class="validate bdbg-input-group__field" />
           	<!-- <label for="search-big" class="bdbg-input-group__label">First Name</label> -->
 		</div>
 	</form>

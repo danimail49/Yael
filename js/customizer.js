@@ -482,7 +482,7 @@
        wp.customize( "bdbg_general_colors_linkcolor", function( value ) {
            value.bind( function( newval ) {
                $( "#general-settings-link" ).html(
-                   "a { color:" + newval + "; }"
+                   "a { color:" + newval + "; } "
                );
            } );
        } );
@@ -491,7 +491,7 @@
        wp.customize( "bdbg_general_colors_linkhovercolor", function( value ) {
            value.bind( function( newval ) {
                $( "#general-settings-linkhover" ).html(
-                   "a:hover:not(.btn) { color:" + newval + "; }"
+                   "a:hover:not(.btn), .card .card-action a:hover:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) { color:" + newval + "; }"
                );
            } );
        } );
@@ -522,6 +522,7 @@
            $( "head" ).append( "<style id=\"style-size-h" + i + "\"></style>" );
            $( "head" ).append( "<style id=\"style-weight-h" + i + "\"></style>" );
            $( "head" ).append( "<style id=\"style-space-h" + i + "\"></style>" );
+           $( "head" ).append( "<style id=\"style-color-h" + i + "\"></style>" );
        }
        
        /*
@@ -548,6 +549,13 @@
                 );
             } );
         } );
+        wp.customize( "bdbg_general_typography_h1_color", function( value ) {
+            value.bind( function( newval ) {
+                $( "#style-color-h1" ).html(
+                    "h1 { color:" + newval + "; }"
+                );
+            } );
+        } );
         wp.customize( "bdbg_general_typography_h2_fontsize", function( value ) {
             value.bind( function( newval ) {
                 $( "#style-size-h2" ).html(
@@ -566,6 +574,13 @@
             value.bind( function( newval ) {
                 $( "#style-space-h2" ).html(
                     "h2 { letter-spacing:" + newval + "px; }"
+                );
+            } );
+        } );
+        wp.customize( "bdbg_general_typography_h2_color", function( value ) {
+            value.bind( function( newval ) {
+                $( "#style-color-h2" ).html(
+                    "h2 { color:" + newval + "; }"
                 );
             } );
         } );
@@ -590,6 +605,13 @@
                 );
             } );
         } );
+        wp.customize( "bdbg_general_typography_h3_color", function( value ) {
+            value.bind( function( newval ) {
+                $( "#style-color-h3" ).html(
+                    "h3 { color:" + newval + "; }"
+                );
+            } );
+        } );
         wp.customize( "bdbg_general_typography_h4_fontsize", function( value ) {
             value.bind( function( newval ) {
                 $( "#style-size-h4" ).html(
@@ -611,10 +633,24 @@
                 );
             } );
         } );
+        wp.customize( "bdbg_general_typography_h4_color", function( value ) {
+            value.bind( function( newval ) {
+                $( "#style-color-h4" ).html(
+                    "h4 { color:" + newval + "; }"
+                );
+            } );
+        } );
         wp.customize( "bdbg_general_typography_h5_fontsize", function( value ) {
             value.bind( function( newval ) {
                 $( "#style-size-h5" ).html(
                     "h5 { font-size:" + newval + "px; }"
+                );
+            } );
+        } );
+        wp.customize( "bdbg_general_typography_h5_color", function( value ) {
+            value.bind( function( newval ) {
+                $( "#style-color-h5" ).html(
+                    "h5 { color:" + newval + "; }"
                 );
             } );
         } );
@@ -650,6 +686,13 @@
             value.bind( function( newval ) {
                 $( "#style-space-h6" ).html(
                     "h6 { letter-spacing:" + newval + "px; }"
+                );
+            } );
+        } );
+        wp.customize( "bdbg_general_typography_h6_color", function( value ) {
+            value.bind( function( newval ) {
+                $( "#style-color-h6" ).html(
+                    "h6 { color:" + newval + "; }"
                 );
             } );
         } );

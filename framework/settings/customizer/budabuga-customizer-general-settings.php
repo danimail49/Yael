@@ -45,6 +45,12 @@ $general_settings = array(
 				'default'      => 0,
 				'transport'    => 'postMessage',
 			),
+	'bdbg_general_typography_h1_color' =>
+			array(
+				'type'         => 'theme_mod',
+				'default'      => 'rgba(33, 33, 33, 1)',
+				'transport'    => 'postMessage',
+			),
 	'bdbg_general_typography_h2_fontsize' =>
 			array(
 				'type'         => 'theme_mod',
@@ -61,6 +67,12 @@ $general_settings = array(
 			array(
 				'type'         => 'theme_mod',
 				'default'      => 0,
+				'transport'    => 'postMessage',
+			),
+	'bdbg_general_typography_h2_color' =>
+			array(
+				'type'         => 'theme_mod',
+				'default'      => 'rgba(33, 33, 33, 1)',
 				'transport'    => 'postMessage',
 			),
 	'bdbg_general_typography_h3_fontsize' =>
@@ -81,6 +93,12 @@ $general_settings = array(
 				'default'      => 0,
 				'transport'    => 'postMessage',
 			),
+	'bdbg_general_typography_h3_color' =>
+			array(
+				'type'         => 'theme_mod',
+				'default'      => 'rgba(33, 33, 33, 1)',
+				'transport'    => 'postMessage',
+			),
 	'bdbg_general_typography_h4_fontsize' =>
 			array(
 				'type'         => 'theme_mod',
@@ -97,6 +115,12 @@ $general_settings = array(
 			array(
 				'type'         => 'theme_mod',
 				'default'      => 0,
+				'transport'    => 'postMessage',
+			),
+	'bdbg_general_typography_h4_color' =>
+			array(
+				'type'         => 'theme_mod',
+				'default'      => 'rgba(33, 33, 33, 1)',
 				'transport'    => 'postMessage',
 			),
 	'bdbg_general_typography_h5_fontsize' =>
@@ -117,6 +141,12 @@ $general_settings = array(
 				'default'      => 0,
 				'transport'    => 'postMessage',
 			),
+	'bdbg_general_typography_h5_color' =>
+			array(
+				'type'         => 'theme_mod',
+				'default'      => 'rgba(33, 33, 33, 1)',
+				'transport'    => 'postMessage',
+			),
 	'bdbg_general_typography_h6_fontsize' =>
 			array(
 				'type'         => 'theme_mod',
@@ -133,6 +163,12 @@ $general_settings = array(
 			array(
 				'type'         => 'theme_mod',
 				'default'      => 0,
+				'transport'    => 'postMessage',
+			),
+	'bdbg_general_typography_h6_color' =>
+			array(
+				'type'         => 'theme_mod',
+				'default'      => 'rgba(33, 33, 33, 1)',
 				'transport'    => 'postMessage',
 			),
 

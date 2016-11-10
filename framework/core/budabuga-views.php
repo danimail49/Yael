@@ -171,7 +171,7 @@ if ( ! function_exists( 'bdbg_post_thumbnail' ) ) :
 		if ( ! has_post_thumbnail() && 'video' !== get_post_format() || ( ! has_post_thumbnail() && 'video' === get_post_format() && empty( get_post_meta( get_the_ID(), 'bdbg_video_url', true ) ) ) ) :
 			echo '<img src ="' . THEMEDIR_URI . 'img/images/bdbg-img-placeholder.png"
 				width="1920" height="1080" alt="' . get_the_title() . '">';
-		elseif( ! has_post_thumbnail() && 'video' === get_post_format() && ! empty( get_post_meta( get_the_ID(), 'bdbg_video_url', true ) ) ) :
+		elseif( 'video' === get_post_format() && ! empty( get_post_meta( get_the_ID(), 'bdbg_video_url', true ) ) ) :
 			$video = wp_oembed_get( get_post_meta( get_the_ID(), 'bdbg_video_url', true ) );
 			echo <<<VIDEO
 				<div class="video-container">

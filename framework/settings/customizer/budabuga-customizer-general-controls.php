@@ -58,6 +58,12 @@ $general_controls = array(
 				'min' => 0,
 			),
 		),
+	'bdbg_general_typography_h1_color' =>
+		array(
+			'label'   => __( 'H1 color', 'budabuga' ),
+			'type'    => 'alpha_color',
+			'section' => 'bdbg_general_h1',
+		),
 	'bdbg_general_typography_h2_fontsize' =>
 		array(
 			'label'       => __( 'H2 font size (px)', 'budabuga' ),
@@ -88,6 +94,12 @@ $general_controls = array(
 			'input_attrs' => array(
 				'min' => 0,
 			),
+		),
+	'bdbg_general_typography_h2_color' =>
+		array(
+			'label'   => __( 'H2 color', 'budabuga' ),
+			'type'    => 'alpha_color',
+			'section' => 'bdbg_general_h2',
 		),
 	'bdbg_general_typography_h3_fontsize' =>
 		array(
@@ -120,6 +132,12 @@ $general_controls = array(
 				'min' => 0,
 			),
 		),
+	'bdbg_general_typography_h3_color' =>
+		array(
+			'label'   => __( 'H3 color', 'budabuga' ),
+			'type'    => 'alpha_color',
+			'section' => 'bdbg_general_h3',
+		),
 	'bdbg_general_typography_h4_fontsize' =>
 		array(
 			'label'       => __( 'H4 font size (px)', 'budabuga' ),
@@ -150,6 +168,12 @@ $general_controls = array(
 			'input_attrs' => array(
 				'min' => 0,
 			),
+		),
+	'bdbg_general_typography_h4_color' =>
+		array(
+			'label'   => __( 'H4 color', 'budabuga' ),
+			'type'    => 'alpha_color',
+			'section' => 'bdbg_general_h4',
 		),
 	'bdbg_general_typography_h5_fontsize' =>
 		array(
@@ -182,6 +206,12 @@ $general_controls = array(
 				'min' => 0,
 			),
 		),
+	'bdbg_general_typography_h5_color' =>
+		array(
+			'label'   => __( 'H5 color', 'budabuga' ),
+			'type'    => 'alpha_color',
+			'section' => 'bdbg_general_h5',
+		),
 	'bdbg_general_typography_h6_fontsize' =>
 		array(
 			'label'       => __( 'H6 font size (px)', 'budabuga' ),
@@ -213,6 +243,12 @@ $general_controls = array(
 				'min' => 0,
 			),
 		),
+	'bdbg_general_typography_h6_color' =>
+		array(
+			'label'   => __( 'H6 color', 'budabuga' ),
+			'type'    => 'alpha_color',
+			'section' => 'bdbg_general_h6',
+		),
 
 	/*----------------------------------------------------------------------------
 	   Colors
@@ -242,15 +278,15 @@ $general_controls = array(
 			'type'    => 'alpha_color',
 			'section' => 'bdbg_general_general',
 		),
-	'bdbg_general_colors_activeelem_fontcolor' =>
-		array(
-			'label'   => __( 'Buttons text color', 'budabuga' ),
-			'type'    => 'alpha_color',
-			'section' => 'bdbg_general_general',
-		),
 	'bdbg_general_colors_activeelem_background' =>
 		array(
 			'label'   => __( 'Buttons background', 'budabuga' ),
+			'type'    => 'alpha_color',
+			'section' => 'bdbg_general_general',
+		),
+	'bdbg_general_colors_activeelem_fontcolor' =>
+		array(
+			'label'   => __( 'Buttons text color', 'budabuga' ),
 			'type'    => 'alpha_color',
 			'section' => 'bdbg_general_general',
 		),

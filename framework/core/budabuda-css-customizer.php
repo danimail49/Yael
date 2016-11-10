@@ -30,7 +30,7 @@ function bdbg_customizer_scripts() { ?>
 		.bdbg-logo--main,
 		nav a.button-collapse,
 		.bdbg-js-search,
-		.bdbg-menu--main > li > a {
+		.bdbg-menu--main > .bdbg-menu__item > a {
 			line-height: <?php echo bdbg_get_theme_mod( 'bdbg_header_general_height' ) . 'px;'; ?>
 		}
 
@@ -38,7 +38,7 @@ function bdbg_customizer_scripts() { ?>
 			background-color: <?php echo bdbg_get_theme_mod( 'bdbg_header_general_background' ) . ';'; ?>
 		}
 
-		.bdbg-menu--main > li > a,
+		.bdbg-menu--main > .bdbg-menu__item > a,
 		.button-collapse,
 		.bdbg-js-search {
 			color: <?php echo bdbg_get_theme_mod( 'bdbg_header_general_fontcolor' ) . ';'; ?>
@@ -48,7 +48,9 @@ function bdbg_customizer_scripts() { ?>
 			background-color: <?php echo bdbg_get_theme_mod( 'bdbg_header_general_hoverbackground' ) . ';'; ?>
 		}
 
-		.bdbg-menu--main > li > a:hover {
+		.bdbg-menu--main > .bdbg-menu__item > a:hover,
+		.button-collapse:hover,
+		.bdbg-js-search:hover {
 			color: <?php echo bdbg_get_theme_mod( 'bdbg_header_general_hovercolor' ) . ';'; ?>
 		}
 
@@ -205,7 +207,8 @@ function bdbg_customizer_scripts() { ?>
 			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_linkcolor' ) . ';'; ?>
 		 }
 
-		 a:hover:not(.btn):not(.bdbg-js-search):not(.button-collapse):not(.bdbg-menu__item a) {
+		 a:hover,
+		 .card .card-action a:hover:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
 			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_colors_linkhovercolor' ) . ';'; ?>
 		 }
 
@@ -232,32 +235,38 @@ function bdbg_customizer_scripts() { ?>
 			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h1_fontsize' ) . 'px;'; ?>
 			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h1_weight' ) . ';'; ?>
 			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h1_letterspace' ) . 'px;'; ?>
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h1_color' ) . ';'; ?>
 		 }
 		 .bdbg-post h2.bdbg-post__title,
 		 h2 {
 			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h2_fontsize' ) . 'px;'; ?>
 			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h2_weight' ) . ';'; ?>
 			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h2_letterspace' ) . 'px;'; ?>
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h2_color' ) . ';'; ?>
 		 }
 		 h3 {
 			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h3_fontsize' ) . 'px;'; ?>
 			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h3_weight' ) . ';'; ?>
 			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h3_letterspace' ) . 'px;'; ?>
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h3_color' ) . ';'; ?>
 		 }
 		 h4 {
 			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h4_fontsize' ) . 'px;'; ?>
 			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h4_weight' ) . ';'; ?>
 			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h4_letterspace' ) . 'px;'; ?>
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h4_color' ) . ';'; ?>
 		 }
 		 h5 {
 			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h5_fontsize' ) . 'px;'; ?>
 			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h5_weight' ) . ';'; ?>
 			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h5_letterspace' ) . 'px;'; ?>
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h5_color' ) . ';'; ?>
 		 }
 		 h6 {
 			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h6_fontsize' ) . 'px;'; ?>
 			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h6_weight' ) . ';'; ?>
 			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h6_letterspace' ) . 'px;'; ?>
+			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h6_color' ) . ';'; ?>
 		 }
 
 	</style>
