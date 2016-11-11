@@ -226,15 +226,15 @@ wp.customize( "bdbg_header_logo_side_margin", function( value ) {
 -------------------------------------*/
 wp.customize( "bdbg_header_search_fontsize", function( value ) {
     value.bind( function( newval ) {
-        $( "#search-big" ).css( "font-size", parseInt( newval ) );
+        $( ".bdbg-overlay .bdbg-input-group__field" ).css( "font-size", parseInt( newval ) );
     } );
 } );
 
 wp.customize( "bdbg_header_search_fontcolor", function( value ) {
     value.bind( function( newval ) {
-        $( "#search-big" ).css( "color", newval );
+        $( ".bdbg-overlay .bdbg-input-group__field" ).css( "color", newval );
         $( ".bdbg-modal__heading" ).css( "color", newval );
-        $( ".bdbg-overlay #searchform .bdbg-input-group__field" ).css( "border-color", newval );
+        $( ".bdbg-overlay .bdbg-input-group__field" ).css( "border-color", newval );
         $( ".bdbg-overlay__button--close" ).css( "color", newval );
     } );
 } );

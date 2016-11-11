@@ -75,7 +75,6 @@ function bdbg_customizer_scripts() { ?>
 			font-size: <?php echo bdbg_get_theme_mod( 'bdbg_header_search_fontsize' ) . 'px;'; ?>
 		}
 
-		#search-big,
 		.bdbg-modal__heading,
 		.bdbg-overlay__button--close,
 		.bdbg-overlay #searchform .bdbg-input-group__field,
@@ -237,7 +236,7 @@ function bdbg_customizer_scripts() { ?>
 			 letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h1_letterspace' ) . 'px;'; ?>
 			 color: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h1_color' ) . ';'; ?>
 		 }
-		 .bdbg-post h2.bdbg-post__title,
+		 .bdbg-post h2.bdbg-post__title a,
 		 h2 {
 			 font-size: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h2_fontsize' ) . 'px;'; ?>
 			 font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_general_typography_h2_weight' ) . ';'; ?>

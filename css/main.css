@@ -2311,6 +2311,21 @@ html #wpadminbar {
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   text-transform: none;
+  margin: 0;
+}
+
+.card .card-action .bdbg-meta__cats .cat-links {
+  margin: 0;
+}
+
+.bdbg-meta__item {
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+.bdbg-meta__item span,
+.bdbg-meta__item a {
+  display: inline-block;
 }
 
 .bdbg-comments .bdbg-comments__avatar {

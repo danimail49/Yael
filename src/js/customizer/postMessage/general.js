@@ -103,28 +103,28 @@ for ( var i = 1; i < 7; i++ ) {
  wp.customize( "bdbg_general_typography_h2_fontsize", function( value ) {
      value.bind( function( newval ) {
          $( "#style-size-h2" ).html(
-             ".bdbg-post h2.bdbg-post__title, h2 { font-size:" + newval + "px; }"
+             ".bdbg-post h2.bdbg-post__title a, h2 { font-size:" + newval + "px; }"
          );
      } );
  } );
  wp.customize( "bdbg_general_typography_h2_weight", function( value ) {
      value.bind( function( newval ) {
          $( "#style-weight-h2" ).html(
-             ".bdbg-post h2.bdbg-post__title, h2 { font-weight:" + newval + "; }"
+             ".bdbg-post h2.bdbg-post__title a, h2 { font-weight:" + newval + "; }"
          );
      } );
  } );
  wp.customize( "bdbg_general_typography_h2_letterspace", function( value ) {
      value.bind( function( newval ) {
          $( "#style-space-h2" ).html(
-             "h2 { letter-spacing:" + newval + "px; }"
+             ".bdbg-post h2.bdbg-post__title a, h2 { letter-spacing:" + newval + "px; }"
          );
      } );
  } );
  wp.customize( "bdbg_general_typography_h2_color", function( value ) {
      value.bind( function( newval ) {
          $( "#style-color-h2" ).html(
-             "h2 { color:" + newval + "; }"
+             ".bdbg-post h2.bdbg-post__title a, h2 { color:" + newval + "; }"
          );
      } );
  } );

@@ -238,15 +238,15 @@
        -------------------------------------*/
        wp.customize( "bdbg_header_search_fontsize", function( value ) {
            value.bind( function( newval ) {
-               $( "#search-big" ).css( "font-size", parseInt( newval ) );
+               $( ".bdbg-overlay .bdbg-input-group__field" ).css( "font-size", parseInt( newval ) );
            } );
        } );
        
        wp.customize( "bdbg_header_search_fontcolor", function( value ) {
            value.bind( function( newval ) {
-               $( "#search-big" ).css( "color", newval );
+               $( ".bdbg-overlay .bdbg-input-group__field" ).css( "color", newval );
                $( ".bdbg-modal__heading" ).css( "color", newval );
-               $( ".bdbg-overlay #searchform .bdbg-input-group__field" ).css( "border-color", newval );
+               $( ".bdbg-overlay .bdbg-input-group__field" ).css( "border-color", newval );
                $( ".bdbg-overlay__button--close" ).css( "color", newval );
            } );
        } );
@@ -559,28 +559,28 @@
         wp.customize( "bdbg_general_typography_h2_fontsize", function( value ) {
             value.bind( function( newval ) {
                 $( "#style-size-h2" ).html(
-                    ".bdbg-post h2.bdbg-post__title, h2 { font-size:" + newval + "px; }"
+                    ".bdbg-post h2.bdbg-post__title a, h2 { font-size:" + newval + "px; }"
                 );
             } );
         } );
         wp.customize( "bdbg_general_typography_h2_weight", function( value ) {
             value.bind( function( newval ) {
                 $( "#style-weight-h2" ).html(
-                    ".bdbg-post h2.bdbg-post__title, h2 { font-weight:" + newval + "; }"
+                    ".bdbg-post h2.bdbg-post__title a, h2 { font-weight:" + newval + "; }"
                 );
             } );
         } );
         wp.customize( "bdbg_general_typography_h2_letterspace", function( value ) {
             value.bind( function( newval ) {
                 $( "#style-space-h2" ).html(
-                    "h2 { letter-spacing:" + newval + "px; }"
+                    ".bdbg-post h2.bdbg-post__title a, h2 { letter-spacing:" + newval + "px; }"
                 );
             } );
         } );
         wp.customize( "bdbg_general_typography_h2_color", function( value ) {
             value.bind( function( newval ) {
                 $( "#style-color-h2" ).html(
-                    "h2 { color:" + newval + "; }"
+                    ".bdbg-post h2.bdbg-post__title a, h2 { color:" + newval + "; }"
                 );
             } );
         } );

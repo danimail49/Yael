@@ -69,9 +69,24 @@ $widget_args = array(
 /*----------------------------------------------------------------------------
    Theme Widget Areas List
 ----------------------------------------------------------------------------*/
+/* Header
+-------------------------------------*/
+
+$widget_list = array(
+	'topbar_left' => array(
+		'name' => __( 'Top Bar Left', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="l6 m6 s12 col widget bdbg-widget%2$s">',
+		'after_widget' => '</div>',
+	),
+	'topbar_right' => array(
+		'name' => __( 'Top Bar Right', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="l6 m6 s12 col widget bdbg-widget bdbg-widget---alignright %2$s">',
+		'after_widget' => '</div>',
+	),
+
 /* Footer
 -------------------------------------*/
-$widget_list = array(
+
 	'footer_top' => array(
 		'name' => __( 'Top Footer', 'budabuga' ),
 		'before_widget' => '<div id="%1$s" class="' . $footer_top_classes . ' col widget bdbg-widget %2$s">',

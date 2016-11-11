@@ -217,13 +217,14 @@ if ( ! function_exists( 'bdbg_post_meta_date' ) ) :
 		// Post Date.
 		$archive_year  = get_the_time( 'Y' );
 		$archive_month = get_the_time( 'm' );
-		$time_string = '<a href="' . get_month_link( $archive_year, $archive_month ) . '"><time class="entry-date published" datetime="%1$s">
-			<i class="fa fa-clock-o" aria-hidden="true"></i> %1$s
-		</time></a>';
+		$time_string = '<a href="' . get_month_link( $archive_year, $archive_month ) . '">
+			%1$s
+		</a>';
 
-		$time_string = sprintf( $time_string, esc_attr( get_the_date( 'F jS, Y' ) ) );
+		$date_format = ( ! is_rtl() ) ? 'F jS, Y' : 'd F Y';
+		$time_string = sprintf( $time_string, esc_attr( get_the_date( $date_format ) ) );
 
-		return $time_string;
+		return "<span class=\"bdbg-meta__item bdbg-meta__time\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i> {$time_string}</span>";
 	}
 
 endif;
@@ -234,9 +235,9 @@ if ( ! function_exists( 'bdbg_post_meta_author' ) ) :
 		// Post Date.
 		$author_url = get_author_posts_url( get_the_author_meta( 'ID' ) );
 		$author_name = get_the_author_meta( 'display_name' );
-		$author = "<a href=\"{$author_url}\" rel=\"author\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {$author_name}</a>";
+		$author = "<a href=\"{$author_url}\" rel=\"author\"> {$author_name}</a>";
 
-		return $author;
+		return "<span class=\"bdbg-meta__item bdbg-meta__author\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> {$author}</span>";
 	}
 
 endif;
@@ -256,13 +257,13 @@ if ( ! function_exists( 'bdbg_post_meta_comments' ) ) :
 				$comments = __( '1 Comment', 'budabuga' );
 			endif;
 			$write_comments = '<a href="' . get_comments_link() . '">
-				<i class="fa fa-commenting-o" aria-hidden="true"></i> ' . $comments . '
+				 ' . $comments . '
 			</a>';
 		else :
 			$write_comments = __( 'Comments are off for this post.', 'budabuga' );
 		endif;
 
-		return $write_comments;
+		return "<span class=\"bdbg-meta__item bdbg-meta__comments\"><i class=\"fa fa-commenting-o\" aria-hidden=\"true\"></i> {$write_comments}</span>";
 	}
 
 endif;
@@ -273,14 +274,14 @@ if ( ! function_exists( 'bdbg_post_meta_categories' ) ) :
 
 		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'budabuga' ) );
 		if ( $categories_list ) {
-			$categories = sprintf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>
+			$categories = sprintf( '<span class="cat-links"> <span class="screen-reader-text">%1$s </span>
  %2$s</span>',
 				_x( 'Categories', 'Used before category names.', 'budabuga' ),
-				'<i class="fa fa-folder-o" aria-hidden="true"></i> ' . $categories_list
+				$categories_list
 			);
 		}
 
-		return $categories;
+		return "<span class=\"bdbg-meta__item bdbg-meta__cats\"><i class=\"fa fa-folder-o\" aria-hidden=\"true\"></i> {$categories}</span>";
 
 	}
 
@@ -292,13 +293,13 @@ if ( ! function_exists( 'bdbg_post_meta_tags' ) ) :
 		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'budabuga' ) );
 
 		if ( $tags_list ) {
-			$taxonomies = sprintf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span><i class="fa fa-tags" aria-hidden="true"></i>
- %2$s</span>',
+			$taxonomies = sprintf( '<span class="cat-links"><span class="screen-reader-text">%1$s</span>
+ %2$s',
 				_x( 'Tags', 'Used before tag names.', 'budabuga' ),
 				$tags_list
 			);
 
-			return $taxonomies;
+			return "<span class=\"bdbg-meta__item bdbg-meta__cats\"><i class=\"fa fa-tags\" aria-hidden=\"true\"></i> {$taxonomies}</span>";
 		}
 
 		return false;

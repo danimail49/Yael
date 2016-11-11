@@ -124,8 +124,10 @@ $header_controls = array(
 	'bdbg_header_logo_main_upload' =>
 		array(
 			'label'   => __( 'Logo Upload', 'budabuga' ),
-			'type'    => 'header_image',
+			'type'    => 'cropped_image',
 			'section' => 'bdbg_header_logo_main',
+			'flex_width'  => true, // Allow custom aspect ratios and dimensions.
+			'flex_height' => true,
 		    'width'       => 128,
 		    'height'      => 64,
 		),
@@ -182,8 +184,10 @@ $header_controls = array(
 	'bdbg_header_logo_side_upload' =>
 		array(
 			'label'   => __( 'Logo Upload', 'budabuga' ),
-			'type'    => 'header_image',
+			'type'    => 'cropped_image',
 			'section' => 'bdbg_header_logo_side',
+			'flex_width'  => true, // Allow custom aspect ratios and dimensions.
+			'flex_height' => true,
 		    'width'       => 128,
 		    'height'      => 64,
 		),
