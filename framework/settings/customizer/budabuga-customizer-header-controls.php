@@ -86,6 +86,15 @@ $header_controls = array(
 			'type'    => 'alpha_color',
 			'section' => 'bdbg_header_general',
 		),
+		'bdbg_header_general_fontsize' =>
+			array(
+				'label'       => __( 'Header font size (px)', 'budabuga' ),
+				'type'        => 'number',
+				'section'     => 'bdbg_header_general',
+				'input_attrs' => array(
+					'min' => 1,
+				),
+			),
 		'bdbg_header_general_weight' =>
 			array(
 				'label'       => __( 'Header font weight (px)', 'budabuga' ),
@@ -96,15 +105,6 @@ $header_controls = array(
 					'lighter' => 'Lighter',
 					'normal'  => 'Normal',
 					'bold' 	  => 'Bold',
-				),
-			),
-		'bdbg_header_general_fontsize' =>
-			array(
-				'label'       => __( 'Header font size (px)', 'budabuga' ),
-				'type'        => 'number',
-				'section'     => 'bdbg_header_general',
-				'input_attrs' => array(
-					'min' => 1,
 				),
 			),
 		'bdbg_header_general_letterspace' =>
@@ -146,6 +146,15 @@ $header_controls = array(
 			'type'    => 'alpha_color',
 			'section' => 'bdbg_header_logo_main',
 		),
+	'bdbg_header_logo_main_fontsize' =>
+		array(
+			'label'       => __( 'Header Title font size (px)', 'budabuga' ),
+			'type'        => 'number',
+			'section'     => 'bdbg_header_logo_main',
+			'input_attrs' => array(
+				'min' => 1,
+			),
+		),
 	'bdbg_header_logo_main_weight' =>
 		array(
 			'label'       => __( 'Header Title font weight (px)', 'budabuga' ),
@@ -156,15 +165,6 @@ $header_controls = array(
 				'lighter' => 'Lighter',
 				'normal'  => 'Normal',
 				'bold' 	  => 'Bold',
-			),
-		),
-	'bdbg_header_logo_main_fontsize' =>
-		array(
-			'label'       => __( 'Header Title font size (px)', 'budabuga' ),
-			'type'        => 'number',
-			'section'     => 'bdbg_header_logo_main',
-			'input_attrs' => array(
-				'min' => 1,
 			),
 		),
 	'bdbg_header_logo_main_letterspace' =>
@@ -206,6 +206,15 @@ $header_controls = array(
 			'type'    => 'alpha_color',
 			'section' => 'bdbg_header_logo_side',
 		),
+	'bdbg_header_logo_side_fontsize' =>
+		array(
+			'label'       => __( 'Side Title font size (px)', 'budabuga' ),
+			'type'        => 'number',
+			'section'     => 'bdbg_header_logo_side',
+			'input_attrs' => array(
+				'min' => 1,
+			),
+		),
 	'bdbg_header_logo_side_weight' =>
 		array(
 			'label'       => __( 'Side Title font weight (px)', 'budabuga' ),
@@ -216,15 +225,6 @@ $header_controls = array(
 				'lighter' => 'Lighter',
 				'normal'  => 'Normal',
 				'bold' 	  => 'Bold',
-			),
-		),
-	'bdbg_header_logo_side_fontsize' =>
-		array(
-			'label'       => __( 'Side Title font size (px)', 'budabuga' ),
-			'type'        => 'number',
-			'section'     => 'bdbg_header_logo_side',
-			'input_attrs' => array(
-				'min' => 1,
 			),
 		),
 	'bdbg_header_logo_side_letterspace' =>

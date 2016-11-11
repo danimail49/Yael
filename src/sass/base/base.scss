@@ -23,3 +23,7 @@ figure {
   height: auto;
   width: auto !important;
 }
+
+h1 {
+  margin: 0 0 ($h1-fontsize / 2.5) 0;
+}

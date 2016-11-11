@@ -36,6 +36,31 @@ $header_fixed_class = ( bdbg_get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'n
 ?>
 
 <header role="banner" class="bdbg-header <?php echo $header_fixed_class; ?>">
+
+	<?php if ( is_active_sidebar( 'topbar_left' ) || is_active_sidebar( 'topbar_right' ) ) : ?>
+		<div class="bdbg-topheader">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--left">
+						<?php if ( is_active_sidebar( 'topbar_left' ) ) :
+							dynamic_sidebar( 'topbar_left' );
+						endif; ?>
+					</div>
+					<!-- /.col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--left -->
+					<div class="col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--right">
+						<?php if ( is_active_sidebar( 'topbar_right' ) ) :
+							dynamic_sidebar( 'topbar_right' );
+						endif; ?>
+					</div>
+					<!-- /.col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--right -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container bdbg-topheader -->
+		</div>
+		<!-- /.bdbg-topheader -->
+	<?php endif; ?>
+
 	<ul id="bdbg-menu-side"
 		class="bdbg-menu bdbg-menu--side <?php echo esc_html( $header_direction['from'] ); ?>
 		side-nav">

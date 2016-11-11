@@ -2263,6 +2263,10 @@ figure {
   width: auto !important;
 }
 
+h1 {
+  margin: 0 0 16px 0;
+}
+
 .bdbg-footer {
   margin-top: 1rem;
 }
@@ -2293,6 +2297,10 @@ html {
 
 html #wpadminbar {
   position: fixed;
+}
+
+.navbar-fixed .bdbg-topheader {
+  position: static;
 }
 
 .row {
@@ -2360,7 +2368,7 @@ html #wpadminbar {
 .bdbg-comments__body {
   padding: 1rem 1.5rem;
   color: #fff;
-  background-color: rgba(255, 64, 129, 0.75);
+  background-color: rgba(33, 150, 243, 0.75);
   position: relative;
 }
 
@@ -2369,7 +2377,7 @@ html #wpadminbar {
   height: 1rem;
   border-top: 1rem solid transparent;
   border-bottom: 1rem solid transparent;
-  border-right: 1rem solid rgba(255, 64, 129, 0.75);
+  border-right: 1rem solid rgba(33, 150, 243, 0.75);
   position: absolute;
   left: -1rem;
   top: 50%;
@@ -2639,7 +2647,7 @@ html #wpadminbar {
 }
 
 .bdbg-pagination li.active {
-  background-color: #ff4081;
+  background-color: #2196f3;
 }
 
 .bdbg-pagination li i {
@@ -2663,7 +2671,7 @@ html #wpadminbar {
 }
 
 .card .card-action a:hover:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: #ff4081;
+  color: #2196f3;
 }
 
 .bdbg-content__single .card-action {

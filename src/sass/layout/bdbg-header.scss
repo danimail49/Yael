@@ -5,7 +5,7 @@
   margin-bottom: $gutter-width / 2;
 
   @media screen and (max-width: $small-screen) {
-    margin-bottom: $gutter-width / 4;  
+    margin-bottom: $gutter-width / 4;
   }
 }
 
@@ -30,4 +30,10 @@ html {
 
 html #wpadminbar {
   position: fixed;
+}
+
+.navbar-fixed {
+  .bdbg-topheader {
+    position: static;
+  }
 }

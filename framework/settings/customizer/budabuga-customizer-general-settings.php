@@ -200,7 +200,7 @@ $general_settings = array(
 	'bdbg_general_colors_linkhovercolor' =>
 		array(
 			'type'         => 'theme_mod',
-			'default'      => 'rgba(255, 64, 129, 1)',
+			'default'      => 'rgba(33, 150, 243, 1)',
 			'transport'    => 'postMessage',
 			'show_opacity' => 'true',
 		),
@@ -214,7 +214,7 @@ $general_settings = array(
 	'bdbg_general_colors_activeelem_background' =>
 		array(
 			'type'         => 'theme_mod',
-			'default'      => 'rgba(255, 64, 129, 1)',
+			'default'      => 'rgba(33, 150, 243, 1)',
 			'transport'    => 'refresh',
 			'show_opacity' => 'true',
 		),
