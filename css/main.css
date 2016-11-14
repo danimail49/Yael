@@ -2271,21 +2271,6 @@ h1 {
   margin-top: 1rem;
 }
 
-.bdbg-header {
-  top: 0;
-  height: 64px;
-  position: static;
-  margin-bottom: 1rem;
-}
-
-.admin-bar .bdbg-header.navbar-fixed {
-  top: 46px;
-}
-
-.admin-bar .bdbg-menu--side {
-  top: 46px;
-}
-
 html {
   margin-top: 0 !important;
 }
@@ -2299,8 +2284,9 @@ html #wpadminbar {
   position: fixed;
 }
 
-.navbar-fixed .bdbg-topheader {
-  position: static;
+.bdbg-topheader {
+  position: fixed;
+  width: 100%;
 }
 
 .row {
@@ -2703,16 +2689,6 @@ html #wpadminbar {
   border: 0;
 }
 
-@media screen and (min-width: 783px) {
-  .admin-bar .bdbg-header.navbar-fixed {
-    top: 32px;
-  }
-
-  .admin-bar .bdbg-menu--side {
-    top: 32px;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .bdbg-header .bdbg-nav .bdbg-logo--main {
     margin-left: auto;
@@ -2729,10 +2705,6 @@ html #wpadminbar {
 @media screen and (max-width: 600px) {
   .bdbg-footer {
     margin-top: 0.5rem;
-  }
-
-  .bdbg-header {
-    margin-bottom: 0.5rem;
   }
 
   .card {

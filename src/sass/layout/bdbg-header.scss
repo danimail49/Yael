@@ -1,23 +1,23 @@
-.bdbg-header {
-  top: 0;
-  height: 64px;
-  position: static;
-  margin-bottom: $gutter-width / 2;
+// .bdbg-header {
+//   top: 0;
+//   height: 64px;
+//   position: static;
+//   margin-bottom: $gutter-width / 2;
+//
+//   @media screen and (max-width: $small-screen) {
+//     margin-bottom: $gutter-width / 4;
+//   }
+// }
 
-  @media screen and (max-width: $small-screen) {
-    margin-bottom: $gutter-width / 4;
-  }
-}
-
-.bdbg-header.navbar-fixed {
-  // position: static;
-
-  @include admin-sticky-fix;
-}
-
-.bdbg-menu--side {
-  @include admin-sticky-fix;
-}
+// .bdbg-header.navbar-fixed {
+//   // position: static;
+//
+//   @include admin-sticky-fix;
+// }
+//
+// .bdbg-menu--side {
+//   @include admin-sticky-fix;
+// }
 
 html {
   margin-top: 0 !important;
@@ -32,8 +32,11 @@ html #wpadminbar {
   position: fixed;
 }
 
+.bdbg-topheader {
+  position: fixed;
+  width: 100%;
+}
+
 .navbar-fixed {
-  .bdbg-topheader {
-    position: static;
-  }
+
 }

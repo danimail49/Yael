@@ -11,6 +11,8 @@
         //= modules/bdbg-modal.js
         // Grid Height Plugin
         //= modules/bdbg_grid_height.js
+        // Grid Height Plugin
+        //= modules/bdbg_topbar.js
 
         $( ".bdbg-row-set" )
             .bdbgGridHeight( {

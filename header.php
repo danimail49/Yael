@@ -35,31 +35,31 @@ $header_direction = bdbg_header_layout();
 $header_fixed_class = ( bdbg_get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar-fixed' : '';
 ?>
 
-<header role="banner" class="bdbg-header <?php echo $header_fixed_class; ?>">
-
-	<?php if ( is_active_sidebar( 'topbar_left' ) || is_active_sidebar( 'topbar_right' ) ) : ?>
-		<div class="bdbg-topheader">
-			<div class="container">
-				<div class="row">
-					<div class="col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--left">
-						<?php if ( is_active_sidebar( 'topbar_left' ) ) :
-							dynamic_sidebar( 'topbar_left' );
-						endif; ?>
-					</div>
-					<!-- /.col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--left -->
-					<div class="col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--right">
-						<?php if ( is_active_sidebar( 'topbar_right' ) ) :
-							dynamic_sidebar( 'topbar_right' );
-						endif; ?>
-					</div>
-					<!-- /.col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--right -->
+<?php if ( is_active_sidebar( 'topbar_left' ) || is_active_sidebar( 'topbar_right' ) ) : ?>
+	<div class="bdbg-topheader" id="js-topheader" style="display: none;">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--left">
+					<?php if ( is_active_sidebar( 'topbar_left' ) ) :
+						dynamic_sidebar( 'topbar_left' );
+					endif; ?>
 				</div>
-				<!-- /.row -->
+				<!-- /.col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--left -->
+				<div class="col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--right">
+					<?php if ( is_active_sidebar( 'topbar_right' ) ) :
+						dynamic_sidebar( 'topbar_right' );
+					endif; ?>
+				</div>
+				<!-- /.col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--right -->
 			</div>
-			<!-- /.container bdbg-topheader -->
+			<!-- /.row -->
 		</div>
-		<!-- /.bdbg-topheader -->
-	<?php endif; ?>
+		<!-- /.container bdbg-topheader -->
+	</div>
+	<!-- /.bdbg-topheader -->
+<?php endif; ?>
+
+<header role="banner" class="bdbg-header <?php echo $header_fixed_class; ?>">
 
 	<ul id="bdbg-menu-side"
 		class="bdbg-menu bdbg-menu--side <?php echo esc_html( $header_direction['from'] ); ?>
@@ -70,7 +70,7 @@ $header_fixed_class = ( bdbg_get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'n
 
 		<?php bdbg_menus( 'side', $header_direction ); ?>
 	</ul>
-	<nav class="bdbg-nav" role="navigation">
+	<nav class="bdbg-nav" id="js-nav" role="navigation">
 		<div class="nav-wrapper container">
 			<?php
 			if ( bdbg_get_theme_mod( 'bdbg_header_search_display' ) ) :
