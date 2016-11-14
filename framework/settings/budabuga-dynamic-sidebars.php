@@ -73,6 +73,12 @@ $widget_args = array(
 -------------------------------------*/
 
 $widget_list = array(
+	'page_right' => array(
+		'name' => __( 'Main Sidebar', 'budabuga' ),
+		'before_widget' => '<div class="card"><div class="card-content"><div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
+		'after_widget' => '</div></div></div>',
+	),
+
 	'topbar_left' => array(
 		'name' => __( 'Top Bar Left', 'budabuga' ),
 		'before_widget' => '<div id="%1$s" class="l6 m6 s12 col widget bdbg-widget%2$s">',
@@ -110,11 +116,6 @@ $widget_list = array(
 	// 	'before_widget' => '<div class="card"><div class="card-content"><div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
 	// 	'after_widget' => '</div></div></div>',
 	// ),
-	'page_right' => array(
-		'name' => __( 'Main Sidebar', 'budabuga' ),
-		'before_widget' => '<div class="card"><div class="card-content"><div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
-		'after_widget' => '</div></div></div>',
-	),
 	'precomments' => array(
 		'name' => __( 'Precomments', 'budabuga' ),
 		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--comments %2$s">',
