@@ -149,6 +149,50 @@
            } );
        } );
        
+       /* Top Bar
+       -------------------------------------*/
+       $( "head" ).append( "<style id=\"topbarcss\"></style>" );
+       
+       wp.customize( "bdbg_topbar_background", function( value ) {
+           value.bind( function( newval ) {
+               $( "#js-topheader" ).css( "background-color", newval );
+           } );
+       } );
+       
+       wp.customize( "bdbg_topbar_fontcolor", function( value ) {
+           value.bind( function( newval ) {
+               $( "#js-topheader" ).css( "color", newval );
+           } );
+       } );
+       
+       wp.customize( "bdbg_topbar_weight", function( value ) {
+           value.bind( function( newval ) {
+               $( "#js-topheader" ).css( "font-weight", newval );
+           } );
+       } );
+       
+       wp.customize( "bdbg_topbar_letterspace", function( value ) {
+           value.bind( function( newval ) {
+               $( "#js-topheader" ).css( "letter-spacing", parseInt( newval ) );
+           } );
+       } );
+       
+       wp.customize( "bdbg_topbar_linkcolor", function( value ) {
+           value.bind( function( newval ) {
+               $( "#topbarcss" ).append(
+                   "#js-topheader a {color:" + newval + ";}"
+               );
+           } );
+       } );
+       
+       wp.customize( "bdbg_topbar_linkhovercolor", function( value ) {
+           value.bind( function( newval ) {
+               $( "#topbarcss" ).append(
+                   "#js-topheader a:hover {color:" + newval + ";}"
+               );
+           } );
+       } );
+       
        /* Main Logo
        -------------------------------------*/
        wp.customize( "bdbg_header_logo_main_height", function( value ) {

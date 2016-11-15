@@ -97,6 +97,47 @@ $header_settings = array(
 		),
 
 /*----------------------------------------------------------------------------
+   Top Bar Section
+----------------------------------------------------------------------------*/
+
+	'bdbg_topbar_background' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'      		=> '#1E87DA',
+			'transport'         => 'postMessage',
+		),
+	'bdbg_topbar_fontcolor' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'     		=> '#fff',
+			'transport'         => 'postMessage',
+		),
+	'bdbg_topbar_weight' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'           => 'normal',
+			'transport'         => 'postMessage',
+		),
+	'bdbg_topbar_letterspace' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'           => 0,
+			'transport'         => 'postMessage',
+		),
+	'bdbg_topbar_linkcolor' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'           => '#fff',
+			'transport'         => 'postMessage',
+		),
+	'bdbg_topbar_linkhovercolor' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'           => '#F0F5F7',
+			'transport'         => 'postMessage',
+		),
+
+/*----------------------------------------------------------------------------
    Logo Main Section
 ----------------------------------------------------------------------------*/
 	'bdbg_header_logo_main_upload' =>

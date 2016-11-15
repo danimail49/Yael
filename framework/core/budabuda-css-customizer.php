@@ -27,6 +27,10 @@ function bdbg_customizer_scripts() { ?>
 			height: <?php echo bdbg_get_theme_mod( 'bdbg_header_general_height' ) . 'px;'; ?>
 		}
 
+		.navbar-fixed {
+			top: <?php echo bdbg_get_theme_mod( 'bdbg_header_general_height' ) . 'px;'; ?>
+		}
+
 		.bdbg-logo--main,
 		nav a.button-collapse,
 		.bdbg-js-search,
@@ -67,6 +71,19 @@ function bdbg_customizer_scripts() { ?>
 		.bdbg-menu--main > li > a {
 			font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_header_general_weight' ) . ';'; ?>
 		}
+
+		/**
+		 * Top Bar
+		 */
+		#js-topheader {
+			background-color: <?php echo bdbg_get_theme_mod( 'bdbg_topbar_background' ) . ';'; ?>
+			color: <?php echo bdbg_get_theme_mod( 'bdbg_topbar_fontcolor' ) . ';'; ?>
+			font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_topbar_weight' ) . ';'; ?>
+			letter-spacing: <?php echo bdbg_get_theme_mod( 'bdbg_topbar_letterspace' ) . 'px;'; ?>
+		}
+
+		#js-topheader a {color: <?php echo bdbg_get_theme_mod( 'bdbg_topbar_linkcolor' ) . ';'; ?>}
+		#js-topheader a:hover {color: <?php echo bdbg_get_theme_mod( 'bdbg_topbar_linkhovercolor' ) . ';'; ?>}
 
 		/**
 		 * Searchbox

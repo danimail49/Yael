@@ -10,7 +10,7 @@ $( ".bdbg-overlay__button--close" ).on( "click", function() {
     $( ".bdbg-overlay" ).removeClass( "bdbg-overlay--visible" );
 } );
 
-$( "#search-big" ).on( "keypress", function( event ) {
+$( ".bdbg-modal--search" ).find( "#s" ).on( "keypress", function( event ) {
     if ( 13 === event.keyCode ) {
         let modalHeading = $( ".bdbg-modal__heading" );
         let count = 0;

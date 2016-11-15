@@ -23,13 +23,19 @@
         if ( $navbarEl.offset().top > offsetTop && topbarIsVisible() ) {
             $topbarEl.stop( true, false ).slideUp( 180 );
             $navbarEl.stop( true, false ).animate( { top: adminbarHeight - 1 }, { duration: 180 } );
+            $( ".bdbg-header" ).css( "top", 0 );
+            $( "body" ).removeClass( "js-topbar-opened" );
+            $( "#js-topbar-margin" ).css( "margin-top", navbarHeight );
         } else if ( $navbarEl.offset().top <= offsetTop && ! topbarIsVisible() ) {
             $topbarEl.stop( true, false ).slideDown( 180 );
             $navbarEl.stop( true, false ).animate( { top: offsetTop - 1 }, { duration: 180 } );
+            $( ".bdbg-header" ).css( "top", offsetTop - adminbarHeight - 1 );
+            $( "body" ).addClass( "js-topbar-opened" );
+            $( "#js-topbar-margin" ).css( "margin-top", topbarHeight );
         }
     }
 
-    if ( $( "#js-topheader" ).length ) {
+    if ( $( "#js-topheader" ).length && $( ".navbar-fixed" ).length ) {
 
         // Elements
         var $navbarEl   = $( "#js-nav" ),
@@ -50,6 +56,8 @@
             toggleTopBar();
         } );
 
+    } else {
+        $( "body" ).addClass( "header-scroll" );
     }
 
 

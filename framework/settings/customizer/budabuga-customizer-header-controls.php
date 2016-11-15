@@ -97,7 +97,7 @@ $header_controls = array(
 			),
 		'bdbg_header_general_weight' =>
 			array(
-				'label'       => __( 'Header font weight (px)', 'budabuga' ),
+				'label'       => __( 'Header font weight', 'budabuga' ),
 				'type'        => 'select',
 				'section'     => 'bdbg_header_general',
 				// 'description' => __( 'Choose font weight. Can be bold, bolder, lighter or normal', 'budabuga' ),
@@ -119,17 +119,68 @@ $header_controls = array(
 			),
 
 /*----------------------------------------------------------------------------
+   Top Bar Section
+----------------------------------------------------------------------------*/
+
+		'bdbg_topbar_background' =>
+			array(
+				'label'   => __( 'Top Bar Background', 'budabuga' ),
+				'type'    => 'alpha_color',
+				'section' => 'bdbg_topbar',
+			),
+		'bdbg_topbar_fontcolor' =>
+			array(
+				'label'   => __( 'Top Bar Font Color', 'budabuga' ),
+				'type'    => 'alpha_color',
+				'section' => 'bdbg_topbar',
+			),
+		'bdbg_topbar_weight' =>
+			array(
+				'label'       => __( 'Top Bar Font weight', 'budabuga' ),
+				'type'        => 'select',
+				'section'     => 'bdbg_topbar',
+				// 'description' => __( 'Choose font weight. Can be bold, bolder, lighter or normal', 'budabuga' ),
+				'choices' => array(
+					'lighter' => 'Lighter',
+					'normal'  => 'Normal',
+					'bold' 	  => 'Bold',
+				),
+			),
+		'bdbg_topbar_letterspace' =>
+			array(
+				'label'       => __( 'Top Bar text letterspace (px)', 'budabuga' ),
+				'type'        => 'number',
+				'section'     => 'bdbg_topbar',
+				// 'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
+				'input_attrs' => array(
+					'min' => 0,
+				),
+			),
+		'bdbg_topbar_linkcolor' =>
+			array(
+				'label'   => __( 'Top Bar Link Color', 'budabuga' ),
+				'type'    => 'alpha_color',
+				'section' => 'bdbg_topbar',
+			),
+		'bdbg_topbar_linkhovercolor' =>
+			array(
+				'label'   => __( 'Top Bar Link Hover Color', 'budabuga' ),
+				'type'    => 'alpha_color',
+				'section' => 'bdbg_topbar',
+			),
+
+/*----------------------------------------------------------------------------
    Logo Main Section
 ----------------------------------------------------------------------------*/
 	'bdbg_header_logo_main_upload' =>
 		array(
 			'label'   => __( 'Logo Upload', 'budabuga' ),
-			'type'    => 'cropped_image',
+			'type'    => 'header_image',
 			'section' => 'bdbg_header_logo_main',
-			'flex_width'  => true, // Allow custom aspect ratios and dimensions.
-			'flex_height' => true,
-		    'width'       => 128,
-		    'height'      => 64,
+			// 'flex_width'  => true, // Allow custom aspect ratios and dimensions.
+			// 'flex_height' => true,
+		    // 'width'       => 128,
+		    // 'height'      => 64,
 		),
 	'bdbg_header_logo_main_height' =>
 		array(

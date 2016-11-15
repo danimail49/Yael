@@ -81,12 +81,12 @@ $widget_list = array(
 
 	'topbar_left' => array(
 		'name' => __( 'Top Bar Left', 'budabuga' ),
-		'before_widget' => '<div id="%1$s" class="l6 m6 s12 col widget bdbg-widget%2$s">',
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--inline %2$s">',
 		'after_widget' => '</div>',
 	),
 	'topbar_right' => array(
 		'name' => __( 'Top Bar Right', 'budabuga' ),
-		'before_widget' => '<div id="%1$s" class="l6 m6 s12 col widget bdbg-widget bdbg-widget---alignright %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget---alignright bdbg-widget--inline %2$s">',
 		'after_widget' => '</div>',
 	),
 
@@ -105,7 +105,7 @@ $widget_list = array(
 	),
 	'footer_bottom' => array(
 		'name' => __( 'Bottom Footer', 'budabuga' ),
-		'before_widget' => '<div id="%1$s" class="' . $footer_bottom_classes . ' col widget bdbg-widget %2$s">',
+		'before_widget' => '<div id="%1$s" class="' . $footer_bottom_classes . ' col widget bdbg-widget bdbg-widget--inline %2$s">',
 		'after_widget' => '</div>',
 	),
 

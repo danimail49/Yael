@@ -15,9 +15,9 @@
 //   @include admin-sticky-fix;
 // }
 //
-// .bdbg-menu--side {
-//   @include admin-sticky-fix;
-// }
+.bdbg-menu--side {
+  @include admin-sticky-fix;
+}
 
 html {
   margin-top: 0 !important;
@@ -37,6 +37,19 @@ html #wpadminbar {
   width: 100%;
 }
 
-.navbar-fixed {
+.header-scroll {
+  #js-topheader {
+    display: block !important;
+    position: relative;
+  }
+}
 
+.bdbg-topheader {
+  .container {
+    padding: 1rem 0;
+  }
+}
+
+#js-topbar-margin {
+  transition: margin 200ms;
 }
