@@ -219,7 +219,7 @@ if ( ! function_exists( 'bdbg_post_meta_date' ) ) :
 		</a>';
 
 		$date_format = ( ! is_rtl() ) ? 'F jS, Y' : 'd F Y';
-		$time_string = sprintf( $time_string, esc_attr( get_the_date( $date_format ) ) );
+		$time_string = sprintf( $time_string, esc_attr( get_the_date() ) );
 
 		return "<span class=\"bdbg-meta__item bdbg-meta__time\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i> {$time_string}</span>";
 	}

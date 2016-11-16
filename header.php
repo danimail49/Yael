@@ -45,7 +45,7 @@ $header_fixed_class = ( bdbg_get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'n
 					endif; ?>
 				</div>
 				<!-- /.col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--left -->
-				<div class="col l6 m6 s12 bdbg-topheader__item bdbg-widget-wraper--inline bdbg-topheader__item--left bdbg-widget-wrapper--right">
+				<div class="col l6 m6 s12 bdbg-topheader__item bdbg-widget-wraper--inline bdbg-topheader__item--right bdbg-widget-wrapper--right">
 					<?php if ( is_active_sidebar( 'topbar_right' ) ) :
 						dynamic_sidebar( 'topbar_right' );
 					endif; ?>

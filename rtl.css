@@ -49,3 +49,17 @@ nav ul li {
 .bdbg-overlay__button {
   text-align: left;
 }
+
+/* Pagination */
+.page-numbers i,
+.pagination i {
+  transform: rotateY( 180deg );
+}
+
+.bdbg-topheader .col {
+  float: left;
+}
+
+.bdbg-topheader__item--left {
+  text-align: left;
+}
