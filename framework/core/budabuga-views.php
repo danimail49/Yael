@@ -97,27 +97,24 @@ if ( ! function_exists( 'bdbg_logo' ) ) :
 	 */
 	function bdbg_logo( $logo_name, $logo_echo = true ) {
 		$logo_name = $logo_name . '_upload';
-		$logo_id = bdbg_get_theme_mod( $logo_name );
-		$logo_obj = '';
+		$logo_img = wp_get_attachment_image( bdbg_get_theme_mod( $logo_name ), 'full', false, array(
+				'class'    => 'bdbg-logo__img',
+				'itemprop' => 'logo',
+			)
+		);
+		$logo_return = '';
 
-		if ( $logo_id ) :
-			$logo = wp_get_attachment_image_src( $logo_id );
-			$attr = array(
-				'width' => $logo[1],
-				'height' => $logo[2],
-				'class' => 'bdbg-logo__img',
-			);
-
-			$logo_obj = sprintf( '<img src="%1$s" width="%2$d" height="%3$d" class="%4$s" />', esc_url( $logo[0] ), esc_attr( $attr['width'] ), esc_attr( $attr['height'] ), esc_attr( $attr['class'] ) );
+		if ( ! empty( $logo_img ) ) :
+			$logo_return = $logo_img;
 		else :
-			$logo_obj = esc_html( get_bloginfo( 'name' ) );
+			$logo_return = esc_html( get_bloginfo( 'name' ) );
 		endif;
 
 		if ( ! $logo_echo ) :
-			return $logo_echo;
+			return $logo_return;
 		endif;
 
-		echo $logo_obj;
+		echo $logo_return;
 	}
 
 endif;

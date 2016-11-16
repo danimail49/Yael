@@ -117,18 +117,25 @@ class Bdbg_Theme_Customizer {
 	public function create_controls( $wp_customize ) {
 		foreach ( $this->controls as $ctrl_id => $ctrl_params ) :
 			if ( 'color' === $ctrl_params['type'] ) :
+				unset( $ctrl_params['type'] );
 				$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $ctrl_id, $ctrl_params ) );
 			elseif ( 'alpha_color' === $ctrl_params['type'] ) :
+				unset( $ctrl_params['type'] );
 				$wp_customize->add_control( new Bdbg_Alpha_Color_Control( $wp_customize, $ctrl_id, $ctrl_params ) );
 			elseif ( 'media_control' === $ctrl_params['type'] ) :
+				unset( $ctrl_params['type'] );
 				$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, $ctrl_id, $ctrl_params ) );
 			elseif ( 'std_image' === $ctrl_params['type'] ) :
+				unset( $ctrl_params['type'] );
 				$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $ctrl_id, $ctrl_params ) );
 			elseif ( 'cropped_image' === $ctrl_params['type'] ) :
+				unset( $ctrl_params['type'] );
 				$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, $ctrl_id, $ctrl_params ) );
 			elseif ( 'header_image' === $ctrl_params['type'] ) :
+				unset( $ctrl_params['type'] );
 				$wp_customize->add_control( new WP_Customize_Header_Image_Control( $wp_customize, $ctrl_id, $ctrl_params ) );
 			elseif ( 'numeric_input' === $ctrl_params['type'] ) :
+				unset( $ctrl_params['type'] );
 				$wp_customize->add_control( new Bdbg_Int_Customizer_control( $wp_customize, $ctrl_id, $ctrl_params ) );
 			else :
 				$wp_customize->add_control( $ctrl_id, $ctrl_params );
