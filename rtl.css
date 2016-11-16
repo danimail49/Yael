@@ -56,10 +56,21 @@ nav ul li {
   transform: rotateY( 180deg );
 }
 
-.bdbg-topheader .col {
+.bdbg-topheader .col,
+.bdbg-footer__section--bottom .col {
   float: left;
 }
 
-.bdbg-topheader__item--left {
+.bdbg-topheader__item--left,
+.bdbg-bottomfooter__item--left {
   text-align: left;
+}
+
+.bdbg-menu--side .collapsible-header::after {
+  float: left;
+}
+
+.side-nav .collapsible-body li a,
+.side-nav.fixed .collapsible-body li a {
+  padding: 0 32px;
 }

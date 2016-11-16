@@ -103,9 +103,14 @@ $widget_list = array(
 		'before_widget' => '<div id="%1$s" class="' . $footer_middle_classes . ' col widget bdbg-widget %2$s">',
 		'after_widget' => '</div>',
 	),
-	'footer_bottom' => array(
-		'name' => __( 'Bottom Footer', 'budabuga' ),
-		'before_widget' => '<div id="%1$s" class="' . $footer_bottom_classes . ' col widget bdbg-widget bdbg-widget--inline %2$s">',
+	'footer_bottom-left' => array(
+		'name' => __( 'Bottom Footer Left', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--inline %2$s">',
+		'after_widget' => '</div>',
+	),
+	'footer_bottom-right' => array(
+		'name' => __( 'Bottom Footer Right', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget---alignright bdbg-widget--inline %2$s">',
 		'after_widget' => '</div>',
 	),
 

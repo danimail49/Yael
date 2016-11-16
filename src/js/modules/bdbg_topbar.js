@@ -56,6 +56,10 @@
             toggleTopBar();
         } );
 
+        $( window ).on( "resize", function() {
+            toggleTopBar();
+        } );
+
     } else {
         $( "body" ).addClass( "header-scroll" );
     }

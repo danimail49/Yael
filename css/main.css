@@ -2287,8 +2287,8 @@ h6 {
   margin: 0 0 7.2px 0;
 }
 
-.bdbg-footer {
-  margin-top: 1rem;
+.bdbg-footer__section {
+  padding: 1rem 0;
 }
 
 .admin-bar .bdbg-menu--side {
@@ -2778,10 +2778,6 @@ html #wpadminbar {
 }
 
 @media screen and (max-width: 600px) {
-  .bdbg-footer {
-    margin-top: 0.5rem;
-  }
-
   .card {
     margin: 1rem 0;
   }

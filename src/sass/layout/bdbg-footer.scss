@@ -1,7 +1,11 @@
 .bdbg-footer {
-  margin-top: $gutter-width / 2;
+  // margin-top: $gutter-width / 2;
+  //
+  // @media screen and (max-width: $small-screen) {
+  //   margin-top: $gutter-width / 4;
+  // }
+}
 
-  @media screen and (max-width: $small-screen) {
-    margin-top: $gutter-width / 4;
-  }
+.bdbg-footer__section {
+  padding: 1rem 0;
 }
