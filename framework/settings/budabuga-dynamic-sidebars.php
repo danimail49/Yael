@@ -27,7 +27,7 @@ if ( ! function_exists( 'bdbg_width_widget_class' ) ) :
 	 */
 	function bdbg_width_widget_class( $widget_area_customizer_param, $columns = 12 ) {
 
-		$widget_columns = get_theme_mod( $widget_area_customizer_param );
+		$widget_columns = bdbg_get_theme_mod( $widget_area_customizer_param );
 
 		switch ( $widget_columns ) :
 			case 4:
@@ -60,8 +60,8 @@ $footer_bottom_classes =
    Global Widget Areas Args
 ----------------------------------------------------------------------------*/
 $widget_args = array(
-	'before_widget' => '<div id="%1$s" class="widget bdbg-widget %2$s">',
-	'after_widget' => '</div>',
+	'before_widget' => '<div class="card"><div class="card-content"><div id="%1$s" class="widget bdbg-widget %2$s">',
+	'after_widget' => '</div></div></div>',
 	'before_title' => '<h5 class="widget-title bdbg-widget__title">',
 	'after_title' => '</h5>',
 );
@@ -69,20 +69,61 @@ $widget_args = array(
 /*----------------------------------------------------------------------------
    Theme Widget Areas List
 ----------------------------------------------------------------------------*/
+/* Header
+-------------------------------------*/
+
 $widget_list = array(
+	'page_right' => array(
+		'name' => __( 'Main Sidebar', 'budabuga' ),
+		'before_widget' => '<div class="card"><div class="card-content"><div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
+		'after_widget' => '</div></div></div>',
+	),
+
+	'topbar_left' => array(
+		'name' => __( 'Top Bar Left', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--inline %2$s">',
+		'after_widget' => '</div>',
+	),
+	'topbar_right' => array(
+		'name' => __( 'Top Bar Right', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget---alignright bdbg-widget--inline %2$s">',
+		'after_widget' => '</div>',
+	),
+
+/* Footer
+-------------------------------------*/
+
 	'footer_top' => array(
-		'name' => 'Footer Top',
+		'name' => __( 'Top Footer', 'budabuga' ),
 		'before_widget' => '<div id="%1$s" class="' . $footer_top_classes . ' col widget bdbg-widget %2$s">',
 		'after_widget' => '</div>',
 	),
 	'footer_middle' => array(
-		'name' => 'Footer Middle',
+		'name' => __( 'Middle Footer', 'budabuga' ),
 		'before_widget' => '<div id="%1$s" class="' . $footer_middle_classes . ' col widget bdbg-widget %2$s">',
 		'after_widget' => '</div>',
 	),
-	'footer_bottom' => array(
-		'name' => 'Footer Bottom',
-		'before_widget' => '<div id="%1$s" class="' . $footer_bottom_classes . ' col widget bdbg-widget %2$s">',
+	'footer_bottom-left' => array(
+		'name' => __( 'Bottom Footer Left', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--inline %2$s">',
+		'after_widget' => '</div>',
+	),
+	'footer_bottom-right' => array(
+		'name' => __( 'Bottom Footer Right', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget---alignright bdbg-widget--inline %2$s">',
+		'after_widget' => '</div>',
+	),
+
+/* Page
+-------------------------------------*/
+	// 'page_left' => array(
+	// 	'name' => __( 'Left Page', 'budabuga' ),
+	// 	'before_widget' => '<div class="card"><div class="card-content"><div id="%1$s" class="widget bdbg-widget bdbg-widget--page %2$s">',
+	// 	'after_widget' => '</div></div></div>',
+	// ),
+	'precomments' => array(
+		'name' => __( 'Precomments', 'budabuga' ),
+		'before_widget' => '<div id="%1$s" class="widget bdbg-widget bdbg-widget--comments %2$s">',
 		'after_widget' => '</div>',
 	),
 );

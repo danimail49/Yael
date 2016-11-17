@@ -1,16 +1,20 @@
-.bdbg-header {
-  top: 0;
-  height: 64px;
-  position: static;
-  // z-index: 10;
-}
+// .bdbg-header {
+//   top: 0;
+//   height: 64px;
+//   position: static;
+//   margin-bottom: $gutter-width / 2;
+//
+//   @media screen and (max-width: $small-screen) {
+//     margin-bottom: $gutter-width / 4;
+//   }
+// }
 
-.bdbg-header.navbar-fixed {
-  // position: static;
-
-  @include admin-sticky-fix;
-}
-
+// .bdbg-header.navbar-fixed {
+//   // position: static;
+//
+//   @include admin-sticky-fix;
+// }
+//
 .bdbg-menu--side {
   @include admin-sticky-fix;
 }
@@ -26,4 +30,26 @@ html {
 
 html #wpadminbar {
   position: fixed;
+}
+
+.bdbg-topheader {
+  position: fixed;
+  width: 100%;
+}
+
+.header-scroll {
+  #js-topheader {
+    display: block !important;
+    position: relative;
+  }
+}
+
+.bdbg-topheader {
+  .container {
+    padding: 1rem 0;
+  }
+}
+
+#js-topbar-margin {
+  transition: margin 200ms;
 }

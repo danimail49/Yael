@@ -3046,7 +3046,7 @@ th {
 }
 
 .collection {
-  margin: 0.5rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
   border: 1px solid #e0e0e0;
   border-radius: 2px;
   overflow: hidden;
@@ -3205,7 +3205,7 @@ nav ul a span.badge {
   width: 100%;
   background-color: #acece6;
   border-radius: 2px;
-  margin: 0.5rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
   overflow: hidden;
 }
 
@@ -3384,8 +3384,8 @@ input[type=range] + .thumb {
 }
 
 .container .row {
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
 .section {
@@ -3420,7 +3420,7 @@ input[type=range] + .thumb {
 .row .col {
   float: left;
   box-sizing: border-box;
-  padding: 0 0.75rem;
+  padding: 0 1rem;
   min-height: 1px;
 }
 
@@ -3892,39 +3892,39 @@ h6 a {
 }
 
 h1 {
-  font-size: 4.2rem;
+  font-size: 40px;
   line-height: 110%;
-  margin: 2.1rem 0 1.68rem 0;
+  margin: 20px 0 16px 0;
 }
 
 h2 {
-  font-size: 3.56rem;
+  font-size: 34px;
   line-height: 110%;
-  margin: 1.78rem 0 1.424rem 0;
+  margin: 17px 0 13.6px 0;
 }
 
 h3 {
-  font-size: 2.92rem;
+  font-size: 28px;
   line-height: 110%;
-  margin: 1.46rem 0 1.168rem 0;
+  margin: 14px 0 11.2px 0;
 }
 
 h4 {
-  font-size: 2.28rem;
+  font-size: 24px;
   line-height: 110%;
-  margin: 1.14rem 0 0.912rem 0;
+  margin: 12px 0 9.6px 0;
 }
 
 h5 {
-  font-size: 1.64rem;
+  font-size: 20px;
   line-height: 110%;
-  margin: 0.82rem 0 0.656rem 0;
+  margin: 10px 0 8px 0;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 110%;
-  margin: 0.5rem 0 0.4rem 0;
+  margin: 9px 0 7.2px 0;
 }
 
 em {
@@ -3956,14 +3956,14 @@ footer.page-footer .footer-copyright {
   -webkit-transition: box-shadow 0.25s;
           transition: box-shadow 0.25s;
   padding: 20px;
-  margin: 0.5rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
   border-radius: 2px;
   background-color: #fff;
 }
 
 .card {
   position: relative;
-  margin: 0.5rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
   background-color: #fff;
   -webkit-transition: box-shadow 0.25s;
           transition: box-shadow 0.25s;
@@ -4386,7 +4386,7 @@ footer.page-footer .footer-copyright {
 .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #2196f3;
   text-align: center;
   letter-spacing: 0.5px;
   -webkit-transition: 0.2s ease-out;
@@ -4396,7 +4396,7 @@ footer.page-footer .footer-copyright {
 
 .btn:hover,
 .btn-large:hover {
-  background-color: #2bbbad;
+  background-color: #39a1f4;
 }
 
 .btn-floating {
@@ -4820,7 +4820,7 @@ button.btn-floating {
   border-top: 1px solid #ddd;
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd;
-  margin: 0.5rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
 }
 
 .collapsible-header {
@@ -5046,7 +5046,7 @@ button:focus {
 
 label {
   font-size: 0.8rem;
-  color: #9e9e9e;
+  color: #2196f3;
 }
 
 /* Text Inputs + Textarea
@@ -5055,21 +5055,21 @@ label {
 /* Style Placeholders */
 
 ::-webkit-input-placeholder {
-  color: #d1d1d1;
+  color: #82c4f8;
 }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  color: #d1d1d1;
+  color: #82c4f8;
 }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #d1d1d1;
+  color: #82c4f8;
 }
 
 :-ms-input-placeholder {
-  color: #d1d1d1;
+  color: #82c4f8;
 }
 
 /* Text inputs */
@@ -5089,7 +5089,7 @@ input[type=search],
 textarea.materialize-textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid #2196f3;
   border-radius: 0;
   outline: none;
   height: 3rem;
@@ -5175,8 +5175,8 @@ input[type=tel]:focus:not([readonly]),
 input[type=number]:focus:not([readonly]),
 input[type=search]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #26a69a;
-  box-shadow: 0 1px 0 0 #26a69a;
+  border-bottom: 1px solid #2196f3;
+  box-shadow: 0 1px 0 0 #2196f3;
 }
 
 input:not([type]):focus:not([readonly]) + label,
@@ -5192,7 +5192,7 @@ input[type=tel]:focus:not([readonly]) + label,
 input[type=number]:focus:not([readonly]) + label,
 input[type=search]:focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #26a69a;
+  color: #2196f3;
 }
 
 input:not([type]).valid,
@@ -5221,8 +5221,8 @@ input[type=search].valid,
 input[type=search]:focus.valid,
 textarea.materialize-textarea.valid,
 textarea.materialize-textarea:focus.valid {
-  border-bottom: 1px solid #4caf50;
-  box-shadow: 0 1px 0 0 #4caf50;
+  border-bottom: 1px solid #2196f3;
+  box-shadow: 0 1px 0 0 #2196f3;
 }
 
 input:not([type]).valid + label:after,
@@ -5252,7 +5252,7 @@ input[type=search]:focus.valid + label:after,
 textarea.materialize-textarea.valid + label:after,
 textarea.materialize-textarea:focus.valid + label:after {
   content: attr(data-success);
-  color: #4caf50;
+  color: #2196f3;
   opacity: 1;
 }
 
@@ -5362,16 +5362,16 @@ textarea.materialize-textarea + label:after {
 }
 
 .input-field.col label {
-  left: 0.75rem;
+  left: 1rem;
 }
 
 .input-field.col .prefix ~ label,
 .input-field.col .prefix ~ .validate ~ label {
-  width: calc(100% - 3rem - 1.5rem);
+  width: calc(100% - 3rem - 2rem);
 }
 
 .input-field label {
-  color: #9e9e9e;
+  color: #2196f3;
   position: absolute;
   top: 0.8rem;
   font-size: 1rem;
@@ -5396,7 +5396,7 @@ textarea.materialize-textarea + label:after {
 }
 
 .input-field .prefix.active {
-  color: #26a69a;
+  color: #2196f3;
 }
 
 .input-field .prefix ~ input,
@@ -5972,7 +5972,7 @@ select {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid #2196f3;
   outline: none;
   height: 3rem;
   line-height: 3rem;
@@ -6379,11 +6379,11 @@ input[type=range]:focus::-ms-fill-upper {
 .side-nav a.btn:hover,
 .side-nav a.btn-large:hover,
 .side-nav a.btn-large:hover {
-  background-color: #2bbbad;
+  background-color: #39a1f4;
 }
 
 .side-nav a.btn-floating:hover {
-  background-color: #26a69a;
+  background-color: #2196f3;
 }
 
 .side-nav li > a > i,

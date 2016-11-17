@@ -1,0 +1,30 @@
+// Preventing margin collapsing on cards.
+.card {
+  display: inline-block;
+  width: 100%;
+
+  @media screen and (max-width: $small-screen) {
+    margin: $gutter-width / 2 0;
+  }
+
+  .card-action {
+    a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+      text-transform: none;
+      margin: 0;
+    }
+  }
+}
+
+.card .card-action .bdbg-meta__cats .cat-links {
+  margin: 0;
+}
+
+.bdbg-meta__item {
+  display: inline-block;
+  padding-right: 1rem;
+
+  span,
+  a {
+    display: inline-block;
+  }
+}

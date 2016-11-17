@@ -1,0 +1,76 @@
+/*--------------------------------------------------------------------------//
+// RTL Suppot
+//--------------------------------------------------------------------------*/
+
+/* Base
+//-----------------------------------*/
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+/* Layout
+//-----------------------------------*/
+
+/* Grid */
+.row .col {
+  float: right;
+}
+
+/* Modules
+//-----------------------------------*/
+
+/* Cards */
+.bdbg-meta__item {
+  padding-right: 0;
+  padding-left: 1rem;
+}
+
+/* Comments */
+.bdbg-comments__body:before {
+  right: -1rem;
+  left: auto;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* Menu */
+nav ul li {
+  float: right;
+}
+
+.bdbg-menu--main .dropdown-button::after {
+  float: left;
+  margin-right: 1em;
+}
+
+/* Search */
+.bdbg-overlay__button {
+  text-align: left;
+}
+
+/* Pagination */
+.page-numbers i,
+.pagination i {
+  transform: rotateY( 180deg );
+}
+
+.bdbg-topheader .col,
+.bdbg-footer__section--bottom .col {
+  float: left;
+}
+
+.bdbg-topheader__item--left,
+.bdbg-bottomfooter__item--left {
+  text-align: left;
+}
+
+.bdbg-menu--side .collapsible-header::after {
+  float: left;
+}
+
+.side-nav .collapsible-body li a,
+.side-nav.fixed .collapsible-body li a {
+  padding: 0 32px;
+}

@@ -1,8 +1,6 @@
 /*----------------------------------------------------------------------------
  Base Styles
 ----------------------------------------------------------------------------*/
-/* Header
---------------------------------------*/
 header {
   a {
     text-decoration: none;
@@ -11,4 +9,28 @@ header {
 
 body {
   z-index: 1;
+  word-wrap: break-word;
+}
+
+img {
+  height: auto;
+  width: auto;
+  max-width: 100%
+}
+
+figure {
+  max-width: 100%;
+  height: auto;
+  width: auto !important;
+}
+
+h1 { margin: 0 0 ($h1-fontsize / 2.5) 0; }
+h2 { margin: 0 0 ($h2-fontsize / 2.5) 0; }
+h3 { margin: 0 0 ($h3-fontsize / 2.5) 0; }
+h4 { margin: 0 0 ($h4-fontsize / 2.5) 0; }
+h5 { margin: 0 0 ($h5-fontsize / 2.5) 0; }
+h6 { margin: 0 0 ($h6-fontsize / 2.5) 0; }
+
+figure {
+  margin: 0 0 1em 0;
 }

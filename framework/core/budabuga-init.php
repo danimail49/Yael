@@ -25,6 +25,11 @@ if ( ! function_exists( 'bdbg_setup' ) ) :
 		// Hide WordPress version.
 		remove_action( 'wp_head', 'wp_generator' );
 
+		// Set defaults content width.
+		if ( ! isset( $content_width ) ) {
+			$content_width = 1280;
+		}
+
 		// Make theme available for translation.
 		load_theme_textdomain( 'budabuga', trailingslashit( THEMEDIR ) . 'languages' );
 
@@ -41,6 +46,8 @@ if ( ! function_exists( 'bdbg_setup' ) ) :
 
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails', array( 'post' ) );
+
+		set_post_thumbnail_size( 1280, 720, true );
 
 		// This theme uses wp_nav_menu() in three locations.
 		register_nav_menus( array(
@@ -66,17 +73,27 @@ if ( ! function_exists( 'bdbg_setup' ) ) :
 		 * See: https://codex.wordpress.org/Post_Formats
 		 */
 		add_theme_support( 'post-formats', array(
-			'aside',
-			'gallery',
-			'link',
-			'image',
-			'quote',
-			'status',
 			'video',
-			'audio',
-			'chat',
+			'image',
 		) );
 	}
 
 	add_action( 'after_setup_theme', 'bdbg_setup' );
 endif; // budabuga_setup.
+
+if ( function_exists( 'bdbg_adjust_image_sizes_attr' ) ) :
+	/**
+	 * Set default srcset img sizes.
+	 *
+	 * @since 1.00
+	 *
+	 * @param  array  $sizes Image sizes.
+	 * @param  string $size  Default size.
+	 * @return array         Image sizes for srcset.
+	 */
+	function bdbg_adjust_image_sizes_attr( $sizes, $size ) {
+		$sizes = '(max-width: 600px) 90vw, (max-width: 1024px) 90vw, (max-width: 1200px) 90vw, 1024px';
+		return $sizes;
+	}
+	add_filter( 'wp_calculate_image_sizes', 'bdbg_adjust_image_sizes_attr', 10 , 2 );
+endif;

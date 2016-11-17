@@ -1,5 +1,9 @@
 .bdbg-nav {
   height: 64px;
+  z-index: 20;
+  position: relative;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.16),
+              0 5px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 // Main Nav
@@ -38,6 +42,22 @@
 
   a {
     padding: 0 32px;
+    color: #3d3d3d;
+
+    &:hover {
+      color: #3d3d3d;
+    }
+  }
+
+  .bdbg-message {
+    padding: 1rem 32px;
+    display: block;
+    line-height: 1;
+
+    a {
+      display: inline;
+      padding: 0;
+    }
   }
 
   .collapsible-header {
@@ -89,6 +109,7 @@
 
 .bdbg-header .button-collapse i {
   font-size: 1.95rem;
+  vertical-align: middle;
 }
 
 @media screen and (max-width: 1024px) {

@@ -32,10 +32,35 @@ endif;
 
 <?php
 $header_direction = bdbg_header_layout();
-$header_fixed_class = ( get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar-fixed' : '';
+$header_fixed_class = ( bdbg_get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar-fixed' : '';
 ?>
 
+<?php if ( is_active_sidebar( 'topbar_left' ) || is_active_sidebar( 'topbar_right' ) ) : ?>
+	<div class="bdbg-topheader" id="js-topheader" style="display: none;">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 m6 s12 bdbg-topheader__item bdbg-widget-wrapper--inline bdbg-topheader__item--left">
+					<?php if ( is_active_sidebar( 'topbar_left' ) ) :
+						dynamic_sidebar( 'topbar_left' );
+					endif; ?>
+				</div>
+				<!-- /.col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--left -->
+				<div class="col l6 m6 s12 bdbg-topheader__item bdbg-widget-wraper--inline bdbg-topheader__item--right bdbg-widget-wrapper--right">
+					<?php if ( is_active_sidebar( 'topbar_right' ) ) :
+						dynamic_sidebar( 'topbar_right' );
+					endif; ?>
+				</div>
+				<!-- /.col l6 m12 s12 bdbg-topheader__item bdbg-topheader__item--right -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container bdbg-topheader -->
+	</div>
+	<!-- /.bdbg-topheader -->
+<?php endif; ?>
+
 <header role="banner" class="bdbg-header <?php echo $header_fixed_class; ?>">
+
 	<ul id="bdbg-menu-side"
 		class="bdbg-menu bdbg-menu--side <?php echo esc_html( $header_direction['from'] ); ?>
 		side-nav">
@@ -45,10 +70,10 @@ $header_fixed_class = ( get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar
 
 		<?php bdbg_menus( 'side', $header_direction ); ?>
 	</ul>
-	<nav class="bdbg-nav" role="navigation">
+	<nav class="bdbg-nav" id="js-nav" role="navigation">
 		<div class="nav-wrapper container">
 			<?php
-			if ( get_theme_mod( 'bdbg_header_search_display' ) ) :
+			if ( bdbg_get_theme_mod( 'bdbg_header_search_display' ) ) :
 				echo '<ul class="' . esc_html( $header_direction['to'] ) . '"><li><a href="#" class="bdbg-iconbutton bdbg-js-search"><i class="fa fa-search" aria-hidden="true"></i></a></li></ul>';
 			endif;
 			?>
@@ -64,3 +89,6 @@ $header_fixed_class = ( get_theme_mod( 'bdbg_header_general_fixed' ) ) ? 'navbar
 	</nav>
 	<!-- /.bdbg-nav -->
 </header>
+
+<div id="js-topbar-margin" class="container">
+<div class="row">

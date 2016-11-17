@@ -1,0 +1,15 @@
+.bdbg-pagination {
+  display: inline-block;
+  margin-bottom: $element-bottom-margin * 2;
+
+  li {
+
+  &.active {
+    background-color: rgba(33, 150, 243, 1);
+  }
+
+    i {
+      font-size: 1em;
+    }
+  }
+}

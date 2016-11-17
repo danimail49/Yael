@@ -22,6 +22,7 @@ define( 'THEMEDIR_URI', trailingslashit( get_template_directory_uri() ), true );
 define( 'THEMEDIR', trailingslashit( get_template_directory() ), true ); // Path to theme folder.
 define( 'FRAMEWORK', THEMEDIR . 'framework/', true ); // Framework Theme base path.
 define( 'FRAMEWORK_ADMIN', THEMEDIR . 'framework/admin/', true ); // Framework Theme Admin Scripts path.
+define( 'FRAMEWORK_INTERFACE', THEMEDIR . 'framework/interfaces/', true ); // Framework Theme Interfaces path.
 define( 'FRAMEWORK_CLASSES', THEMEDIR . 'framework/classes/', true ); // Framework Classes  path.
 define( 'FRAMEWORK_CORE', THEMEDIR . 'framework/core/', true ); // Framework Theme Modules base path.
 define( 'FRAMEWORK_SETTINGS', THEMEDIR . 'framework/settings/', true ); // Framework Theme Settings base path.
@@ -54,12 +55,22 @@ require_once( FRAMEWORK_SETTINGS . 'budabuga-customizer-controls.php' );
 // Creating theme customizer controls.
 require_once( FRAMEWORK_CLASSES . 'class-bdbg-theme-customizer.php' );
 Bdbg_Theme_Customizer::init( $panels, $sections, $settings, $controls );
+// Framework defaults for customizer.
+require_once( FRAMEWORK_SETTINGS . 'budabuga_customizer_defaults.php' );
 
 // Theme dynamic sidebars settings.
 require_once( FRAMEWORK_SETTINGS . 'budabuga-dynamic-sidebars.php' );
 // Creating theme widget areas.
 require_once( FRAMEWORK_CLASSES . 'class-bdbg-dynamic-sidebar.php' );
 Bdbg_Dynamic_Sidebar::init( $widget_list, $widget_args );
+
+/* Metaboxes
+-------------------------------------*/
+// Metabox Engine.
+require_once( FRAMEWORK_CLASSES . 'metaboxes/CMB2/init.php' );
+// Create metaboxes
+require_once( FRAMEWORK . 'metaboxes/post-format-metaboxes.php' );
+
 
 /*----------------------------------------------------------------------------
    FRAMEWORK FUNCTIONS

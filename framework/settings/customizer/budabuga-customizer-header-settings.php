@@ -50,7 +50,7 @@ $header_settings = array(
 	'bdbg_header_general_background' =>
 		array(
 			'type'         => 'theme_mod',
-			'default'      => '#404eb9',
+			'default'      => 'rgb(33, 150, 243)',
 			'transport'    => 'postMessage',
 			'show_opacity' => 'true',
 		),
@@ -95,12 +95,46 @@ $header_settings = array(
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		),
-	'bdbg_header_general_margin' =>
+
+/*----------------------------------------------------------------------------
+   Top Bar Section
+----------------------------------------------------------------------------*/
+
+	'bdbg_topbar_background' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'      		=> '#1E87DA',
+			'transport'         => 'postMessage',
+		),
+	'bdbg_topbar_fontcolor' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'     		=> '#fff',
+			'transport'         => 'postMessage',
+		),
+	'bdbg_topbar_weight' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'           => 'normal',
+			'transport'         => 'postMessage',
+		),
+	'bdbg_topbar_letterspace' =>
 		array(
 			'type'              => 'theme_mod',
 			'default'           => 0,
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
+		),
+	'bdbg_topbar_linkcolor' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'           => '#fff',
+			'transport'         => 'postMessage',
+		),
+	'bdbg_topbar_linkhovercolor' =>
+		array(
+			'type'              => 'theme_mod',
+			'default'           => '#F0F5F7',
+			'transport'         => 'postMessage',
 		),
 
 /*----------------------------------------------------------------------------
@@ -140,13 +174,6 @@ $header_settings = array(
 			'sanitize_callback' => 'sanitize_text_field',
 		),
 	'bdbg_header_logo_main_letterspace' =>
-		array(
-			'type'              => 'theme_mod',
-			'default'           => 0,
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
-		),
-	'bdbg_header_logo_main_margin' =>
 		array(
 			'type'              => 'theme_mod',
 			'default'           => 0,
@@ -232,7 +259,7 @@ $header_settings = array(
 	'bdbg_header_search_background' =>
 		array(
 			'type'         => 'theme_mod',
-			'default'      => 'rgba(238, 110, 115, 0.6);',
+			'default'      => 'rgba(33, 150, 243, 0.6);',
 			'transport'    => 'postMessage',
 			'show_opacity' => 'true',
 		),
