@@ -1,0 +1,30 @@
+//
+// Common widget styles.
+//
+.bdbg-widget-wrapper--right {
+  text-align: right;
+}
+
+.bdbg-widget--inline {
+  display: inline-block;
+}
+
+.bdbg-widget---alignright {
+  text-align: left;
+}
+
+//
+// Menu widget for inline widget wrappers.
+//
+.widget_nav_menu {
+  display: block;
+
+  .menu {
+    margin: 0;
+  }
+
+  .menu-item {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+}

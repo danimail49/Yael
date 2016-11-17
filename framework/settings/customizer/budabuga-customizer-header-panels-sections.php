@@ -35,6 +35,14 @@ $header_sections = array(
 			// 'description' => __( 'General section description', 'budabuga' ),
 			'panel' => 'bdbg_header',
 			'capability'  => 'edit_theme_options',
+			'priority'   => 15,
+		),
+	'bdbg_topbar' =>
+		array(
+			'title'       => __( 'Top Bar', 'budabuga' ),
+			// 'description' => __( 'General section description', 'budabuga' ),
+			'panel' => 'bdbg_header',
+			'capability'  => 'edit_theme_options',
 			'priority'   => 10,
 		),
 	'bdbg_header_logo_main' =>
@@ -55,7 +63,7 @@ $header_sections = array(
 	'bdbg_header_search' =>
 		array(
 			'title'       => __( 'Search', 'budabuga' ),
-			// 'description' => __( 'Search section description', 'budabuga' ),
+			'description' => __( 'Click on Search Icon to see your change', 'budabuga' ),
 			'panel' => 'bdbg_header',
 			'capability'  => 'edit_theme_options',
 			'priority'   => 40,

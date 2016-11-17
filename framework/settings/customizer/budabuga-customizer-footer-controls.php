@@ -53,11 +53,11 @@ $footer_controls = array(
 			'label'       => __( 'Top Footer font weight (px)', 'budabuga' ),
 			'type'        => 'select',
 			'section'     => 'bdbg_footer_top',
-			'description' => __( 'Choose font weight. Can be bold, lighter or normal', 'budabuga' ),
+			// 'description' => __( 'Choose font weight. Can be bold, lighter or normal', 'budabuga' ),
 			'choices' => array(
-				'bold' 	  => 'Bold',
 				'lighter' => 'Lighter',
 				'normal'  => 'Normal',
+				'bold' 	  => 'Bold',
 			),
 		),
 	'bdbg_footer_top_letterspace' =>
@@ -65,7 +65,7 @@ $footer_controls = array(
 			'label'       => __( 'Top Footer text letterspace (px)', 'budabuga' ),
 			'type'        => 'numeric_input',
 			'section'     => 'bdbg_footer_top',
-			'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
+			// 'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
 			'input_attrs' => array(
 				'min' => 0,
 			),
@@ -112,11 +112,11 @@ $footer_controls = array(
 			'label'       => __( 'Middle Footer font weight (px)', 'budabuga' ),
 			'type'        => 'select',
 			'section'     => 'bdbg_footer_middle',
-			'description' => __( 'Choose font weight. Can be bold, lighter or normal', 'budabuga' ),
+			// 'description' => __( 'Choose font weight. Can be bold, lighter or normal', 'budabuga' ),
 			'choices' => array(
-				'bold' 	  => 'Bold',
 				'lighter' => 'Lighter',
 				'normal'  => 'Normal',
+				'bold' 	  => 'Bold',
 			),
 		),
 	'bdbg_footer_middle_letterspace' =>
@@ -124,7 +124,7 @@ $footer_controls = array(
 			'label'       => __( 'Middle Footer text letterspace (px)', 'budabuga' ),
 			'type'        => 'number',
 			'section'     => 'bdbg_footer_middle',
-			'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
+			// 'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
 			'input_attrs' => array(
 				'min' => 0,
 			),
@@ -170,11 +170,11 @@ $footer_controls = array(
 			'label'       => __( 'Bottom Footer font weight (px)', 'budabuga' ),
 			'type'        => 'select',
 			'section'     => 'bdbg_footer_bottom',
-			'description' => __( 'Choose font weight. Can be bold, lighter or normal', 'budabuga' ),
+			// 'description' => __( 'Choose font weight. Can be bold, lighter or normal', 'budabuga' ),
 			'choices' => array(
-				'bold' 	  => 'Bold',
 				'lighter' => 'Lighter',
 				'normal'  => 'Normal',
+				'bold' 	  => 'Bold',
 			),
 		),
 	'bdbg_footer_bottom_letterspace' =>
@@ -182,7 +182,7 @@ $footer_controls = array(
 			'label'       => __( 'Bottom Footer text letterspace (px)', 'budabuga' ),
 			'type'        => 'number',
 			'section'     => 'bdbg_footer_bottom',
-			'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
+			// 'description' => __( 'When "0" is assigned uses default theme letterspace.', 'budabuga' ),
 			'input_attrs' => array(
 				'min' => 0,
 			),

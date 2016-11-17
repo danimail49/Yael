@@ -13,6 +13,11 @@
        //= customizer/postMessage/header.js
        //= customizer/postMessage/footer.js
 
+       /*----------------------------------------------------------------------------
+          General Controls
+       ----------------------------------------------------------------------------*/
+       //= customizer/postMessage/general.js
+
     } );
 
 } )( jQuery );

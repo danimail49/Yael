@@ -14,6 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) :
 	die( 'No direct script access allowed' );
 endif; ?>
 
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container -->
 
 <footer class="bdbg-footer" role="contentinfo">
 	<?php if ( is_active_sidebar( 'footer_top' ) ) : ?>
@@ -50,11 +54,25 @@ endif; ?>
 					<?php
 					if ( ! is_active_sidebar( 'footer_top' ) &&
 						! is_active_sidebar( 'footer_middle' ) &&
-						! is_active_sidebar( 'footer_bottom' ) ) :
+						! is_active_sidebar( 'footer_bottom-left' ) &&
+						! is_active_sidebar( 'footer_bottom-right' ) ) :
 
-						bdbg_dynamic_sidebar( 'footer_bottom' );
+						bdbg_dynamic_sidebar( 'footer_bottom-right-right' );
 
-					endif; ?>
+					else : ?>
+
+						<div class="col l6 m6 s12 bdbg-bottomfooter__item bdbg-widget-wrapper--inline bdbg-bottomfooter__item--left">
+							<?php if ( is_active_sidebar( 'footer_bottom-left' ) ) : ?>
+								<?php dynamic_sidebar( 'footer_bottom-left' ); ?>
+							<?php endif; ?>
+						</div>
+						<div class="col l6 m6 s12 bdbg-bottomfooter__item bdbg-widget-wrapper--inline bdbg-bottomfooter__item--right bdbg-widget-wrapper--right">
+							<?php if ( is_active_sidebar( 'footer_bottom-right' ) ) : ?>
+								<?php dynamic_sidebar( 'footer_bottom-right' ); ?>
+							<?php endif; ?>
+						</div>
+
+					<?php endif; ?>
 				</div>
 				<!-- /.row -->
 			</div>

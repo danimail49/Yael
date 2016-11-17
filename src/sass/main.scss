@@ -19,19 +19,35 @@
 @import "base/base";
 // Layout
 //-------------------------------------/
+// Footer
+@import "layout/bdbg-footer";
 // Header
 @import "layout/bdbg-header";
-//Grid
+// Grid
 @import "layout/grid";
+// Widgets
+@import "layout/bdbg-widgets";
+// Image Aligment TinyMCE classes
+@import "layout/bdbg-wpeditor";
 
 // Module
 //-------------------------------------/
-// Navigation
-@import "module/bdbg-nav";
-// Modal
-@import "module/bdbg-modal";
+// Cards
+@import "module/bdbg-cards";
+// Comments
+@import "module/bdbg-comments";
+// Logo
+@import "module/bdbg-logo";
 // Message
 @import "module/bdbg-message";
+// Modal
+@import "module/bdbg-modal";
+// Navigation
+@import "module/bdbg-nav";
+// Pagination
+@import "module/bdbg-pagination";
+// Posts
+@import "module/bdbg-post";
 
 // State
 //-------------------------------------/

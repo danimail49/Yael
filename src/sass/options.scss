@@ -11,10 +11,32 @@ $small-screen: 600px;
 $medium-screen: 1024px;
 $large-screen: 1200px;
 
+// Grid gutter
+$gutter-width: 2rem;
+$element-top-margin: $gutter-width / 2;
+$element-bottom-margin: $gutter-width / 2;
+
 // Font path override
 $roboto-font-path: "../fonts/roboto/";
 
+// Dropdowns
 $dropdown-color: #3d3d3d;
+
+// Buttons
+$button-raised-background: rgba(33, 150, 243, 1);
+
+// Inputs
+$input-focus-color: rgba(33, 150, 243, 1);
+$input-border-color: rgba(33, 150, 243, 1);
+$input-success-color: rgba(33, 150, 243, 1);
+
+// Headings
+$h1-fontsize: 40px;
+$h2-fontsize: 34px;
+$h3-fontsize: 28px;
+$h4-fontsize: 24px;
+$h5-fontsize: 20px;
+$h6-fontsize: 18px;
 
 //----------------------------------------------------------------------------
 // Project Options
