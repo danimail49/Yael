@@ -165,13 +165,13 @@
             }
         
             function toggleTopBar() {
-                if ( $navbarEl.offset().top > offsetTop && topbarIsVisible() ) {
+                if ( $( window ).scrollTop() > offsetTop && topbarIsVisible() ) {
                     $topbarEl.stop( true, false ).slideUp( 180 );
                     $navbarEl.stop( true, false ).animate( { top: adminbarHeight - 1 }, { duration: 180 } );
                     $( ".bdbg-header" ).css( "top", 0 );
                     $( "body" ).removeClass( "js-topbar-opened" );
                     $( "#js-topbar-margin" ).css( "margin-top", navbarHeight );
-                } else if ( $navbarEl.offset().top <= offsetTop && ! topbarIsVisible() ) {
+                } else if ( $( window ).scrollTop() <= offsetTop && ! topbarIsVisible() ) {
                     $topbarEl.stop( true, false ).slideDown( 180 );
                     $navbarEl.stop( true, false ).animate( { top: offsetTop - 1 }, { duration: 180 } );
                     $( ".bdbg-header" ).css( "top", offsetTop - adminbarHeight - 1 );
