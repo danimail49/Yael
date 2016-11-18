@@ -11,15 +11,15 @@ wp.customize( "bdbg_header_general_showshadow", function( value ) {
     } );
 } );
 
-wp.customize( "bdbg_header_general_fixed", function( value ) {
-    value.bind( function( newval ) {
-        if ( newval === true ) {
-            $( ".bdbg-header" ).addClass( "navbar-fixed" );
-        } else {
-            $( ".bdbg-header" ).removeClass( "navbar-fixed" );
-        }
-    } );
-} );
+// wp.customize( "bdbg_header_general_fixed", function( value ) {
+//     value.bind( function( newval ) {
+//         if ( newval === true ) {
+//             $( ".bdbg-header" ).addClass( "navbar-fixed" );
+//         } else {
+//             $( ".bdbg-header" ).removeClass( "navbar-fixed" );
+//         }
+//     } );
+// } );
 
 wp.customize( "bdbg_header_general_height", function( value ) {
     value.bind( function( newval ) {
