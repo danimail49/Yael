@@ -9,12 +9,12 @@
 //   }
 // }
 
-// .bdbg-header.navbar-fixed {
-//   // position: static;
-//
-//   @include admin-sticky-fix;
-// }
-//
+.bdbg-header.navbar-fixed {
+  position: static;
+
+  // @include admin-sticky-fix;
+}
+
 .bdbg-menu--side {
   @include admin-sticky-fix;
 }
@@ -36,6 +36,10 @@ html #wpadminbar {
   position: fixed;
   width: 100%;
   z-index: 20;
+
+  .container {
+    padding: 0.5rem 0;
+  }
 }
 
 .header-scroll {
@@ -45,12 +49,10 @@ html #wpadminbar {
   }
 }
 
-.bdbg-topheader {
-  .container {
-    padding: 0.5rem 0;
-  }
-}
-
 #js-topbar-margin {
   transition: margin 200ms;
+}
+
+.navbar-fixed {
+
 }

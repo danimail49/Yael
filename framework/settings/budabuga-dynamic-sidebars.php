@@ -53,8 +53,6 @@ $footer_top_classes =
 	bdbg_width_widget_class( 'bdbg_footer_top_columns' );
 $footer_middle_classes =
 	bdbg_width_widget_class( 'bdbg_footer_middle_columns' );
-$footer_bottom_classes =
-	bdbg_width_widget_class( 'bdbg_footer_bottom_columns' );
 
 /*----------------------------------------------------------------------------
    Global Widget Areas Args
