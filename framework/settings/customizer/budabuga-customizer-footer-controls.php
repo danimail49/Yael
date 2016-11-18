@@ -133,17 +133,6 @@ $footer_controls = array(
    Footer Bottom Section
 ----------------------------------------------------------------------------*/
 
-	'bdbg_footer_bottom_columns' =>
-		array(
-			'label'       => __( 'Bottom Footer columns', 'budabuga' ),
-			'type'        => 'number',
-			'section'     => 'bdbg_footer_bottom',
-			'description' => __( 'From 1 to 4.', 'budabuga' ),
-			'input_attrs' => array(
-				'min' => 1,
-				'max' => 4,
-			),
-		),
 	'bdbg_footer_bottom_background' =>
 		array(
 			'label'   => __( 'Bottom Footer background', 'budabuga' ),
