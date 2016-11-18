@@ -108,12 +108,6 @@ $footer_settings = array(
    Footer Bottom Section
 ----------------------------------------------------------------------------*/
 
-		'bdbg_footer_bottom_columns' =>
-				array(
-					'type'         => 'theme_mod',
-					'default'      => 2,
-					'transport'    => 'postMessage',
-				),
 		'bdbg_footer_bottom_background' =>
 			array(
 				'type'         => 'theme_mod',
