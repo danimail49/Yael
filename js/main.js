@@ -202,7 +202,21 @@
                 } );
         
                 $( window ).on( "resize", function() {
-                    toggleTopBar();
+                    $topbarEl.css( "height", "" );
+                    topbarHeight   = $topbarEl.height();
+                    navbarHeight   = $navbarEl.height();
+                    adminbarHeight = ( $adminbarEl.length ) ? $adminbarEl.height() : 0;
+                    $topbarEl.css( "height", topbarHeight );
+        
+                    offsetTop = adminbarHeight + topbarHeight;
+        
+                    if( topbarIsVisible() ) {
+                        $( ".bdbg-header" ).css( "top", offsetTop - 1 );
+                        $navbarEl.css( "top", offsetTop - 1 );
+                    } else {
+                        $( ".bdbg-header" ).css( "top", adminbarHeight - 1 );
+                        $navbarEl.css( "top", adminbarHeight - 1 );
+                    }
                 } );
         
             } else {
