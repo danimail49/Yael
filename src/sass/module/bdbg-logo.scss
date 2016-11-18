@@ -1,16 +1,17 @@
-.bdbg-logo--main {
-  vertical-align: middle;
-  margin-left: 3rem;
-
-  &.left {
-    left: 0;
-  }
-
-  &.right {
-    right: 0;
-  }
-
-  .bdbg-logo__img {
+nav {
+  .bdbg-logo--main {
     vertical-align: middle;
-  }
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+
+    .bdbg-logo__img {
+      vertical-align: middle;
+    }
+  }  
 }
