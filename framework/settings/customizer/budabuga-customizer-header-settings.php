@@ -32,7 +32,7 @@ $header_settings = array(
 		array(
 			'type'         => 'theme_mod',
 			'default'      => true,
-			'transport'    => 'postMessage',
+			'transport'    => 'refresh',
 		),
 	'bdbg_header_general_layout' =>
 		array(
