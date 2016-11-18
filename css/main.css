@@ -2535,20 +2535,19 @@ a img.aligncenter {
   padding: 0 1rem;
 }
 
-.bdbg-logo--main {
+nav .bdbg-logo--main {
   vertical-align: middle;
-  margin-left: 3rem;
 }
 
-.bdbg-logo--main.left {
+nav .bdbg-logo--main.left {
   left: 0;
 }
 
-.bdbg-logo--main.right {
+nav .bdbg-logo--main.right {
   right: 0;
 }
 
-.bdbg-logo--main .bdbg-logo__img {
+nav .bdbg-logo--main .bdbg-logo__img {
   vertical-align: middle;
 }
 
