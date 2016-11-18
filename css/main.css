@@ -2295,6 +2295,10 @@ figure {
   padding: 1rem 0;
 }
 
+.bdbg-header.navbar-fixed {
+  position: static;
+}
+
 .admin-bar .bdbg-menu--side {
   top: 46px;
 }
@@ -2318,13 +2322,13 @@ html #wpadminbar {
   z-index: 20;
 }
 
+.bdbg-topheader .container {
+  padding: 0.5rem 0;
+}
+
 .header-scroll #js-topheader {
   display: block !important;
   position: relative;
-}
-
-.bdbg-topheader .container {
-  padding: 0.5rem 0;
 }
 
 #js-topbar-margin {
