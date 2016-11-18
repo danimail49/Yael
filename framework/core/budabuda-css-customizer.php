@@ -125,7 +125,7 @@ function bdbg_customizer_scripts() { ?>
 		}
 
 		nav .bdbg-logo--main {
-			color: <?php echo bdbg_get_theme_mod( 'bdbg_header_logo_main_fontcolor' ) . '!important;'; ?>
+			color: <?php echo bdbg_get_theme_mod( 'bdbg_header_logo_main_fontcolor' ) . ';'; ?>
 			font-weight: <?php echo bdbg_get_theme_mod( 'bdbg_header_logo_main_weight' ) . ';'; ?>
 			font-size: <?php echo bdbg_get_theme_mod( 'bdbg_header_logo_main_fontsize' ) . 'px;'; ?>
 
