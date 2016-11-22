@@ -11,12 +11,12 @@
         /**
          * Search Modal
          */
-        $( ".bdbg-js-search" ).on( "click", function() {
+        $( ".bdbg-js-search" ).on( "click touchstart", function() {
             $( ".bdbg-overlay" ).addClass( "bdbg-overlay--visible" );
             $( ".bdbg-form--search #s" ).focus();
         } );
         
-        $( ".bdbg-overlay__button--close" ).on( "click", function() {
+        $( ".bdbg-overlay__button--close" ).on( "click touchstart", function() {
             $( ".bdbg-overlay" ).removeClass( "bdbg-overlay--visible" );
         } );
         
