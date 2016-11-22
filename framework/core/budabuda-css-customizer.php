@@ -134,6 +134,10 @@ function bdbg_customizer_scripts() { ?>
 			<?php endif; ?>
 		}
 
+		nav .bdbg-logo--main:hover {
+			color: <?php echo bdbg_get_theme_mod( 'bdbg_header_logo_main_fontcolor' ) . ';'; ?>
+		}
+
 		/**
 		 * Header Side Logo
 		 */
