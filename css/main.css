@@ -2291,6 +2291,10 @@ figure {
   margin: 0 0 1em 0;
 }
 
+.bdbg-footer {
+  margin-top: 1rem;
+}
+
 .bdbg-footer__section {
   padding: 1rem 0;
 }
@@ -2334,6 +2338,7 @@ html #wpadminbar {
 #js-topbar-margin {
   -webkit-transition: margin 200ms;
           transition: margin 200ms;
+  padding-top: 1rem;
 }
 
 .row {
@@ -2751,7 +2756,7 @@ nav .bdbg-logo--main .bdbg-logo__img {
 
 .bdbg-pagination {
   display: inline-block;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .bdbg-pagination li.active {
